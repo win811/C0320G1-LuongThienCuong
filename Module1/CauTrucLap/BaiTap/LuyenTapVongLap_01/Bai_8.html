@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Game đoán số</title>
+</head>
+<body>
+    <button onclick="play()">Chơi luôn</button>
+    <script>
+        function play() {
+            let from=parseInt(prompt('Nhập số đầu đoạn'));
+            let to=parseInt(prompt('Nhập số cuối đoạn'));
+            let ram=Math.floor(Math.random()*(to-from+1))+from;
+            let guess=parseInt(prompt('Nhập số bạn đoán vào đây'));
+            while (guess !== ram) {
+                if (guess > ram) {
+                    alert(' NGU!! ' + '\n' + '\n' + ' Lớn hơn rồi ' );
+                } else
+                    alert(' NGU!! ' + '\n' + '\n' + ' Bé hơn rồi ');
+                guess=parseInt(prompt('Nhập lại đi bạn ơi!'));
+            }
+            alert('Đúng rồi đó !');
+        }
+    </script>
+</body>
+</html>

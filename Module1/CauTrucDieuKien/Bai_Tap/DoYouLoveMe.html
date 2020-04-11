@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DoYouLoveMe</title>
+</head>
+<body>
+    <h1>Do You Love Me?</h1>
+    <button onclick="kiemtra(1)">Yes</button>
+    <button id="khong" style="position:relative;left:30px;top:30px" onmouseover="kiemtra(2)">No</button>
+    <script>
+        function kiemtra(k) {
+            switch (k) {
+                case 1:
+                    alert('<3');
+                    break;
+                case 2:
+                    let r=document.getElementById('khong');
+                    r.style.left=(Math.floor(Math.random()*window.innerWidth)) + 'px';
+                    r.style.top=(Math.floor(Math.random()*window.innerHeight)) + 'px';
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>

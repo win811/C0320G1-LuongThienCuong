@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Giai thừa của một sô nguyên dương</title>
+</head>
+<body>
+    <script>
+        let num=parseInt(prompt('Nhập số cần tính giai thừa'));
+        let count=0;
+        let GT=1;
+        while (count<num) {
+            for (let i=1;i<=num;i++) {
+                GT*=i;
+                count++;
+            }
+        }
+        document.write(GT);
+    </script>
+</body>
+</html>

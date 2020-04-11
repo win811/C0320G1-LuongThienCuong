@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Năm Nhuận</title>
+</head>
+<body>
+    <script>
+        let year=parseInt(prompt("Nhập năm vào"));
+        if (year%100===0){
+            if (year%400===0){
+                document.write("Năm "+year+" là năm Nhuận");
+            }else {
+                document.write("Năm "+year+" không phải là năm Nhuận");
+            }
+        }else if (year%4===0){
+            document.write("Năm "+year+" là năm Nhuận");
+        }else {
+            document.write("Năm "+year+" không phải là năm Nhuận");
+        }
+    </script>
+</body>
+</html>

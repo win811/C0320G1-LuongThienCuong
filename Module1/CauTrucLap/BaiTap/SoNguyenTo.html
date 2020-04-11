@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Số nguyên tố</title>
+</head>
+<body>
+    <p>Số nguyên tố :</p>
+    <script>
+        function checkPrime(a) {
+            for (let i=2;i<=a/2;i++) {
+                if (a % i === 0) {
+                    return false;
+                }
+            }
+            return true;
+        }
+        let num = parseInt(prompt('Nhập số lượng số nguyên tố cần in ra'));
+        let count = 0;
+        let nt = 2;
+        while (count<num) {
+            if (checkPrime(nt)) {
+                document.write( nt + "<br>");
+                count++;
+            }
+            nt += 1;
+        }
+    </script>
+</body>
+</html>

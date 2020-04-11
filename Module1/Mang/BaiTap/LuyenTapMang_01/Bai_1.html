@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Viết chương trình khởi tạo mảng số nguyên gồm 10 phần tử</title>
+</head>
+<body>
+    <script>
+        let array = [];
+        let i;
+        let TargetNumber = [];
+        for (i = 0; i < 10; i++) {
+            array[i] = Math.floor(Math.random()*101);
+            if (array[i] >= 10) {
+                TargetNumber[i] = array[i];
+            }
+        }
+        document.write(TargetNumber.join('-'));
+    </script>
+</body>
+</html>

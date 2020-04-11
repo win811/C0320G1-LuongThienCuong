@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Từ Điển</title>
+</head>
+<body>
+    <script>
+        let str = prompt('Input word').toLowerCase();
+        let EN= ['hi','bae'];
+        let VI= ['chào','cục cưng'];
+        let result = [];
+        let i = EN.indexOf(str);
+        if (i !== -1) {
+            result.push(VI[i]);
+            alert(result);
+        } else {
+            alert('NOT FOUND');
+        }
+    </script>
+</body>
+</html>

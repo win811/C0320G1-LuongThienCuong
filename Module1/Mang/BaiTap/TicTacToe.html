@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tic Tac Toe</title>
+</head>
+<body>
+<h3>Caro Game Simple</h3>
+<hr width="50%" align="left"/>
+<p id="carogame"></p>
+
+<script>
+    let b = document.getElementById("carogame");
+    let board = [];
+    let data = "";//Biến chứa chuỗi để hiển thị lên HTML
+    for (let i = 0; i < 5; i++) { //Tạo mảng
+        board[i] = ['.', '.', '.', '.', '.'];
+    }
+
+    function display() { //Tạo hàm hiển thị mảng
+        for (let i = 0; i < 5; i++) {
+            data += "<br/>";
+            for (let j = 0; j < 5; j++) {
+                data += board[i][j] + "&nbsp;&nbsp;";
+            }
+        }
+        b.innerHTML = data;
+    }
+
+    function changeValue() {  //Tạo hàm click thay đổi giá trị mảng và hiển thị lại
+        let positionR = prompt("R: "); // Nhập chỉ số hàng cần thay đổi
+        let positionC = prompt("C: "); // Nhập chỉ số cột cần thay đổi
+        let value = prompt('INPUT X OR O');  // Nhập X hoặc O
+        data = "";
+        board[positionR][positionC] = value; //Gán lại giá trị
+        display(); //Hiển thị lại
+
+        //Tạo vòng lặp xét hàng ngang(hàng đứng cột chạy)
+        for (let i = 0; i < 5; i++) {
+            let check;
+            // Tạo biến check ngay vòng for ngoài để khi điều kiện đúng có thể dừng vòng for ngoài được
+            for (let j = 0; j < 5; j++) {
+                check = board[i][j] === value && board[i][j+1] === value && board[i][j+2] === value;
+                if (check) {
+                    alert('Winner is : '+ value);
+                    break;
+                }
+            }
+            if (check) {
+                break;
+            }
+        }
+
+        //Tạo vòng lặp xét hàng dọc(cột đứng hàng chạy)
+        for (let j = 0; j < 5; j++) {
+            let check;
+            // Tạo biến check ngay vòng for ngoài để khi điều kiện đúng có thể dừng vòng for ngoài được
+            for (let i = 0; i < 5; i++) {
+                check =board[i][j] === value && board[i+1][j] === value && board[i+2][j] === value;
+                if (check) {
+                    alert('Winner is : '+ value);
+                    break;
+                }
+            }
+            if (check) {
+                break;
+            }
+        }
+
+        //Tạo vòng lặp xét đường chéo từ trái qua
+        for (let i = 0,j = 0; i < 5, j < 5; i++,j++ ) {
+            let check = board[i][j] === value && board[i+1][j+1] === value && board[i+2][j+2] === value;
+            if (check) {
+                alert('Winner is : '+ value);
+                break;
+            }
+        }
+
+        //Tạo vòng lặp xét đường chéo từ phải qua
+        for (let i = 0,j = 0; i < 5, j < 5; i--,j-- ) {
+            let check = board[i][j] === value && board[i-1][j-1] === value && board[i-2][j-2] === value;
+            if (check) {
+                alert('Winner is : '+ value);
+                break;
+            }
+        }
+    }
+
+    display();//Hiển thị mảng khi onload
+</script>
+
+<input type='button' value='Change Value' onclick='changeValue()'>
+</body>
+</html>

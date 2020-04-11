@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CaseStudy yêu cầu 2</title>
+</head>
+<body>
+    <button onclick="showinfo()">Show Information Customer</button>
+    <script>
+        let name='Lương Thiên Cường';
+        let cmnd='123123';
+        let birthday='08/11/96';
+        let email='cuongwin811@gmail.com';
+        let address='34 Cao Xuân Huy, Cẩm lệ, Đà Nẵng';
+        let customertype='Diamond';
+        let discount=100;
+        let servicetype='Villa';
+        let roomtype='Vip';
+        let rentdays=30;
+        let amount=2;
+        function showinfo() {
+            document.write(
+                '<label><strong>Name</strong></label> : '+name+'<br>' +
+                '<label><strong>CMND</strong></label> : '+cmnd+'<br>'+
+                '<label><strong>Birthday</strong></label> : '+birthday+'<br>'+
+                '<label><strong>Email</strong></label> : '+email+'<br>'+
+                '<label><strong>Address</strong></label> : '+address +'<br>'+
+                '<label><strong>CustomerType</strong></label> : '+customertype+'<br>'+
+                '<label><strong>Discount</strong></label> : '+discount+'<br>'+
+                '<label><strong>ServiceType</strong></label> : '+servicetype+'<br>'+
+                '<label><strong>RoomType</strong></label> : '+roomtype+'<br>'+
+                '<label><strong>RentDays</strong></label> : '+rentdays+'<br>'+
+                '<label><strong>Amount</strong></label> : '+amount
+        )
+        }
+    </script>
+</body>
+</html>

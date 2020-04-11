@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tổng của 30 số đầu tiên chia hết cho 7 trong tập số tự nhiên</title>
+</head>
+<body>
+    <script>
+        let num1=0; //Số đầu tiên trong tập hợp số tự nhiên
+        let S30 = 0; //Tổng 30 số đầu tiên chia hết cho 7
+        let count=0;
+        while (count<30) {
+            if (num1 % 7 === 0) {
+                S30+=num1;
+                count++;
+            }
+            num1++;
+        }
+        document.write(S30);
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Diện tích hình vuông, chữ nhật, tam giác vuông</title>
+</head>
+<body>
+    - Cạnh hình vuông <input id="cv" type="text"/>
+        <br>
+    <p id="dthv">Diện tích hình vuông :</p>
+        <br>
+    - Chiều dài hình chữ nhật <input id="dcn" type="text"/>
+        <br><br>
+    - Chiều rộng hình chữ nhật <input id="rcn" type="text"/>
+        <br>
+    <p id="dthcn">Diện tích hình chữ nhật :</p>
+        <br>
+    - Cạnh góc vuông thứ nhất <input id="cgv1" type="text"/>
+        <br><br>
+    - Cạnh góc vuông thứ nhì <input id="cgv2" type="text"/>
+        <br>
+    <p id="dttgv">Diện tích tam giác vuông :</p>
+    <button onclick="kiemtra ()">Tính Toán</button>
+    <script>
+        function kiemtra () {
+            let cv=parseFloat(document.getElementById('cv').value);
+            let shv=cv*cv;
+            document.getElementById('dthv').innerHTML='Diện tích hình vuông : '+ shv;
+            let dcn=parseFloat(document.getElementById('dcn').value);
+            let rcn=parseFloat(document.getElementById('rcn').value);
+            let scn=dcn*rcn;
+            document.getElementById('dthcn').innerHTML='Diện tích hình chữ nhật : '+ scn;
+            let cgv1=parseFloat(document.getElementById('cgv1').value);
+            let cgv2=parseFloat(document.getElementById('cgv2').value);
+            let stgv=1/2*cgv1*cgv2;
+            document.getElementById('dttgv').innerHTML='Diện tích tam giác vuông : '+stgv;
+        }
+    </script>
+</body>
+</html>

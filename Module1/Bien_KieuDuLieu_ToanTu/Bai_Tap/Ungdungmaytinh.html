@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ứng dụng máy tính</title>
+
+</head>
+<body>
+        Caculator<br>
+        <input type="text" id="so1">&nbsp;&nbsp;
+        <input type="text" id="so2"><br><br>
+        <button onclick="cong()">Cộng(+)</button>&nbsp;
+        <button onclick="tru()">Trừ(-)</button>&nbsp;
+        <button onclick="nhan()">Nhân(X)</button>&nbsp;
+        <button onclick="chia()">Chia(/)</button><br><br>
+        <p id="hienthi">Kết quả sẽ hiện thị tại đây nha <3</p>
+
+    <script>
+        let a=document.getElementById("so1");
+        let b=document.getElementById("so2");
+        function cong() {
+            let r=parseInt(a.value)+parseInt(b.value);
+            document.getElementById("hienthi").innerHTML="Kết quả của phép tính cộng này là : "+r;
+        }
+        function tru() {
+            let r=parseInt(a.value)-parseInt(b.value);
+            document.getElementById("hienthi").innerHTML="Kết quả của phép tính trừ này là : "+r;
+        }
+        function nhan() {
+            let r=parseInt(a.value)*parseInt(b.value);
+            document.getElementById("hienthi").innerHTML="Kết quả của phép tính nhân này là : "+r;
+        }
+        function chia() {
+            let r=parseInt(a.value)/parseInt(b.value);
+            document.getElementById("hienthi").innerHTML="Kết quả của phép tính chia này là : "+r;
+        }
+    </script>
+</body>
+</html>

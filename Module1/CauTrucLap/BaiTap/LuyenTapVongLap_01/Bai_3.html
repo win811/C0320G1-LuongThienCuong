@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>20 số đầu tiên dãy fibonacci</title>
+</head>
+<body>
+    <p>Dãy fibonacci</p>
+    <script>
+        let num1=0;
+        let num2=1;
+        document.write(num1+'<br>'+num2+'<br>');
+        let numN;
+        let count=0;
+        while (count<18) {
+            numN=num1+num2;
+            document.write(numN+'<br>');
+            num1=num2;
+            num2=numN;
+            count++;
+        }
+    </script>
+</body>
+</html>

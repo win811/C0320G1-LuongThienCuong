@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lãi kép</title>
+</head>
+<body>
+    <script>
+        let loan=parseFloat(prompt('Nhập số tiền vay'));
+        let month=parseFloat(prompt('Nhập số tháng vay'));
+        let rate=parseFloat(prompt('Nhập lãi suất hàng tháng'));
+        let co=Math.pow(1+rate/100,month);
+        let pay=loan*co;
+        alert('Bạn chuẩn bị mất cái tay' + '\n' + pay);
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tổng 20 nố đầu tiên của dãy Fibonacci</title>
+</head>
+<body>
+<p>Tổng 20 số đầu tiên của dãy Fibonacci</p>
+<script>
+    let num1=0;
+    let num2=1;
+    let numN;
+    let S20=1;
+    let count=0;
+    while (count<18) {
+        numN=num1+num2;
+        S20+=numN;
+        num1=num2;
+        num2=numN;
+        count++;
+    }
+    document.write(S20);
+</script>
+</body>
+</html>

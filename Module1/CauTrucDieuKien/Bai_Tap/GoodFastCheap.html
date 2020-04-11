@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Good Fast Cheap</title>
+</head>
+<body>
+    <input type="checkbox" id="good" onclick="kiemtra(1)"/> GOOD
+    <br>
+    <input type="checkbox" id="fast" onclick="kiemtra(2)"/> FAST
+    <br>
+    <input type="checkbox" id="cheap" onclick="kiemtra(3)"/> CHEAP
+    <script>
+        function kiemtra (k) {
+            let g = document.getElementById('good');
+            let f = document.getElementById('fast');
+            let c = document.getElementById('cheap');
+            if (k === 1) {
+                if (f.checked===true && c.checked===true) {
+                    f.checked=false;
+                }
+            }
+            if (k === 2) {
+                if (g.checked===true && c.checked===true) {
+                    c.checked=false;
+                }
+            }
+            if (k === 3) {
+                if (g.checked===true && f.checked===true) {
+                    g.checked=false;
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>

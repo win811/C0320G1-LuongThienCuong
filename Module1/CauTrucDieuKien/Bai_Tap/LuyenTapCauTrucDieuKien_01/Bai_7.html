@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính cước điện thoại bàn</title>
+</head>
+<body>
+    Thời lượng gọi (phút) :
+    <input id="phut" type="text"/>
+    <br>
+    <p id="giacuoc">Tổng giá cước :</p>
+    <button onclick="kiemtra()">Tính toán</button>
+    <script>
+        function kiemtra() {
+            let p = parseFloat(document.getElementById('phut').value);
+            let c;
+            if (p <= 50) {
+                c = 25000 + 600 * p;
+            } else if (p <= 200) {
+                c = 25000 + 600 * 50 + 400 * (p - 50);
+            } else {
+                c = 25000 + 600 * 50 + 400 * 150 + 200 * (p - 200);
+            }
+            document.getElementById('giacuoc').textContent += c + ' VND';
+        }
+    </script>
+</body>
+</html>

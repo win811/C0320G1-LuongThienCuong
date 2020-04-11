@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài Tập Cân Nặng</title>
+</head>
+<body>
+    <script>
+        let w=parseFloat(prompt('Nhập Cân Nặng(kg)'));
+        let h=parseFloat(prompt('Nhập Chiều cao(m)'));
+        let bmi=w/(h*h);
+        if (bmi<18.5){
+            alert('Chỉ số BMI của bạn là: '+bmi+'\n'+'Tình trạng: Gầy');
+        }else if (bmi<25.0){
+            alert('Chỉ số BMI của bạn là: '+bmi+'\n'+'Tình trạng: Bình Thường');
+        }else if (bmi<30.0){
+            alert('Chỉ số BMI của bạn là: '+bmi+'\n'+'Tình trạng: Thừa cân');
+        }else {
+            alert('Chỉ số BMI của bạn là: '+bmi+'\n'+'Tình trạng: Béo phì');
+        }
+    </script>
+</body>
+</html>

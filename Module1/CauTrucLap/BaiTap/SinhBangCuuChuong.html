@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sinh Bảng Cửu Chương</title>
+</head>
+<body>
+    <script>
+        let bang= "<table border='1' width='1200' cellspacing='3' cellpadding='3'>";
+        let h = 1;
+        let c = 2;
+        while (h <= 9) {
+            bang += "<tr>";
+            while (c <= 9) {
+                bang += "<td>" + c + "x" + h + "=" + c*h + "</td>";
+                c++;
+            }
+            h++;
+            c = 2;
+            bang += "</tr>";
+        }
+        bang += "</table>";
+        document.write(bang);
+    </script>
+</body>
+</html>

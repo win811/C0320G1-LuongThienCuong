@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Doanh Số Bán Hàng</title>
+</head>
+<body>
+    KPI:
+    <input id="kpi" type="text"/>
+    <br><br>
+    Doanh Số dạt được:
+    <input id="doanhso" type="text"/>
+    <br>
+    <p id="hoahong">Hoa Hồng:</p>
+    <button onclick="kiemtra()">Tính Toán</button>
+
+    <script>
+        function kiemtra () {
+            let k = parseFloat(document.getElementById('kpi').value);
+            let d = parseFloat(document.getElementById('doanhso').value);
+            let hh;
+            if (d <= k) {
+                if (d >= 0.5 * k) {
+                    hh = 0.01 * d;
+                } else {
+                    hh = 'Đéo có';
+                }
+            } else {
+                hh = 0.01 * d + 0.02 * (d - k);
+            }
+            document.getElementById('hoahong').innerHTML = 'Hoa Hồng: ' + hh;
+        }
+    </script>
+</body>
+</html>

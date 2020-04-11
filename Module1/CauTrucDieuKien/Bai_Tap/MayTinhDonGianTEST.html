@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Máy Tính đơn giản test</title>
+</head>
+<body>
+<input type="text" id="nhap"/>
+<br><br>
+<button  onclick="nhapso(1)"> 1 </button>&nbsp;
+<button  onclick="nhapso(2)"> 2 </button>&nbsp;
+<button  onclick="nhapso(3)"> 3 </button>&nbsp;
+<button  onclick="nhapso('+')"> + </button>&nbsp;
+<br><br>
+<button  onclick="nhapso(4)"> 4 </button>&nbsp;
+<button  onclick="nhapso(5)"> 5 </button>&nbsp;
+<button  onclick="nhapso(6)"> 6 </button>&nbsp;
+<button  onclick="nhapso('-')"> - </button>&nbsp;
+<br><br>
+<button  onclick="nhapso(7)"> 7 </button>&nbsp;
+<button  onclick="nhapso(8)"> 8 </button>&nbsp;
+<button  onclick="nhapso(9)"> 9 </button>&nbsp;
+<button  onclick="nhapso('*')"> * </button>&nbsp;
+<br><br>
+<button  onclick="nhapso('c')"> c </button>&nbsp;
+<button  onclick="nhapso(0)"> 0 </button>&nbsp;
+<button  onclick="nhapso('=')"> = </button>&nbsp;
+<button  onclick="nhapso('/')"> / </button>&nbsp;
+<script>
+    function nhapso(o) {
+        let n=document.getElementById('nhap');
+        switch (o) {
+            case 0 :
+            case 1 :
+            case 2 :
+            case 3 :
+            case 4 :
+            case 5 :
+            case 6 :
+            case 7 :
+            case 8 :
+            case 9 :
+            case '+':
+            case '-':
+            case '*':
+            case '/':
+                n.value += o;
+                break;
+            case 'c':
+                n.value=n.value.substring(0,n.value.length-1);
+                break;
+            case '=':
+                let r=eval(n.value);
+                n.value=r;
+                break;
+        }
+    }
+</script>
+</body>
+</html>

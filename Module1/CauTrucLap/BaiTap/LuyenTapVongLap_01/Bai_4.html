@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 4</title>
+</head>
+<body>
+<p>Số đầu tiên trong dãy fabonacci chia hết cho 5</p>
+<script>
+    let num1=0;
+    let num2=1;
+    let numN;
+    numN=num1+num2;
+    while (numN % 5 !== 0) {
+        num1=num2;
+        num2=numN;
+        numN=num1+num2;
+    }
+    document.write(numN);
+</script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2</title>
+</head>
+<body>
+    <script>
+        //Bài 2 & 3
+        let array = ['c','s','c','2','6','1'];
+        array.reverse();
+        alert(array.join('') + '\n' + 'Array length : ' + array.length);
+        //Bài 4
+        let str1 = prompt('Enter String 1');
+            alert('String length : ' + str1.length);
+        //Bài 5
+        let str2 = prompt('Enter String 2');
+        if ( str1 === str2) {
+            alert('String 1 and String 2 is the same');
+        } else {
+            alert('String 1 and String 2 is not the same');
+        }
+        //Bài 6
+        let array2 = ['a','-','b','-','c'];
+        for ( let i = 0; i < 5 ; i++) {
+            if (array2[i] === '-') {
+                array2[i] = '_' ;
+            }
+        }
+        alert(array2.join(''));
+
+    </script>
+</body>
+</html>

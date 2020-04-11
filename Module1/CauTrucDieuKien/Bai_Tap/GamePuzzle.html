@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GamePuzzle</title>
+</head>
+<body>
+    <img id="so1" src="Hinhanh/1.png" onclick="kiemtra(1)"/><br>
+    <img id="so2" src="Hinhanh/1_2.png" onclick="kiemtra(2)"/><br>
+    <img id="so3" src="Hinhanh/1_3.png" onclick="kiemtra(3)"/><br>
+    <script>
+        function kiemtra(k) {
+            let a=document.getElementById('so1').getAttribute('src');
+            let b=document.getElementById('so2').getAttribute('src');
+            let c=document.getElementById('so3').getAttribute('src');
+            switch (k) {
+                case 1:
+                    if (a==='Hinhanh/1.png') {
+                        document.getElementById('so1').src="Hinhanh/2.png";
+                    }else if (a==='Hinhanh/2.png'){
+                        document.getElementById('so1').src="Hinhanh/3.png";
+                    }else {
+                        document.getElementById('so1').src="Hinhanh/1.png";
+                    }
+                    break;
+                case 2:
+                    if (b==='Hinhanh/1_2.png'){
+                        document.getElementById('so2').src="Hinhanh/2_2.png";
+                    }else if (b==='Hinhanh/2_2.png'){
+                        document.getElementById('so2').src="Hinhanh/3_2.png";
+                    }else {
+                        document.getElementById('so2').src="Hinhanh/1_2.png";
+                    }
+                    break;
+                case 3:
+                    if (c==='Hinhanh/1_3.png'){
+                        document.getElementById('so3').src="Hinhanh/2_3.png";
+                    }else if (c==='Hinhanh/2_3.png'){
+                        document.getElementById('so3').src="Hinhanh/3_3.png";
+                    }else {
+                        document.getElementById('so3').src="Hinhanh/1_3.png";
+                    }
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>

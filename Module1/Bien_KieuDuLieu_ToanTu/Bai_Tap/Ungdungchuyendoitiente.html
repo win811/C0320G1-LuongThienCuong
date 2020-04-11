@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ứng dụng chuyển đổi tiền tệ</title>
+</head>
+<body>
+    Amount<br>
+    <input type="text" id="amount"><br>
+    From Currency<br>
+    <select id="from">
+        <option value="vietnam">VietNam</option>
+        <option value="usd">USD</option>
+        <option value="euro">EURO</option>
+    </select><br>
+    To Currency<br>
+    <select id="to">
+        <option value="usd">USD</option>
+        <option value="vietnam">VietNam</option>
+        <option value="euro">EURO</option>
+    </select>
+<button onclick="myfunction()">Convert</button>
+<p id="hienthi">Kết quả sẽ được hiển thị tại đây</p>
+<script>
+    let a = document.getElementById("amount");
+    let f = document.getElementById("from");
+    let t = document.getElementById("to");
+    function myfunction() {
+        let r;
+        if (f.value === t.value) {
+            r = parseFloat(a.value);
+        } else if (f.value === "vietnam" && t.value === "usd") {
+                r = parseFloat(a.value) / 23.235;
+        }else if (f.value==="vietnam"&&t.value==="euro") {
+                r = parseFloat(a.value)/25.813
+        }else if (f.value==="usd"&&t.value==="vietnam") {
+                r = 23.235 * parseFloat(a.value);
+        }else if(f.value==="usd"&&t.value==="euro") {
+                r =  0.91*parseFloat(a.value);
+        }else if(f.value==="euro"&&t.value==="usd"){
+                r= parseFloat(a.value)/0.91;
+        }
+        document.getElementById("hienthi").innerHTML = "Result : " + r;
+    }
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính số ngày một tháng</title>
+</head>
+<body>
+    <input id="thang" type="text">
+    <button onclick="tinhtoan()">Tính số ngày</button>
+    <p id="hienthi"></p>
+    <script>
+        function tinhtoan() {
+            let a = parseInt(document.getElementById('thang').value);
+            switch (a) {
+                case 1 :
+                case 3 :
+                case 5 :
+                case 7 :
+                case 8 :
+                case 10 :
+                case 12 :
+                    document.getElementById('hienthi').innerHTML = 'Tháng ' + a + ' có 31 ngày';
+                    break;
+                case 2 :
+                    document.getElementById('hienthi').innerHTML = 'Tháng ' + a + ' có 28 hoặc 29 ngày';
+                    break;
+                default :
+                    document.getElementById('hienthi').innerHTML = 'Tháng ' + a + ' có 30 ngày';
+            }
+        }
+    </script>
+</body>
+</html>

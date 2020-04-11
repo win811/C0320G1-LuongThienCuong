@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 7</title>
+</head>
+<body>
+<script>
+    let array = [0,1,2,3,4,5,6,7,8,10];
+    let value = parseInt(prompt('Enter value'));
+    let indexV = array.indexOf(value);
+    if (array.indexOf(value) === -1) {
+        alert('Value is not in the array');
+    } else {
+        for (let i = 0; i < (array.length - indexV - 1); i++) {
+            array[indexV + i] = array[indexV + i + 1];
+        }
+        array[array.length - 1] = 0;
+    }
+    alert(array);
+
+</script>
+</body>
+</html>

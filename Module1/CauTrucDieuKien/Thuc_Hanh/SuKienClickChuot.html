@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sự Kiện Chuột</title>
+</head>
+<body>
+        <img id="nobita" src="Nobita.jpg" style=position:relative;left:0 height="100" width="100"/>
+        <p>Click button below to move the image to right</p>
+        <button onclick="right()">Click Me</button>
+    <script>
+        function right() {
+            let a=document.getElementById('nobita');
+            a.style.left = parseInt(a.style.left) + 5 + 'px';
+        }
+    </script>
+</body>
+</html>

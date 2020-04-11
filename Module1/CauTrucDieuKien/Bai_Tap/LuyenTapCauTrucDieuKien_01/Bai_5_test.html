@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 5 test</title>
+</head>
+<body>
+Điểm bài kiểm tra số 1 <input id="so1" type="text"/>
+<br><br>
+Điểm bài kiểm tra số 2 <input id="so2" type="text"/>
+<br><br>
+Điểm bài kiểm tra số 3 <input id="so3" type="text"/>
+<br><br>
+Điểm bài thi giữa kỳ <input id="giuaky" type="text"/>
+<br><br>
+Điểm bài thi cuối kỳ <input id="cuoiky" type="text"/>
+<br>
+<p id="dtbkh">Điểm trung bình khóa học:</p>
+<p id="xlhl">Xếp loại học lực:</p>
+<button onclick="kiemtra()">Tính Toán</button>
+<script>
+    function kiemtra() {
+        let s1 = parseFloat(document.getElementById('so1').value);
+        let s2 = parseFloat(document.getElementById('so2').value);
+        let s3 = parseFloat(document.getElementById('so3').value);
+        let gk = parseFloat(document.getElementById('giuaky').value);
+        let ck = parseFloat(document.getElementById('cuoiky').value);
+        let tbkt = (s1+s2+s3) / 3;
+        let tbkh = tbkt*0.2 + gk*0.3 + ck*0.5;
+        document.getElementById('dtbkh').innerHTML = 'Điểm trung bình khóa học: ' + tbkh;
+        if (tbkh >= 10) {
+            document.getElementById('xlhl').innerHTML = 'Xếp loại học lực: Xuất Sắc';
+        } else if (tbkh >= 8.5) {
+            document.getElementById('xlhl').innerHTML = 'Xếp loại học lực: Giỏi';
+        } else if (tbkh >= 7.5) {
+            document.getElementById('xlhl').innerHTML = 'Xếp loại học lực: Khá';
+        } else if (tbkh >= 6.5) {
+            document.getElementById('xlhl').innerHTML = 'Xếp loại học lực: Trung bình';
+        } else if (tbkh >= 4) {
+            document.getElementById('xlhl').innerHTML = 'Xếp loại học lực: Yếu';
+        } else {
+            document.getElementById('xlhl').innerHTML = 'Xếp loại học lực: Ở lại lớp';
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính điểm</title>
+</head>
+<body>
+   <script>
+       let VatLy = parseFloat(prompt('Nhập điểm Vật Lý: '));
+       let HoaHoc = parseFloat(prompt('Nhập điểm Hóa Học: '));
+       let SinhHoc = parseFloat(prompt('Nhập điểm Sinh Học: '));
+       let TongDiem = VatLy + HoaHoc + SinhHoc;
+       let DiemTrungBinh = TongDiem / 3;
+       document.write('Tổng Điểm của các môn học là: ' + TongDiem + '<br/>');
+       document.write('Điểm trung bình của các môn học là: ' + DiemTrungBinh);
+   </script>
+</body>
+</html>

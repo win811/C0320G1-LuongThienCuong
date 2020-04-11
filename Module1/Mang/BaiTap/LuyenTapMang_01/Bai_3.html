@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 3</title>
+</head>
+<body>
+    <script>
+        let array = [0,1,2,3,4,5,6,7,8,10];
+        let max = array[0];
+        let sum = 0;
+        for (let i = 0 ; i < 10 ; i++) {
+            sum += array[i];
+            if (array[i+1] > max) {
+                max = array[i+1];
+            }
+        }
+        let average = sum/array.length;
+        document.write('Average : '+average+'<br/>'+'Max : ' + max+'<br/>'+'Index :' + array.indexOf(max));
+    </script>
+</body>
+</html>

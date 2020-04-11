@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+</head>
+<body>
+    <script>
+    let a= parseInt(prompt('Nhập Số'));
+    function checkPrime(a) {
+        for (let i=2;i<=a/2;i++) {
+            if (a % i === 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+    if (checkPrime(a)) {
+        alert(a+ ' là số nguyên tố');
+    }else {
+        alert(a+' không phải là số nguyên tố');
+    }
+
+    </script>
+</body>
+</html>

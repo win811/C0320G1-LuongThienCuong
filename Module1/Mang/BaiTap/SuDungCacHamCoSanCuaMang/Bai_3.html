@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển chữ hoa thành chữ thường và ngược lại</title>
+</head>
+<body>
+    <script>
+        let str = prompt('Nhập chuỗi');
+        let result = [];
+        for (let i = 0; i < str.length; i++) {
+            if (str[i] >= 'a' && str[i] <= 'z') {
+                result.push(str[i].toUpperCase());
+            } else {
+                result.push(str[i].toLowerCase());
+            }
+        }
+        document.write(result.join(''));
+    </script>
+</body>
+</html>
