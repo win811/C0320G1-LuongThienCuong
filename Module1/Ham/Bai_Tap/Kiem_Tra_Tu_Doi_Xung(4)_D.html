@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra từ đối xứng</title>
+</head>
+<body>
+<script>
+    let array;
+    let string;
+    let check;
+    function isPalindrome(inputStr) {
+        array = [];
+        string = inputStr;
+        check = true;
+        if (string.length >= 2) {
+            for (let i = 0; i < string.length; i++) {
+                array[i] = string[i];
+            }
+            //Chuyển chuỗi qua dạng mảng vì chuỗi không dùng pop , shift được
+            if (array[0] !== array[array.length - 1]) {
+                check = false;
+                return check;
+            }
+            array.pop();
+            array.shift();
+            string = array.join('');
+            isPalindrome(string);
+        }
+        return check;
+    }
+    let strCheck = 'abcda';
+    if (isPalindrome(strCheck)) {
+        alert(strCheck + ' is Palindrome')
+    } else {
+        alert(strCheck + ' is not Palindrome');
+    }
+
+
+</script>
+</body>
+</html>

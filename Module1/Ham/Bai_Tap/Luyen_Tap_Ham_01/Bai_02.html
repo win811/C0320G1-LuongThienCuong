@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <input type="text" id="Text1" value="1"/>
+    <button onclick="add1(input1)">Click here to add 1</button>
+    <script>
+        let input1 = document.getElementById('Text1');
+        function add1(inputObject) {
+            (inputObject.value) = parseInt(inputObject.value) + 1;
+        }
+
+    </script>
+</body>
+</html>

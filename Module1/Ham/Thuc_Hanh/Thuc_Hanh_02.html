@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <p>Type a value in the fahrenheit field to cover the value to Celcius</p>
+    <label>Fahrenheit</label>
+    <input type="text" id="InputFahrenheit" oninput="temperatureCover(this.value)" placeholder="Fahrenheit"/>
+    <br/>
+    <label>Celcius : <span id="OutputCelcius"></span></label>
+    <script>
+        function temperatureCover(valueIn) {
+            valueIn = parseFloat(valueIn);
+            let valueOut = (valueIn -32)/1.8;
+            document.getElementById('OutputCelcius').innerHTML = valueOut;
+        }
+    </script>
+</body>
+</html>

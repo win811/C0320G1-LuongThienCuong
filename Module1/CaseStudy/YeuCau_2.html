@@ -5,33 +5,142 @@
     <title>CaseStudy yêu cầu 2</title>
 </head>
 <body>
-    <button onclick="showinfo()">Show Information Customer</button>
+    <button onclick="show_info()">Show Information Customer</button>
+    <button onclick="edit_and_show_info()">Edit Information Customer</button>
+    <button onclick="show_pay()">Show the amount to be paid after discount</button>
+    <br/>
+    <label id="Display1"></label>
+    <br/><br/>
+    <label id="Display2"></label>
     <script>
         let name='Lương Thiên Cường';
         let cmnd='123123';
         let birthday='08/11/96';
         let email='cuongwin811@gmail.com';
         let address='34 Cao Xuân Huy, Cẩm lệ, Đà Nẵng';
-        let customertype='Diamond';
+        let customer_type='Diamond';
         let discount=100;
-        let servicetype='Villa';
-        let roomtype='Vip';
-        let rentdays=30;
+        let service_type='Villa';
+        let room_type='Vip';
+        let rent_days=30;
         let amount=2;
-        function showinfo() {
-            document.write(
-                '<label><strong>Name</strong></label> : '+name+'<br>' +
-                '<label><strong>CMND</strong></label> : '+cmnd+'<br>'+
-                '<label><strong>Birthday</strong></label> : '+birthday+'<br>'+
-                '<label><strong>Email</strong></label> : '+email+'<br>'+
-                '<label><strong>Address</strong></label> : '+address +'<br>'+
-                '<label><strong>CustomerType</strong></label> : '+customertype+'<br>'+
-                '<label><strong>Discount</strong></label> : '+discount+'<br>'+
-                '<label><strong>ServiceType</strong></label> : '+servicetype+'<br>'+
-                '<label><strong>RoomType</strong></label> : '+roomtype+'<br>'+
-                '<label><strong>RentDays</strong></label> : '+rentdays+'<br>'+
-                '<label><strong>Amount</strong></label> : '+amount
-        )
+        function show_info() {
+            document.getElementById('Display1').innerHTML =
+                '<label><strong>1.Name : </strong></label>'+name+'<br>'
+                + '<label><strong>2.CMND : </strong></label>'+cmnd+'<br>'
+                + '<label><strong>3.Birthday : </strong></label>'+birthday+'<br>'
+                + '<label><strong>4.Email : </strong></label>'+email+'<br>'
+                + '<label><strong>5.Address : </strong></label>'+address +'<br>'
+                + '<label><strong>6.CustomerType : </strong></label>'+customer_type+'<br>'
+                + '<label><strong>7.Discount : </strong></label>'+discount+'<br>'
+                + '<label><strong>8.ServiceType : </strong></label>'+service_type+'<br>'
+                + '<label><strong>9.RoomType : </strong></label>'+room_type+'<br>'
+                + '<label><strong>10.RentDays : </strong></label>'+rent_days+'<br>'
+                + '<label><strong>11.Amount : </strong></label>'+amount;
+        }
+        function edit_and_show_info() {
+            let edit_num = parseInt(prompt('Enter Number you want edit in Info'));
+            switch (edit_num) {
+                case 1:
+                    name = prompt('Enter Name : ');
+                    break;
+                case 2:
+                    cmnd = prompt('Enter CMND : ');
+                    break;
+                case 3:
+                    birthday = prompt('Enter Birthday : ');
+                    break;
+                case 4:
+                    email = prompt('Enter Email : ');
+                    break;
+                case 5:
+                    address = prompt('Enter Address : ');
+                    break;
+                case 6:
+                    customer_type = prompt('Enter Customer Type: ');
+                    break;
+                case 7:
+                    discount = parseInt(prompt('Enter discount : '));
+                    break;
+                case 8:
+                    service_type = prompt('Enter Service Type : ');
+                    break;
+                case 9:
+                    room_type = prompt('Enter Room Type : ');
+                    break;
+                case 10:
+                    rent_days = parseInt(prompt('Enter RentDays : '));
+                    break;
+                case 11:
+                    amount = parseInt(prompt('Enter amount : '));
+                    break;
+            }
+            show_info();
+        }
+        let total_pay;
+        let service_price;
+        let total_discount;
+        let address_discount;
+        let days_discount;
+        let customer_discount;
+        function show_pay() {
+            //Kiểm tra loại dịch vụ để đặt giá dịch vụ
+            switch (service_type.toLowerCase()) {
+                case 'villa' :
+                    service_price = 500;
+                    break;
+                case  'house' :
+                    service_price = 300;
+                    break;
+                case  'room' :
+                    service_price = 100;
+                    break;
+            }
+            //Kiểm tra địa chỉ để đặt giảm giá theo địa chỉ
+            if (address.toLowerCase().indexOf('đà nẵng') !== -1 ) {
+                address_discount = 20;
+            }else if (address.toLowerCase().indexOf('huế') !== -1 ) {
+                address_discount = 10;
+            }else if (address.toLowerCase().indexOf('quảng nam') !== -1 ) {
+                address_discount = 5;
+            }
+            //Kiểm tra thời gian lưu trú để giảm giá theo thời gian lưu trú
+            if (rent_days >= 2 && rent_days <= 4) {
+                days_discount = 10;
+            } else if (rent_days >= 5 && rent_days <= 7) {
+                days_discount = 20;
+            } else if (rent_days > 7) {
+                days_discount = 30;
+            }
+            //Kiểm tra loại khách hàng để giảm giá theo loại khách hàng
+            switch (customer_type.toLowerCase()) {
+                case 'diamond' :
+                    customer_discount = 15;
+                    break;
+                case 'platium' :
+                    customer_discount = 10;
+                    break;
+                case 'god' :
+                    customer_discount = 5;
+                    break;
+                case 'silver' :
+                    customer_discount = 2;
+                    break;
+                case 'member' :
+                    customer_discount = 0;
+                    break;
+            }
+            //Gán giá trị tổng
+            total_discount = address_discount + days_discount + customer_discount;
+            total_pay = service_price * rent_days - total_discount;
+            document.getElementById('Display2').innerHTML =
+                'Discount base on Address : ' + address_discount + '<br/>'
+                + 'Discount base on Rent Days : ' + days_discount + '<br/>'
+                + 'Discount base on Customer Type : ' + customer_discount + '<br/>'
+                + 'Total Discount : ' + total_discount + '<br/>'
+                + 'Service Price : ' + service_price + '<br/>'
+                + 'Rent Days : ' + rent_days + '<br/>'
+                + 'Total Pay ( [Service Price * Rent Days] - Total Discount ) : ' + total_pay;
         }
     </script>
 </body>

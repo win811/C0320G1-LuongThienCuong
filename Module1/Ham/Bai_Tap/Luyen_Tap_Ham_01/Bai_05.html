@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ngôi sao cô đơn</title>
+</head>
+<body>
+    <script>
+        let star = ['polaris', 'aldebaran', 'deneb', 'vega', 'altair', 'dubhe', 'regulus'];
+        let constellation = ['ursa minor', 'taurus', 'cygnus', 'lyra', 'aquila', 'ursa major', 'leo'];
+        let str = prompt('Enter a star');
+        function find_constellation(starName) {
+            let indexInStar = star.indexOf(starName.toLowerCase());
+            if (indexInStar !== -1 ) {
+                alert(constellation[indexInStar]);
+            } else {
+                alert('Not Found');
+            }
+        }
+        find_constellation(str);
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra từ đối xứng</title>
+</head>
+<body>
+    <script>
+        let array;
+        let string;
+        function isPalindrome(inputStr) {
+            array = [];
+            string = inputStr;
+            if (string.length >= 2) {
+                for (let i = 0; i < string.length; i++) {
+                    array[i] = string[i];
+                }
+                //Chuyển chuỗi qua dạng mảng vì chuỗi không dùng pop , shift được
+                if (array[0] !== array[array.length - 1]) {
+                    return false;
+                }
+                array.pop();
+                array.shift();
+                string = array.join('');
+                isPalindrome(string);
+            } else {
+                alert('Đã chạy vào được hàm else');
+                return true;
+            }
+        }
+        let strCheck = 'oto';
+        if (isPalindrome(strCheck)) {
+            alert(strCheck + ' is Palindrome')
+        } else {
+            alert(strCheck + ' is not Palindrome');
+        }
+
+
+    </script>
+</body>
+</html>

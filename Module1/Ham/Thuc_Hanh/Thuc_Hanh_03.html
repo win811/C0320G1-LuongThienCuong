@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+       let arr1 = [3, 5, 1, 8, -3, 7, 8];
+       let arr2 =  [7, 12, 6, 9, 20, 56, 89];
+       let arr3 = [];
+       let arr4 = [0, 0, 0, 0, 0, 0];
+       function minArr(arrNum) {
+           if (arrNum.length === 0) {
+               alert('Array empty');
+           }
+           let min = arrNum[0];
+            for (let i = 1 ; i < arrNum.length ; i++) {
+                if (arrNum[i] < min) {
+                    min = arrNum[i];
+                }
+            }
+            document.writeln('Min of  ' + arrNum + ' is '+ min);
+       }
+       minArr(arr1);
+    </script>
+</body>
+</html>

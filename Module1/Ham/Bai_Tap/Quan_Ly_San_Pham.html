@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quản lý sản phẩm</title>
+</head>
+<body>
+    <h3>Add New Product</h3>
+    <input type="text" id="Text1" placeholder="New Product"/>
+    <button style="background-color: green;color: aliceblue" onclick="add_and_display()">Add</button>
+    <h3>Display All Product</h3>
+    <h4>Product Name
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        <span style="color: darkred" id="Span1">9 products</span>
+    </h4>
+    <p id="Display"></p>
+    <script>
+        let list = ['<table border="0" width="800" cellspacing="15">',
+                    '<tr>'
+                    +'<td>','Sony Xperia',
+                    '</td>'
+                    +'<td><button style="background-color: green;color: aliceblue">Edit</button></td>'
+                    +'<td><button style="background-color: green;color: aliceblue">Delete</button></td>' +
+                    '</tr>',
+                    '</table>'];
+
+        function display () {
+            document.getElementById('Display').innerHTML = list.join('');
+        }
+        display();
+
+        let text = document.getElementById('Text1');
+
+        function add_and_display() {
+            list.pop();
+            list.push(
+                '<tr>'
+                +'<td>',
+                text.value,
+                '</td>'
+                +'<td><button style="background-color: green;color: aliceblue">Edit</button></td>'
+                +'<td><button style="background-color: green;color: aliceblue">Delete</button></td>' +
+                '</tr>',
+                '</table>'
+            );
+            display();
+        }
+
+        function edit() {
+            let edit_text = prompt('Enter Edition');
+
+        }
+    </script>
+</body>
+</html>

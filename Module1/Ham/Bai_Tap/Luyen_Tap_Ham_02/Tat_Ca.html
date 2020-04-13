@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        const PI = 3.14;
+        function square(num) {
+            return num * num;
+        }
+        function acreage(radius) {
+            return PI * radius * radius;
+        }
+        function perimeter(radius) {
+            return PI * 2 * radius;
+        }
+        let x = 2;
+        alert(square(x));
+        alert(acreage(x));
+        alert(perimeter(x));
+        //////////////////
+        function checkNumber(character) {
+            if (character >= 0 || character < 0) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        let y = 'cut';
+        alert(checkNumber(y));
+        //////////////////
+        function checkMin(num1,num2,num3) {
+            let min = num1;
+            if (num2 < min) {
+                min = num2;
+            }else if (num3 < min) {
+                min = num3;
+            }
+            return min;
+        }
+        alert(checkMin(1,2,3));
+    </script>
+</body>
+</html>

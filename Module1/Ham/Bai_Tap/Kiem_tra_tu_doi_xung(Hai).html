@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra từ đối xứng</title>
+</head>
+<body>
+<script>
+    let array;
+    let string;
+    function isPalindrome(inputStr) {
+        let check = false;
+        array = [];
+        string = inputStr;
+        alert(inputStr.length);
+        if (inputStr.length >= 2) {
+            for (let i = 0; i < string.length; i++) {
+                array.push(string[i]);
+            }
+            if (array[0] !== array[array.length - 1]) {
+                check = false;
+            }
+            array.pop();
+            array.shift();
+            alert(array);
+            string = array.join('');
+            alert(string);
+            isPalindrome(string);
+        } else {
+            alert('abc');
+            check = true;
+        }
+        if (check) {
+            return true;
+        }else  {
+            return false;
+        }
+    }
+
+    alert(isPalindrome('aba'));
+    if (isPalindrome('aba')) {
+        alert('Đúng')
+    } else {
+        alert('Sai');
+    }
+
+
+</script>
+</body>
+</html>
