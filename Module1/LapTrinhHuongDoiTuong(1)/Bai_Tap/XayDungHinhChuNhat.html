@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xây dựng lớp hình chữ nhật</title>
+</head>
+<body>
+    <canvas id="MyCanvas" width="1500" height="1500" style="border: 1px solid #d3d3d3"></canvas>
+    <script>
+        function Rectangle(x,y,length,width) {
+            this.x = x;
+            this.y = y;
+            this.length = length;
+            this.width = width;
+            this.setX = function (newX) {
+                this.x = newX;
+            };
+            this.setY = function (newY) {
+                this.y = newY;
+            };
+            this.getArea = function () {
+                return this.length * this.width;
+            };
+            this.perimeter = function () {
+                return 2 * (this.length + this.width);
+            };
+            this.draw = function () {
+                let getRandomHex = Math.floor(Math.random() * 255);
+                let getRandomColor = "rgb(" + getRandomHex + "," + getRandomHex + "," + getRandomHex + ")";
+                let ctx = document.getElementById('MyCanvas').getContext('2d');
+                ctx.fillStyle = getRandomColor;
+                ctx.fillRect(this.x, this.y, this.length, this.width);
+            };
+
+        }
+        let rectangle1 = new Rectangle(300,300,150,75);
+        let rectangle2 = new Rectangle(500,500,150,75);
+        rectangle1.draw();
+        rectangle2.draw();
+        alert(rectangle1.getArea());
+    </script>
+</body>
+</html>

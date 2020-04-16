@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Temperature</title>
+</head>
+<body>
+    <script>
+        function Temperature(C) {
+            this.c = C;
+            this.setC = function (newC) {
+                this.c = newC;
+            };
+            this.toF = function () {
+                return this.c * 1.8 + 32;
+            };
+            this.toK = function () {
+                return this.c + 273.15;
+            };
+        }
+        let tem1 = new Temperature(25);
+        alert(tem1.toF());
+        alert(tem1.toK());
+    </script>
+</body>
+</html>

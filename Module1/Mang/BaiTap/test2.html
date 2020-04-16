@@ -7,9 +7,21 @@
     <input type="text" id="Input" />
 <body>
     <script>
-        let input = document.getElementById('Input');
-        alert(input);
-
+       let realArray = [1,2,3];
+       realArray.sort((a, b) => {
+           return b-a;
+       });
+       alert(realArray);
+       realArray[2] = realArray[3];
+       alert(realArray.length + '\n' + realArray );
+       alert(realArray[2]);
+       function change(arr) {
+            let temp = arr[0];
+            arr[0] = arr[2];
+            arr[2] = temp;
+       }
+       change(realArray);
+       alert(realArray);
     </script>
 </body>
 </html>

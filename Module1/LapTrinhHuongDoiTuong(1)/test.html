@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mobile</title>
+</head>
+<body>
+<script>
+    function Mobile(battery) {
+        this.status = 'off';
+        this.battery = battery;
+        this.texting = [];
+        this.inbox = [];
+        this.send = [];
+        this.checkStatus = function () {
+            return this.status;
+        };
+        this.turnOn = function () {
+            this.status = 'On';
+        };
+        this.turnOff = function () {
+            this.status = 'Off';
+        };
+        this.charge = function () {
+            this.battery += 1;
+        };
+        this.checkBattery = function () {
+            alert(this.battery);
+        };
+    }
+    let nokia = new Mobile(0);
+    nokia.charge();
+    nokia.checkBattery();
+    setTimeout(nokia.checkBattery,2000);
+
+</script>
+</body>
+</html>

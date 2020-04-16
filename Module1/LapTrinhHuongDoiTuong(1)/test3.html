@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        function A() {
+            this.getNum = function () {
+                return 2;
+            };
+        }
+        function B() {
+            this.getCharacter = function (character) {
+                this.num = character;
+            };
+            this.getNum = function () {
+                return this.num.getNum();
+            }
+        }
+        let a = new A();
+        let b = new B();
+        alert(a.getNum() + ' a');
+        b.getCharacter(a);
+        alert(b.getNum());
+
+    </script>
+</body>
+</html>

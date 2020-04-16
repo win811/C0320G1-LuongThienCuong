@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Date</title>
+</head>
+<body>
+    <script>
+        function MyDate (day,month,year) {
+          this.day = day;
+          this.month = month;
+          this.year = year;
+          this.getDay = function () {
+              return 'Today is : ' + this.day;
+          };
+          this.getMonth = function () {
+              return 'This month is : ' + this.month;
+          };
+          this.getYear = function () {
+              return 'This year is : ' + this.year;
+          };
+          this.setDay = function (day) {
+              this.day = day;
+          };
+          this.setMonth = function (month) {
+              this.month = month;
+          };
+          this.setYear = function (year) {
+              this.year = year;
+          }
+        }
+        let date1 = new MyDate(2,2,2002);
+        alert(date1.day);
+        date1.setDay(10);
+        alert(date1.day);
+
+    </script>
+</body>
+</html>

@@ -6,7 +6,7 @@
 </head>
 <body>
 <h1 id="h1">Type anthing slowly</h1>
-<textarea id="txt" cols="40" rows="10" onkeydown="text()"></textarea>
+<textarea id="txt" cols="40" rows="10" onkeydown="setTimeout(typeTextarea,2)"></textarea>
 <script>
     let a = [];
     a[1] = 'T'; a[2] = 'Ô'; a[3] = 'I'; a[4] = ' '; a[5] = 'L'; a[6] = 'À'; a[7] = ' '; a[8] = 'M'; a[9] = 'Ộ'; a[10] = 'T'; a[11] = ' '; a[12] = 'Đ';
@@ -23,9 +23,6 @@
             textarea.value = '';
             i = 1;
         }
-    }
-    function text() {
-        setTimeout(typeTextarea,2);
     }
 </script>
 </body>

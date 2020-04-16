@@ -7,9 +7,20 @@
 <body>
 
     <script>
-       let array = [1,2,,,];
-        alert(array.length);
+        function MyDate (day, month, year) {
+            this.day = day;
+            this.month = month;
+            this.year = year;
+            this.getDay = function () {
+                return this.day;
+            }
+            this.getMonth = function () {
+                return this.month;
+            }
 
+        }
+        let date = new MyDate(8,11,1996);
+        alert(date.day);
     </script>
 </body>
 </html>

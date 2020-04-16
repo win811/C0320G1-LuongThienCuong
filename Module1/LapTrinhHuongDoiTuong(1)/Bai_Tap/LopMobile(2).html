@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mobile</title>
+</head>
+<body>
+<script>
+    function Mobile(name, battery) {
+        this.name = name;
+        this.status = 'off';
+        this.battery = battery;
+        this.message = [];
+        this.inbox = [];
+        this.send = [];
+        this.turnOn = function () {
+            this.status = 'on';
+        };
+        this.turnOff = function () {
+            this.status = 'off';
+        };
+        this.charge = function () {
+            // if (this.battery < 100) {
+            //     this.battery += 1;
+            // }
+            // console.log(this.battery);
+            // setTimeout(this.charge,1000);
+           for (;this.battery < 100;) {
+               console.log(this.battery);
+               this.battery += 0.01;
+           }
+        };
+        this.checkBattery = function () {
+            if (this.status === 'on') {
+                alert(this.battery);
+            }
+        };
+        this.setTimeoutToCheckBattery = function (s) {
+            let batteryNow = this.battery;
+            function checkBatteryNow() {
+                alert(batteryNow);
+            }
+            setTimeout(checkBatteryNow, s);
+        };
+        this.typing = function () {
+            if (this.status === 'on') {
+                let type = prompt(this.name + '\n' + 'Typing Message');
+                this.message.push(type);
+            }
+        };
+        this.findMessageToSend = function (receiver) {
+            if (this.status === 'on') {
+                let displayMessage = '';
+                for (let i = 0; i < this.message.length; i++) {
+                    displayMessage += i + '. ' + this.message[i] + '\n';
+                }
+                let chooseMessageNum = parseInt(prompt(this.name + '\n' + 'Find a message to send'
+                    + 'Enter number' + '\n' + displayMessage));
+
+                receiver.inbox.push(this.message[chooseMessageNum] + '\n' + 'From ' + this.name + '\n');
+                this.send.push(this.message[chooseMessageNum] + '\n' + 'To ' + receiver.name + '\n');
+            }
+        };
+        this.checkInbox = function () {
+            if (this.status === 'on') {
+                let displayInbox = '';
+                for (let i = 0; i < this.inbox.length; i++) {
+                    displayInbox += i + '. ' + this.inbox[i] + '\n';
+                }
+                alert('Inbox of ' + this.name + '\n' + displayInbox);
+            }
+        };
+
+        this.checkSend = function () {
+            if (this.status === 'on') {
+                let displaySend = '';
+                for (let i = 0; i < this.send.length; i++) {
+                    displaySend += i + '. ' + this.send[i] + '\n';
+                }
+                alert('Send of ' + this.name + '\n' + displaySend);
+            }
+        };
+    }
+
+    let nokia = new Mobile('Cuong', 0);
+    let iphone = new Mobile('Hai', 0);
+    nokia.turnOn();
+    iphone.turnOn();
+    nokia.charge();
+    //nokia.typing();
+    //nokia.findMessageToSend(iphone);
+    //iphone.checkInbox();
+    //nokia.checkSend();
+    //nokia.checkBattery();
+    //setTimeout(nokia.checkBattery,3000);
+    //nokia.setTimeoutToCheckBattery(3000);
+
+</script>
+</body>
+</html>
