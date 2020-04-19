@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        regexp = /^\d{5}$/;
+        function is_usZipCode(str) {
+            if (regexp.test(str)) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        let zipCode = "12345";
+        alert(is_usZipCode(zipCode));
+    </script>
+</body>
+</html>

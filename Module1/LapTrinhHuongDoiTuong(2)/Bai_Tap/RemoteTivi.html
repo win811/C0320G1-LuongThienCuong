@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dùng remote điều khiển tivi</title>
+</head>
+<body>
+    <script>
+        class TiVi {
+            constructor(status,channel,volume) {
+                this.status = status;
+                this.channel = channel;
+                this.volume = volume;
+            }
+            changeChannel (newChannel) {
+                this.channel = newChannel;
+            }
+            turnUpVolume (num) {
+                this.volume += num;
+            }
+            turnDownVolume (num) {
+                this.volume -= num;
+            }
+        }
+
+        class Remote {
+            constructor(code,device) {
+                this.code = code;
+                this.device = device;
+            }
+            turnOnDevice () {
+                this.device.status = true;
+                alert('TiVi is on');
+            }
+            turnOffDevice () {
+                this.device.status = false;
+                alert('TiVi is off');
+            }
+            changeButton (newChannel) {
+                this.device.changeChannel(newChannel);
+            }
+            volumeUpButton (num) {
+                this.device.turnUpVolume(num);
+            }
+            volumeDownButton (num) {
+                this.device.turnDownVolume(num);
+            }
+        }
+        let tiVi1 = new TiVi(false,7,50);
+        let remote1 = new Remote(123,tiVi1);
+        remote1.turnOnDevice();
+        alert('TiVi is on channel ' + tiVi1.channel);
+        alert('Volume is ' + tiVi1.volume);
+        remote1.changeButton(3);
+        alert('TiVi is on channel ' + tiVi1.channel);
+        remote1.volumeUpButton(2);
+        alert('Volume is ' + tiVi1.volume);
+        remote1.turnOffDevice();
+    </script>
+</body>
+</html>

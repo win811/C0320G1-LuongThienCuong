@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Adam Eva</title>
+</head>
+<body>
+    <script>
+        class Apple {
+            constructor(weight) {
+                this.weight = weight;
+            }
+            getWeight () {
+                return this.weight;
+            }
+            decrease () {
+                this.weight -= 1;
+            }
+        }
+        class Human {
+            constructor(name,gender,weight) {
+                this.name = name;
+                this.gender = gender;
+                this.weight = weight;
+            }
+            speak (human) {
+                alert('* '+ this.name + ' nói *' + '\n' +
+                    'Chào ' + human.name +', mình đứng đây từ chiều, mình tên là ' + this.name + ', làm miếng táo không'  )
+            }
+            reply (human) {
+                alert('* '+ this.name + ' trả lời *' + '\n' +
+                    'Ok '+ human.name +' ơi, trông ngon đấy, cho cắn phát');
+            }
+            said (human) {
+                alert ('* '+ this.name + ' tức giận và nói *' + '\n' +
+                    'Ơ kìa ' + human.name + ', cắn miếng to vậy, cútt');
+            }
+            checkApple (apple) {
+                alert('* '+this.name+' đang kiểm tra lại quả táo *' +'\n'+'Trọng lượng còn lại của quả táo: ' + apple.weight);
+            }
+            bite (apple) {
+                this.weight += 1;
+                apple.weight -= 1;
+            }
+
+        }
+        let apple1 = new Apple(10);
+        let adam = new Human('Adam','Male',70);
+        let eva = new Human('Eva','Female',50);
+        adam.bite(apple1);
+        adam.speak(eva);
+        eva.reply(adam);
+        eva.bite(apple1);
+        adam.checkApple(apple1);
+        adam.said(eva);
+
+    </script>
+</body>
+</html>

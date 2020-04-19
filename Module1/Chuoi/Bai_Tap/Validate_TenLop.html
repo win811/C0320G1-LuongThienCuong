@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let regExp = /^[CAP][0-9]{4}[GHIKLM]$/;
+        function isCorrectClassName(className) {
+            if (regExp.test(className)) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        let class1 = 'C0318G';
+        alert(isCorrectClassName(class1));
+    </script>
+</body>
+</html>

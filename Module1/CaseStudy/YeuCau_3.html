@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let name;
+        let address;
+        let customerType;
+        let email;
+        let cmnd;
+        let birthday;
+        let rentDays;
+        let guestAmount;
+        let check = false;
+
+        // do {
+        //     let countA = 0;
+        //     let countDoc = 0;
+        //     email = prompt('Input email : ');
+        //     for (let i = 0 ; i < email.length; i++) {
+        //         if (email[i] === '@') {
+        //             countA++;
+        //             for (let j = i+1; j <email.length;j++) {
+        //                 if (email[j] === '.') {
+        //                     countDoc++;
+        //                 }
+        //             }
+        //         }
+        //     }
+        //     if (countA !== 1 && countDoc < 1) {
+        //         alert('Email is not exist')
+        //     }else {
+        //         check = true;
+        //     }
+        // } while (!check);
+
+        // check = false;
+        // do {
+        //     cmnd = prompt('Input Cmnd: ');
+        //     if (!isNaN(cmnd)) {
+        //         cmnd = parseFloat(cmnd);
+        //     }
+        //     if (!Number.isInteger(cmnd)) {
+        //         alert('Cmnd is not right');
+        //         continue;
+        //     }
+        //     if (cmnd < 10000000) {
+        //         alert('Cmnd is not right');
+        //         continue;
+        //     }
+        //     check = true;
+        // }while (!check);
+
+        // check = false;
+        // do {
+        //     birthday = prompt('Input birthday: ');
+        //     if (birthday[2] === '/' && birthday[5] === '/' ) {
+        //         let day = birthday.substring(0,2);
+        //         let month = birthday.substring(3,5);
+        //         let year = birthday.substring(6,10);
+        //         if (!isNaN(day)&&!isNaN(month)&&!isNaN(year)) {
+        //             day = parseFloat(day);
+        //             month = parseFloat(month);
+        //             year = parseFloat(year);
+        //             if (Number.isInteger(day) && Number.isInteger(month) && Number.isInteger(year) ) {
+        //                 if (day < 32 && month < 13 && year > 1900) {
+        //                     check = true;
+        //                 }
+        //             }
+        //         }
+        //     }
+        //     if (!check) {
+        //         alert('birthday is not right');
+        //     }
+        // } while (!check);
+
+        // check = false;
+        // do {
+        //     rentDays = parseFloat(prompt('Input rent days: '));
+        //     if (Number.isInteger(rentDays) && rentDays > 0) {
+        //         check = true;
+        //     } else {
+        //         alert('rent days is not right');
+        //     }
+        // }while (!check);
+
+        // check = false;
+        // do {
+        //     guestAmount = parseFloat(prompt('Input amount of guest'));
+        //     if (Number.isInteger(guestAmount) && guestAmount > 0) {
+        //         check = true;
+        //     }else {
+        //         alert('Amount of guest is not right');
+        //     }
+        // }while (!check);
+
+        let tempName = '';
+        name = prompt('Input Name: ');
+        name = name.trim().toLowerCase();
+        for (let i = 0 ; i < name.length ; i++) {
+            if (name[i] === ' ' && name[i+1] === ' ') {
+                continue;
+            }
+            if (i === 0 || name[i-1] === ' ') {
+                tempName += name[i].toUpperCase();
+                continue;
+            }
+            tempName += name[i];
+        }
+        alert(tempName);
+        name = tempName;
+
+        let tempAddress = '';
+        address = prompt('Input Address: ').trim().toLowerCase();
+        for (let i = 0 ; i < address.length; i++) {
+            if (address[i] === ' ' && address[i+1] === ' ') {
+                continue;
+            }
+            if (i === 0 || address[i-1] === ' ') {
+                tempAddress += address[i].toUpperCase();
+                continue;
+            }
+            tempAddress += address[i];
+        }
+        alert(tempAddress);
+        address = tempAddress;
+
+    </script>
+</body>
+</html>

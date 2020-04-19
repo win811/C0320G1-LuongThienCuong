@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let myDate = new Date(1996,11,8);
+        let thisDate = new Date();
+        let myTotalMilliseconds = thisDate.getTime() - myDate.getTime();
+        let myTotalYears = myTotalMilliseconds / (1000*60*60*24*30*12);
+        alert(myTotalYears);
+    </script>
+</body>
+</html>

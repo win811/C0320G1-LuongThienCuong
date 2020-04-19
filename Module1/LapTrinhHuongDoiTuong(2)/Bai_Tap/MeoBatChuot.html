@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mèo nhai đầu con chuột</title>
+</head>
+<body>
+    <script>
+        class Rat {
+            constructor(name,weight,speed,status) {
+                this.name = name;
+                this.weight = weight;
+                this.speed = speed;
+                this.status = status;
+            }
+            speak () {
+                alert ( '* ' + this.name + ' said *' + '\n' +
+                        'Chít Chít mother fucker');
+            }
+        }
+        class Cat {
+            constructor(name,weight,speed) {
+                this.name = name;
+                this.weight = weight;
+                this.speed = speed;
+            }
+            speak () {
+                alert(  '* ' + this.name + ' said *' + '\n' +
+                        'A con chuột này láo');
+            }
+            speedUp (speed) {
+                alert('- ' + this.name + ' đang tăng tốc -');
+                this.speed += speed;
+            }
+            catchRat (rat) {
+                if (this.speed > rat.speed) {
+                    alert( '- '+ this.name + ' đang rượt ' + rat.name + ' -' + '\n' +
+                            '* ' + this.name + ' said *' + '\n' +
+                            'Bạn đã bị bắt,bố mày nhịn mày lâu lắm rồi nhá');
+                    return 1;
+                } else {
+                    alert(  '- '+ this.name + ' đang rượt ' + rat.name + ' -' + '\n' +
+                            '* ' + this.name + ' said *' + '\n' +
+                            'Đứng lại, con chuột kia')
+                }
+            }
+            eatRat (rat) {
+                if (this.catchRat(rat) >0 && rat.status === true) {
+                    alert('* ' + this.name + ' said *' + '\n' +
+                            'Như nào, giờ thì nhai đầu mày nhá');
+                    this.weight += rat.weight;
+                }else {
+                    alert('* Huấn hiện lên và nói *' + '\n' +
+                        'Không làm mà đòi có ăn, thì ăn đầu buồi, ăn cứt')
+                }
+            }
+        }
+        let jerry = new Rat('jerry',5,20,true);
+        let tom = new Cat('Tom',10,15);
+        jerry.speak();
+        tom.speak();
+        tom.catchRat(jerry);
+        tom.eatRat(jerry);
+        tom.speedUp(6);
+        tom.catchRat(jerry);
+        tom.eatRat(jerry);
+    </script>
+</body>
+</html>

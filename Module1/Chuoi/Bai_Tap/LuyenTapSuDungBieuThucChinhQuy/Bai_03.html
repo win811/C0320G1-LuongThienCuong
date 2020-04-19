@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nguyên Âm Phụ Âm</title>
+</head>
+<body>
+    <script>
+        let vowel = ['a', 'ă', 'â', 'e', 'ê', 'i', 'o', 'ô', 'ơ', 'u', 'ư', 'y'];
+        let consonant = ['b', 'c', 'd', 'đ', 'g', 'h', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'x'];
+        let resultVowel = [];
+        let resultConsonant = [];
+        let string = 'Lương Thiên Cường';
+        for (let i = 0; i < string.length; i++) {
+            if (vowel.indexOf(string[i].toLowerCase()) !== -1) {
+                resultVowel.push(string[i]);
+            } else if (consonant.indexOf(string[i].toLowerCase()) !== -1) {
+                resultConsonant.push(string[i]);
+            }
+        }
+        alert(  'Số lượng nguyên âm trong chuỗi là : ' + resultVowel.length + '\n' +
+                'Số lượng phụ âm trong chuỗi là : ' + resultConsonant.length);
+
+    </script>
+</body>
+</html>

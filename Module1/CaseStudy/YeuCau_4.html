@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Yêu cầu 4</title>
+</head>
+<body>
+    <button style="background-color: green;color: aliceblue" onclick="add_name()">Add Name Customer </button>
+    <button style="background-color: darkred;color: aliceblue" onclick="delete_name()">Delete Customer</button>
+    <p id="Display">Hiển thị thông tin tại đây</p>
+    <script>
+        let arrNameCustomers = [];
+
+        function show_name() {
+            let strNameDisplay = '';
+            let tempName = '';
+            arrNameCustomers.sort();
+            for (let i = 0 ; i < arrNameCustomers.length; i++) {
+                tempName += arrNameCustomers[i];
+                strNameDisplay += i + '. ';
+                for (let j = 0; j < tempName.length; j++) {
+                    if (j === 0 || tempName[j-1] === ' ') {
+                        strNameDisplay += tempName[j].toUpperCase();
+                    } else {
+                        strNameDisplay += tempName[j];
+                    }
+                }
+                strNameDisplay += '<br/>';
+                tempName = '';
+            }
+            document.getElementById('Display').innerHTML = strNameDisplay;
+        }
+
+        function add_name() {
+            let amount = parseInt(prompt('Input amount customer you want to add'));
+            let strName = '';
+            for (let i = 0 ; i < amount; i++) {
+                if (i === amount - 1 ) {
+                    strName += prompt('Input Name');
+                } else {
+                    strName += prompt('Input Name') + '-';
+                }
+            }
+            strName = strName.trim().toLowerCase();
+            let tempName = '';
+            for (let i = 0; i < strName.length; i++) {
+                if (strName[i] === ' ' && strName[i+1] === ' ') {
+                } else {
+                    tempName += strName[i];
+                }
+            }
+            strName = tempName;
+            let tempArr = strName.split('-');
+            for (let i = 0 ; i < tempArr.length ; i++) {
+                arrNameCustomers.push(tempArr[i]);
+            }
+            show_name();
+        }
+
+        function delete_name() {
+            let deleteName = prompt('Input name you want to delete').toLowerCase();
+            let index = arrNameCustomers.indexOf(deleteName);
+            for (let i = index ; i < arrNameCustomers.length; i++) {
+                arrNameCustomers[i] = arrNameCustomers[i+1]
+            }
+            arrNameCustomers.pop();
+            show_name();
+        }
+    </script>
+</body>
+</html>

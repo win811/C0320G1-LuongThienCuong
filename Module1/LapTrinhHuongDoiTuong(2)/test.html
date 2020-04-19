@@ -6,9 +6,23 @@
 </head>
 <body>
     <script>
-        function a() {
-
+        class Human {
+            // constructor(name,gender,weight) {
+            //     this.name = name;
+            //     this.gender = gender;
+            //     this.weight = weight;
+            // };
+            speak (name) {
+                this.name = name;
+                alert('Hi I am ' + this.name + ' want a piece'  )
+            }
+            reply () {
+                alert('Sure');
+            }
         }
+        let me = new Human();
+        me.speak('Adam');
+        alert(me.name);
     </script>
 </body>
 </html>

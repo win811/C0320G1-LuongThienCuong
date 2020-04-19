@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let str1 = "Tôi yêu ngôn ngữ lập trình Javascript";
+        let result = [];
+        for (let i = 0 ; i < str1.length ; i++) {
+            if (str1[i] === 'a') {
+                result.push(str1[i]);
+            }
+        }
+        alert(result.length);
+        let arraySplit = str1.split(' ');
+        alert(arraySplit);
+        alert(arraySplit.length);
+        let str2 = str1.replace('Javascript','Typescript');
+        alert(str2);
+    </script>
+</body>
+</html>

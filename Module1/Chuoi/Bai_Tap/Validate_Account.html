@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let regExp = /^[_a-z0-9]{6,}$/;
+        function isCorrectAccount(account) {
+            if (regExp.test(account)) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        let account = 'cuongwin@gmail.com';
+        alert(isCorrectAccount(account));
+    </script>
+</body>
+</html>
