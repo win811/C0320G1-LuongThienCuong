@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Số điện thoại</title>
+</head>
+<body>
+    <script>
+        let arrPhone = ['0375178713','0905858474','0705280443','0331331331'];
+        regExpViettel = /^(098|097|096|086|032|033|034|035|036|037|038|039)[0-9]{7}$/;
+        let resultViettel = [];
+        for (let i = 0 ; i < arrPhone.length; i++) {
+            if (regExpViettel.test(arrPhone[i])) {
+                resultViettel.push(arrPhone[i]);
+            }
+        }
+        alert(resultViettel);
+
+    </script>
+</body>
+</html>

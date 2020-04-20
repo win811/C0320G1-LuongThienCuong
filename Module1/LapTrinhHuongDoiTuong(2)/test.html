@@ -6,23 +6,21 @@
 </head>
 <body>
     <script>
-        class Human {
-            // constructor(name,gender,weight) {
-            //     this.name = name;
-            //     this.gender = gender;
-            //     this.weight = weight;
-            // };
-            speak (name) {
-                this.name = name;
-                alert('Hi I am ' + this.name + ' want a piece'  )
-            }
-            reply () {
-                alert('Sure');
-            }
-        }
-        let me = new Human();
-        me.speak('Adam');
-        alert(me.name);
+        // class Human {
+        //     speak (name) {
+        //         this.name = name;
+        //         alert('Hi I am ' + this.name + ' want a piece'  )
+        //     }
+        //     reply () {
+        //         alert('Sure');
+        //     }
+        // }
+        // let me = new Human();
+        // me.speak('Adam');
+        // alert(me.name);
+        let regExp = /^(037|033)/;
+        let num = '0335178713';
+        alert(regExp.test(num));
     </script>
 </body>
 </html>

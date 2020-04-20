@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let randomValue = Math.floor(Math.random()*100) + 1;
+        let guessValue = parseInt(prompt('Input Value You Think It\' gonna be From 1 to 100'));
+        for (let i = 0 ; i < 1 ;) {
+            if (guessValue === randomValue) {
+                alert('You\'re damn right,how do you know that, tell me secret');
+                i++;
+            }else if (guessValue > randomValue) {
+                guessValue = parseInt(prompt('Noop, too high! Dumbass,try again'));
+            } else {
+                guessValue = parseInt(prompt('Noop, too low ! Dumbass,try again'));
+            }
+        }
+    </script>
+</body>
+</html>

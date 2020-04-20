@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        function findMax(array) {
+            let max = array[0];
+            for ( let i = 1; i < array.length; i++) {
+                if (array[i] > max) {
+                    max = array[i];
+                }
+            }
+            return max;
+        }
+        function findMin(array) {
+            let min = array[0];
+            for (let i = 1; i < array.length; i++) {
+                if (array[i] < min ) {
+                    min = array[i];
+                }
+            }
+            return min;
+        }
+        function countAppearValue (array,value) {
+            let count = 0;
+            for (let i = 0 ; i< array.length; i++) {
+                if (array[i] === value) {
+                    count++;
+                }
+            }
+            return count;
+         }
+
+        let arr1 = [];
+        for (let i = 0; i < 100; i++) {
+            arr1[i] = Math.floor(Math.random()*101);
+        }
+        let value = 8;
+        // let regExp = /^[0-9]*[9]$/;
+        function displayArr(array) {
+            let str = '';
+            for (let i = 0 ; i < array.length; i++) {
+                if (i === 9 || i === 19 || i === 29 || i === 39 || i === 49 ||
+                    i === 59 || i === 69 || i === 79 || i === 89 || i === 99) {
+                    str += array[i] + '<br/>';
+                } else {
+                    str += array[i] + '&nbsp&nbsp&nbsp';
+                }
+            }
+            document.writeln(str);
+        }
+
+        displayArr(arr1);
+        document.writeln('The minimum value is : ' + findMin(arr1) + '<br/>');
+        document.writeln('The maximum value is : ' + findMax(arr1) + '<br/>');
+        document.writeln('The value : ' + value + ' appear ' + countAppearValue(arr1,value) + ' times' + '<br/>');
+
+    </script>
+</body>
+</html>
