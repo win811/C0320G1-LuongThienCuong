@@ -4,7 +4,16 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
-        .button {
+        .MainMenu {
+            border: none;
+            width: 300px;
+            height: 22px;
+            background-color: lavender;
+            color: black;
+            font-size: 18px;
+
+        }
+        .Button {
             width: 200px;
             color: aliceblue;
         }
@@ -30,18 +39,16 @@
     </style>
 </head>
 <body>
-    <button style=" border: none ;width: 300px;height: 22px; background-color: lavender;
-                    color: black; font-size: 18px;" onclick="displayMainMenu()">
-                    Main Menu</button>
+    <button class="MainMenu" onclick="displayMainMenu()">Main Menu</button>
     <br/><br/>
     <div id="div1" style="position : absolute ;left: 50px"></div>
     <script>
         function  displayMainMenu() {
-            let addNew = '<button class="button" id="addNew" onclick="addNewCustomer()">Add New Customer</button><br/>';
-            let displayInfo = '<button class="button" id="displayInfo" onclick="displayInformation()">Display Information Customer</button><br/>';
-            let editInfo = '<button class="button" id="editInfo" onclick="editInformationCustomer()">Edit Information Customer</button><br/>';
-            let deleteCustomer = '<button class="button" id="deleteCustomer" onclick="deleteCustomer()" >Delete Customer</button><br/><br/>';
-            let exit = '<button class="button" id="exit" onclick="exit()">Exit</button>';
+            let addNew = '<button class="Button" id="addNew" onclick="addNewCustomer()">Add New Customer</button><br/>';
+            let displayInfo = '<button class="Button" id="displayInfo" onclick="displayInformation()">Display Information Customer</button><br/>';
+            let editInfo = '<button class="Button" id="editInfo" onclick="editInformationCustomer()">Edit Information Customer</button><br/>';
+            let deleteCustomer = '<button class="Button" id="deleteCustomer" onclick="deleteCustomer()" >Delete Customer</button><br/><br/>';
+            let exit = '<button class="Button" id="exit" onclick="exit()">Exit</button>';
             document.getElementById('div1').innerHTML = addNew + displayInfo + editInfo + deleteCustomer + exit
         }
         function exit() {

@@ -8,10 +8,33 @@
     <label>l1<br/>123123123</label>
     <label>l2</label>
     <p id="p">p</p>
+    <div id="div1" style="border: 1px solid blue;width: 300px;height: 300px">
+        <div id="div2" style="border: 1px solid red; width: 150px;height: 150px"></div>
+    </div>
     <script>
-       let arr = [];
-       arr[0] = prompt('input value');
-       alert(arr);
+        let arr = [];
+        class Dog {
+            constructor(name,length,weight) {
+                this.name = name;
+                this.length = length;
+                this.weight = weight;
+            }
+            shout () {
+                alert(this.name + ' is shouting Gau Gau');
+            }
+        }
+        function start() {
+            let a = 100;
+            let dog = new Dog('KiKi',a,20);
+            arr.push(dog);
+        }
+        start();
+        // alert(arr);
+        // alert(arr[0].name);
+
     </script>
+<!--    <script>-->
+<!--        alert(arr.length);-->
+<!--    </script>-->
 </body>
 </html>

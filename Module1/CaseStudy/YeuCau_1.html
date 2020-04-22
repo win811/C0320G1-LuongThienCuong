@@ -11,30 +11,30 @@
         let birthday=prompt('input birthday');
         let email=prompt('input email');
         let address=prompt('input address');
-        let customertype=prompt('input customertype');
+        let customerType=prompt('input customertype');
         let discount=parseFloat(prompt('input discount'));
-        let servicetype=prompt('input servicetype').toLowerCase();
-        let roomtype=prompt('input roomtype');
-        let rentdays=parseFloat(prompt('input rentdays'));
+        let serviceType=prompt('input servicetype').toLowerCase();
+        let roomType=prompt('input roomtype');
+        let rentDays=parseFloat(prompt('input rentdays'));
         let amount=parseInt(prompt('input amount'));
-        let totalpay;
-        if (servicetype==='villa') {
-            totalpay=amount*500*rentdays*(1-discount/100);
-        }else if (servicetype==='house') {
-            totalpay=amount*300*rentdays*(1-discount/100);
-        }else if (servicetype==='room') {
-            totalpay=amount*100*rentdays*(1-discount/100);
+        let totalPay;
+        if (serviceType==='villa') {
+            totalpay=amount*500*rentDays*(1-discount/100);
+        }else if (serviceType==='house') {
+            totalpay=amount*300*rentDays*(1-discount/100);
+        }else if (serviceType==='room') {
+            totalpay=amount*100*rentDays*(1-discount/100);
         }
         alert('Name : '+name+'\n'
             + 'Cmnd : '+cmnd+'\n'
             + 'Birthday : '+birthday+'\n'
             + 'Email : '+email+'\n'
             + 'Address : '+address+'\n'
-            + 'Customer Type : '+customertype+'\n'
+            + 'Customer Type : '+customerType+'\n'
             + 'Discount : '+discount+'\n'
-            + 'Service Type : '+servicetype+'\n'
-            + 'Room Type : '+roomtype+'\n'
-            + 'RentDays : '+rentdays+'\n'
+            + 'Service Type : '+serviceType+'\n'
+            + 'Room Type : '+roomType+'\n'
+            + 'RentDays : '+rentDays+'\n'
             + 'Amount : '+amount+'\n'
             + 'Total Pay : '+totalpay
         );

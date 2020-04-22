@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .MainMenu {
+            position: relative;
+            width: 300px;
+            height: 25px;
+            background-color: darkslategrey;
+            color: aliceblue;
+            font-size: 18px;
+
+        }
+        .Object {
+            position: relative;
+            width: 250px;
+            height: 25px;
+            left: 25px;
+            font-size: 18px;
+        }
+        #exitMainMenu {
+            width: 300px;
+            left: 0;
+            color : aliceblue;
+            background-color: darkslategrey;
+        }
+        .Button {
+            position: relative;
+            width: 200px;
+            color: aliceblue;
+            left: 50px;
+        }
+
+        #addNewCustomer,#addNewEmployee {
+            background-color: green;
+        }
+
+        #displayInfoCustomer,#displayInfoEmployee {
+            background-color: purple;
+        }
+
+        #editInfoCustomer,#salaryEmployee {
+            background-color: darkblue;
+        }
+
+        #deleteCustomer {
+            background-color: darkred;
+        }
+
+        #exitCustomer,#exitEmployee {
+            background-color: red;
+        }
+
+    </style>
+</head>
+<body>
+
+    <button class="MainMenu" onclick="displayMainMenu()">Main Menu</button>
+    <br/><br/><br/>
+    <div id="div1" style="position: relative;"></div>
+    <br/>
+    <div id="div2" style="position : relative;"></div>
+    <br/>
+    <div id="div3" style="position: relative;"></div>
+    <br/>
+    <div id="div4" style="position: relative;"></div>
+    <br/>
+    <div id="div5" style="position: relative;"></div>
+
+    <script src="YeuCau6_1.js"></script>
+    <script src="YeuCau6_2.js"></script>
+    <script src="YeuCau6_3.js"></script>
+    <script> // script tạo button
+        let div1 = document.getElementById('div1');
+        let div2 = document.getElementById('div2');
+        let div3 = document.getElementById('div3');
+        let div4 = document.getElementById('div4');
+        let div5 = document.getElementById('div5');
+        function displayMainMenu() {
+            let customer = '<button class ="Object" id="customer" onclick="displayCustomerMenu()">Customer</button><br>';
+            let employee = '<button class ="Object" id="employee" onclick="displayEmployeeMenu()">Employee</button>';
+            let exitMainMenu = '<button class ="Object" id="exitMainMenu" onclick="exitMainMenu()">Exit Main Menu</button>';
+            div1.innerHTML = customer;
+            div3.innerHTML = employee;
+            div5.innerHTML = exitMainMenu;
+        }
+        function exitMainMenu() {
+            div1.innerHTML = '';
+            div2.innerHTML = '';
+            div3.innerHTML = '';
+            div4.innerHTML = '';
+            div5.innerHTML = '';
+        }
+        function displayCustomerMenu() {
+            let addNewCustomer = '<button class="Button" id="addNewCustomer" onclick="addNewCustomer()">Add New Customer</button><br/>';
+            let displayInfoCustomer = '<button class="Button" id="displayInfoCustomer" onclick="displayInfoCustomer()" >Display Information Customer</button><br/>';
+            let editInfoCustomer = '<button class="Button" id="editInfoCustomer" onclick="editInforCustomer()" >Edit Information Customer</button><br/>';
+            let deleteCustomer = '<button class="Button" id="deleteCustomer" >Delete Customer</button><br/>';
+            let exitCustomer = '<button class="Button" id="exitCustomer" onclick="exitCustomer()">Exit Customer</button><br/>';
+           div2.innerHTML = addNewCustomer + displayInfoCustomer + editInfoCustomer + deleteCustomer + exitCustomer;
+        }
+        function exitCustomer() {
+            div2.innerHTML = '';
+        }
+        function displayEmployeeMenu() {
+            let addNewEmployee = '<button class="Button" id="addNewEmployee">Add New Employee</button><br/>';
+            let displayInfoEmployee = '<button class="Button" id="displayInfoEmployee">Display Info Employee</button><br/>';
+            let salaryEmployee = '<button class="Button" id="salaryEmployee">Salary Employee</button><br/>';
+            let exitEmployee = '<button class="Button" id="exitEmployee" onclick="exitEmployee()">Exit Employee</button><br/>';
+            div4.innerHTML = addNewEmployee + displayInfoEmployee + salaryEmployee + exitEmployee;
+        }
+        function exitEmployee() {
+            div4.innerHTML = '';
+        }
+    </script>
+</body>
+</html>
