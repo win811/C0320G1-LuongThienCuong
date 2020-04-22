@@ -14,7 +14,7 @@ class Table {
             tempDisplay += '</tr>';
         }
         tempDisplay += '</table>';
-        document.writeln(tempDisplay);
+        document.getElementById('display').innerHTML = tempDisplay;
     }
 
     setTurn () {
@@ -45,62 +45,88 @@ class Table {
     }
 
     checkWinner () {
-        let a;
-        let b;
-        let c;
+        let cell1;
+        let cell2;
+        let cell3;
         let checkNotEmpty;
         let checkEqual;
-        //Horizontal ( chiều ngang )
-        for ( let i = 0 ; i < this.rows; i++) {
-            for (let j = 0; j < this.cols; j++) {
-                a = this.element(i+'-'+j).textContent;
-                b = this.element(i+'-'+(j + 1)).textContent;
-                c = this.element(i+'-'+(j + 2)).textContent;
-                checkNotEmpty = a !== '' && b !== '' && c !== '';
-                checkEqual = a === b && a === c;
-                if (checkNotEmpty) {
-                    if (checkEqual) {
-                        alert(this.element(i+'-'+j).textContent + ' is Winner');
-                        break;
-                    }
+        let tempOver = false;
+        function checkTotal() {
+            checkNotEmpty = cell1 !== '' && cell2 !== '' && cell3 !== '';
+            checkEqual = cell1 === cell2 && cell1 === cell3;
+            if (checkNotEmpty) {
+                if (checkEqual) {
+                    tempOver = true;
                 }
             }
-            if (checkEqual) {
-                break;
+        }
+
+        //Horizontal ( chiều ngang )
+        for ( let i = 0 ; i < this.rows; i++) {
+            for (let j = 0; j < this.cols-2; j++) {
+                cell1 = (this.element(i+'-'+j)).textContent;
+                cell2 = (this.element(i+'-'+(j + 1))).textContent;
+                cell3 = (this.element(i+'-'+(j + 2))).textContent;
+                checkTotal();
+                this.isOver = tempOver;
+                if (this.isOver) {
+                    alert(this.element(i+'-'+j).textContent + ' is Winner');
+                    return;
+                }
             }
         }
-        if (checkEqual) {
-            this.isOver = true;
-            return;
+        // Vertical (chiều dọc)
+        for ( let i = 0 ; i < this.rows-2; i++) {
+            for ( let j = 0; j < this.cols; j++) {
+                cell1 = this.element(i+'-'+j).textContent;
+                cell2 = this.element((i+1)+'-'+j).textContent;
+                cell3 = this.element((i+2)+'-'+j).textContent;
+                checkTotal();
+                this.isOver = tempOver;
+                if (this.isOver) {
+                    alert(this.element(i+'-'+j).textContent + ' is Winner');
+                    return;
+                }
+            }
         }
-        // //Vertical (chiều dọc)
-        // for (let j = 0; j <this.cols; j++) {
-        //     for ( let i = 0; i < this.rows; i++) {
-        //         a = this.element(i+'-'+j).textContent;
-        //         b = this.element((i+1)+'-'+j).textContent;
-        //         c = this.element((i+2)+'-'+j).textContent;
-        //         checkNotEmpty = a !== '' && b !== '' && c !== '';
-        //         checkEqual = a === b && a === c;
-        //         if (checkNotEmpty) {
-        //             if (checkEqual) {
-        //                 alert(this.element(i+'-'+j).textContent + ' is Winner');
-        //                 break;
-        //             }
-        //         }
-        //     }
-        //     if (checkEqual) {
-        //         break;
-        //     }
-        // }
-        // if (checkEqual) {
-        //     this.isOver = true;
-        //     return;
-        // }
+        //Left diagonal (chéo trái)
+        for ( let i = 0 ; i < this.rows-2; i++) {
+            for ( let j = 0; j < this.cols-2; j++) {
+                cell1 = this.element(i+'-'+j).textContent;
+                cell2 = this.element((i+1)+'-'+(j+1)).textContent;
+                cell3 = this.element((i+2)+'-'+(j+2)).textContent;
+                checkTotal();
+                this.isOver = tempOver;
+                if (this.isOver) {
+                    alert(this.element(i+'-'+j).textContent + ' is Winner');
+                    return;
+                }
+            }
+        }
+        //Right diagonal (chéo phải)
+        for ( let i = 0 ; i < this.rows -2 ; i++) {
+            for ( let j = this.cols - 1 ; j > 1; j--) {
+                cell1 = this.element(i+'-'+j).textContent;
+                cell2 = this.element((i+1)+'-'+(j-1)).textContent;
+                cell3 = this.element((i+2)+'-'+(j-2)).textContent;
+                checkTotal();
+                this.isOver = tempOver;
+                if (this.isOver) {
+                    alert(this.element(i+'-'+j).textContent + ' is Winner');
+                    return;
+                }
+            }
+        }
     }
 }
-let table1 = new Table(10,10);
-table1.draw();
-table1.setTurn();
+
+let table1;
+function start () {
+    table1 = new Table(10, 10);
+    table1.draw();
+    table1.setTurn();
+}
 function play(id) {
     table1.play(id)
 }
+start();

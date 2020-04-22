@@ -5,9 +5,26 @@
     <title>Title</title>
 </head>
 <body>
-    <div id="te">ádad</div>
+
     <script>
-        document.getElementById('te').innerHTML = 'X';
+        class Animal {
+            constructor(name,length) {
+                this.name = name;
+                this.length = length;
+            }
+            shout () {
+                alert(this.name + ' is Shouting');
+            }
+        }
+        class Dog extends Animal {
+            constructor(name,weight) {
+                super(name);
+                this.weight = weight;
+            }
+        }
+        let dog1 = new Dog('KiKi',30);
+        dog1.shout();
+        alert(dog1.weight);
     </script>
 </body>
 </html>

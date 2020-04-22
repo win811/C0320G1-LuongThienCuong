@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .button {
+            width: 200px;
+            color: aliceblue;
+        }
+        #addNew {
+            background-color: green;
+        }
+        #displayInfo {
+            background-color: purple;
+        }
+        #editInfo {
+            background-color: darkblue;
+        }
+        #deleteCustomer {
+            background-color: darkred;
+        }
+        #exit {
+            position: absolute;
+            left: -30px;
+            width: 270px;
+            background-color: red;
+        }
+
+    </style>
+</head>
+<body>
+    <button style=" border: none ;width: 300px;height: 22px; background-color: lavender;
+                    color: black; font-size: 18px;" onclick="displayMainMenu()">
+                    Main Menu</button>
+    <br/><br/>
+    <div id="div1" style="position : absolute ;left: 50px"></div>
+    <script>
+        function  displayMainMenu() {
+            let addNew = '<button class="button" id="addNew" onclick="addNewCustomer()">Add New Customer</button><br/>';
+            let displayInfo = '<button class="button" id="displayInfo" onclick="displayInformation()">Display Information Customer</button><br/>';
+            let editInfo = '<button class="button" id="editInfo" onclick="editInformationCustomer()">Edit Information Customer</button><br/>';
+            let deleteCustomer = '<button class="button" id="deleteCustomer" onclick="deleteCustomer()" >Delete Customer</button><br/><br/>';
+            let exit = '<button class="button" id="exit" onclick="exit()">Exit</button>';
+            document.getElementById('div1').innerHTML = addNew + displayInfo + editInfo + deleteCustomer + exit
+        }
+        function exit() {
+            document.getElementById('div1').innerHTML = '';
+        }
+
+        let arrListCustomers = [];
+        let tempVar;
+
+        function showNameList() {
+            tempVar = '';
+            for (let i = 0; i < arrListCustomers.length; i++) {
+                tempVar += i + '. ' + arrListCustomers[i][0] + '\n';
+            }
+        }
+        function showPropertyOf(index) {
+            tempVar = '';
+            for (let i = 0; i < arrListCustomers[index].length; i++) {
+                tempVar += i + '. ' + arrListCustomers[index][i] + '\n';
+            }
+        }
+        function displayPerson(index) {
+            tempVar = '';
+            for (let i = 0; i < arrListCustomers[index].length; i++) {
+                switch (i) {
+                    case 0 :
+                        tempVar += i + '. Name : ' + arrListCustomers[index][i] + '\n';
+                        break;
+                    case 1 :
+                        tempVar += i + '. Cmnd : ' + arrListCustomers[index][i] + '\n';
+                        break;
+                    case 2 :
+                        tempVar += i + '. Birthday : ' + arrListCustomers[index][i] + '\n';
+                        break;
+                    case 3 :
+                        tempVar += i + '. Email : ' + arrListCustomers[index][i] + '\n';
+                        break;
+                    case 4 :
+                        tempVar += i + '. Address : ' + arrListCustomers[index][i] + '\n';
+                        break;
+                    case 5 :
+                        tempVar += i + '. Customer Type : ' + arrListCustomers[index][i] + '\n';
+                        break;
+                    case 6 :
+                        tempVar += i + '. Discount : ' + arrListCustomers[index][i] + '\n';
+                        break;
+                    case 7 :
+                        tempVar += i + '. Service Type : ' + arrListCustomers[index][i] + '\n';
+                        break;
+                    case 8 :
+                        tempVar += i + '. Room Type : ' + arrListCustomers[index][i] + '\n';
+                        break;
+                    case 9 :
+                        tempVar += i + '. Rent Days : ' + arrListCustomers[index][i] + '\n';
+                        break;
+                    case 10 :
+                        tempVar += i + '. Amount : ' + arrListCustomers[index][i] + '\n';
+                }
+            }
+            alert('Information of ' + arrListCustomers[index][0] + ' : ' + '\n' + tempVar);
+        }
+
+        function displayInformation() {
+            showNameList();
+            let indexName = parseInt(prompt('Input index (select person you want to display)' + '\n' + tempVar));
+            displayPerson(indexName);
+        }
+        
+        function addNewCustomer() {
+            let tempArr = [];
+            let name=prompt('Input Name');
+            let cmnd=prompt('Input cmnd');
+            let birthday=prompt('Input Birthday');
+            let email=prompt('Input Email');
+            let address=prompt('Input Address');
+            let customerType=prompt('Input Customer Type');
+            let discount=parseFloat(prompt('Input Discount'));
+            let serviceType=prompt('Input Service Type');
+            let roomType=prompt('Input Room Type');
+            let rentDays=parseFloat(prompt('Input Rent Days'));
+            let amount=parseInt(prompt('Input Amount'));
+            tempArr.push(name,cmnd,birthday,email,address,customerType,discount,serviceType,roomType,rentDays,amount);
+            arrListCustomers.push(tempArr);
+        }
+
+        function editInformationCustomer() {
+            showNameList();
+            let indexName = parseInt(prompt('Input index (select person you want to edit)' + '\n' + tempVar));
+            showPropertyOf(indexName);
+            let indexProperty = parseInt(prompt('Input index (select property you want to edit)' + '\n' + tempVar));
+            arrListCustomers[indexName][indexProperty] = prompt('Input change');
+            displayPerson(indexName);
+        }
+
+        function deleteCustomer() {
+            showNameList();
+            let indexName = parseInt(prompt('Input index (select person you want to delete)' + '\n' + tempVar));
+            for (let i = indexName ; i < arrListCustomers.length;i ++) {
+                if (i === arrListCustomers.length - 1) {
+                    arrListCustomers.pop();
+                } else {
+                    arrListCustomers[i]= arrListCustomers[i+1];
+                }
+            }
+            showNameList();
+            alert('New list : ' + '\n' + tempVar);
+        }
+
+    </script>
+</body>
+</html>

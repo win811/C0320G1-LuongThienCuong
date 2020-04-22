@@ -2,30 +2,65 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
-<body>
-    <p id="0-0"></p>
-    <script>
-        class A {
-            constructor(name) {
-                sup
+<img id="hero" style="width: 30px; height: 30px;position: absolute;" src="">
+<body onload="init()">
+<script>
+    class Hero {
+        constructor(srcImage, speed, left, top) {
+            this.srcImage = srcImage;
+            this.speed = speed;
+            this.left = left;
+            this.top = top;
+            document.getElementById("hero").src=this.srcImage;
+            document.getElementById("hero").style.left=this.left +"px";
+            document.getElementById("hero").style.top=this.top +"px";
+            document.getElementById("hero").style.position="absolute";
+        }
+        moveRight() {
+            this.left += 20;
+            document.getElementById("hero").style.left=this.left+"px";
+        }
+        moveDown() {
+            this.top += 20;
+            document.getElementById("hero").style.top=this.top+"px"
+        }
+        moveTop() {
+            this.top -= 20;
+            document.getElementById("hero").style.top=this.top+"px";
+        }
+        moveLeft() {
+            this.left -= 20;
+            document.getElementById("hero").style.left=this.left;
+        }
+    }
+    let hero;
+    function init() {
+        hero = new Hero("hero.jpg", 50, 0, 0);
+        window.addEventListener("keydown", move)
+    }
+    function move(evt) {
+        switch (evt.keyCode) {
+            case 38: {
+                hero.moveTop();
+                break;
+            }
+            case 37: {
+                hero.moveLeft();
+                break;
+            }
+            case 39: {
+                hero.moveRight();
+                break;
+            }
+            case 40: {
+                hero.moveDown();
+                break;
             }
         }
-        // function element() {
-        //     return document.getElementById('0-0');
-        // }
-        // element().textContent = '123';
-        // let i = 0;
-        // let j = 0;
-        // let a  = i + "-" + j;
-        // let z = 'ab';
-        // function returnA () {
-        //     return a;
-        // }
-        // let b = '0-0';
-        // alert(z);
-        // document.getElementById(i + "-" + j).textContent = '123';
-    </script>
+    }
+</script>
 </body>
 </html>
