@@ -2,6 +2,7 @@
 // Tạo class Customer và function addNewCustomer
 
 let listCustomers = [];
+let listEmployee = [];
 class Customer {
     constructor(name,cmnd,birthday,email,address,customerType,discount,serviceType,roomType,rentDays,amount) {
         this.name = name;
@@ -101,6 +102,32 @@ class Customer {
     }
 }
 
+class Employee extends Customer{
+    constructor(name,cmnd,birthday,email,phoneNumber,level,position,department,salary) {
+        super (name,cmnd,birthday,email);
+        this.phoneNumber = phoneNumber;
+        this.level = level;
+        this.position = position;
+        this.department = department;
+        this.salary = salary;
+    }
+    getSalary () {
+        switch (this.department.toLowerCase()) {
+            case 'manager' :
+                this.salary += 500;
+                break;
+            case 'sale' :
+                this.salary += 300;
+                break;
+            case 'marketing' :
+                this.salary += 200;
+                break;
+        }
+        return this.salary;
+    }
+
+}
+
 function checkFormat(regExp,value) {
     if (regExp.test(value)) {
         return true;
@@ -112,6 +139,15 @@ function addNewCustomer() {
     let regExp;
 
     let name=(prompt('Input Name')).trim();
+    regExp = /[0-9]/g;
+    while (true) {
+        let result = name.match(regExp);
+        if (result === null) {
+            break;
+        } else {
+            name = prompt('Name must be word, please try again')
+        }
+    }
 
     let cmnd=prompt('Input cmnd').trim();
     regExp = /^[0-9]{9}$/;
@@ -129,7 +165,7 @@ function addNewCustomer() {
         if (checkFormat(regExp,birthday)) {
             break;
         } else {
-            birthday = prompt('Birthday must follow the format : dd/mm/yyyy , please try again')
+            birthday = prompt('Birthday must follow the format : "dd/mm/yyyy" , please try again')
         }
     }
 
@@ -139,7 +175,7 @@ function addNewCustomer() {
         if (checkFormat(regExp,email)) {
             break;
         } else {
-            email = prompt('Email must follow the format : abc@abc.com  , please try again')
+            email = prompt('Email must follow the format : "abc@abc.com"  , please try again')
         }
     }
 
@@ -203,4 +239,96 @@ function addNewCustomer() {
 
     let customer = new Customer(name,cmnd,birthday,email,address,customerType,discount,serviceType,roomType,rentDays,amount);
     listCustomers.push(customer);
+}
+
+function addNewEmployee() {
+    let regExp;
+
+    let name=(prompt('Input Name')).trim();
+    regExp = /[0-9]/g;
+    while (true) {
+        let result = name.match(regExp);
+        if (result === null) {
+            break;
+        } else {
+            name = prompt('Name must be word, please try again')
+        }
+    }
+
+    let cmnd=prompt('Input cmnd').trim();
+    regExp = /^[0-9]{9}$/;
+    while (true) {
+        if (checkFormat(regExp,cmnd)) {
+            break;
+        } else {
+            cmnd = prompt('Cmnd must have 9 numbers, please try again')
+        }
+    }
+
+    let birthday=prompt('Input Birthday').trim();
+    regExp = /^\d{2}[/]\d{2}[/]\d{4}$/;
+    while (true) {
+        if (checkFormat(regExp,birthday)) {
+            break;
+        } else {
+            birthday = prompt('Birthday must follow the format : "dd/mm/yyyy" , please try again')
+        }
+    }
+
+    let email=prompt('Input Email').trim();
+    regExp = /^[A-Za-z0-9]+@[A-Za-z0-9]+.[A-Za-z0-9]+$/;
+    while (true) {
+        if (checkFormat(regExp,email)) {
+            break;
+        } else {
+            email = prompt('Email must follow the format : "abc@abc.com"  , please try again')
+        }
+    }
+
+    let phoneNumber = prompt('Input phone number').trim();
+    regExp = /^[0][0-9]{9}$/;
+    while (true) {
+        if (checkFormat(regExp,phoneNumber)) {
+            break;
+        } else {
+            phoneNumber = prompt('Phone number must follow the format : "0xxxxxxxxx"  , please try again')
+        }
+    }
+
+    let level = prompt('Input certificate').trim();
+    while (true) {
+        let tempVar = level.toLowerCase();
+        if (tempVar === 'intermediate'||tempVar === 'college'||tempVar === 'university'||tempVar === 'graduate') {
+            break;
+        } else {
+            email = prompt('This level is not qualified for the job, level must be "intermediate" or' +
+                                    '"college" or "university" or "graduate" , please try again')
+        }
+    }
+
+    let position = prompt('Input position').trim();
+
+    let department = prompt('Input department').trim();
+    while (true) {
+        let tempVar = department.toLowerCase();
+        if (tempVar === 'sale'||tempVar === 'marketing'||tempVar === 'admin'||tempVar === 'monitor'||
+            tempVar === 'manager'||tempVar === 'director') {
+            break;
+        } else {
+            email = prompt('Department must be "sale" or "marketing" or "admin" or "monitor" ' +
+                                    'or "manager" or "director" , please try again')
+        }
+    }
+
+    let salary = parseFloat(prompt('Input salary'));
+    while (true) {
+        if (Number.isNaN(salary) === false) {
+            break;
+        } else {
+            salary = prompt('Salary must be a number')
+        }
+    }
+
+    let employee = new Employee(name,cmnd,birthday,email,phoneNumber,level,position,department,salary);
+    listEmployee.push(employee);
 }

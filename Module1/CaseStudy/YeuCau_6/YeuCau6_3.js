@@ -1,11 +1,20 @@
 
-// Tạo function editInfoCustomer
+// Tạo function editInfoCustomer & deleteCustomer
 
 function editPropertyCustomer(indexNameCustomer,indexPropertyCustomer) {
         let regExp;
         switch (indexPropertyCustomer) {
             case 0 :
                 tempVar = prompt('Set a new Name').trim();
+                regExp = /[0-9]/g;
+                while (true) {
+                    let result = tempVar.match(regExp);
+                    if (result === null) {
+                        break;
+                    } else {
+                        tempVar = prompt('Name must be word, please try again')
+                    }
+                }
                 listCustomers[indexNameCustomer].setName(tempVar);
                 break;
             case 1 :
@@ -118,10 +127,26 @@ function editPropertyCustomer(indexNameCustomer,indexPropertyCustomer) {
         }
 }
 function editInforCustomer() {
-    showNameListCustomers();
-    let indexNameCustomer = parseInt(prompt('Input index (select person you want to edit)' + '\n' + tempVar));
-    showInfoCustomer(indexNameCustomer);
+    getNameList(listCustomers);
+    let indexNameCustomer = parseInt(prompt('Input index (select customer you want to edit)' + '\n' + tempVar));
+    getInfoCustomer(indexNameCustomer);
     let indexPropertyCustomer = parseInt(prompt('Input index (select property you want to edit)' + '\n' + tempVar));
     editPropertyCustomer(indexNameCustomer,indexPropertyCustomer);
-    showInfoCustomer(indexNameCustomer);
+    getInfoCustomer(indexNameCustomer);
+    alert('Information of ' + listCustomers[indexNameCustomer].getName() + ' : ' + '\n' + tempVar);
 }
+
+function deleteCustomer() {
+    getNameList(listCustomers);
+    let indexNameCustomer = parseInt(prompt('Input index ( select customer you want to delete)'+ '\n' + tempVar));
+    for (let i = indexNameCustomer; i < listCustomers.length;i++ ) {
+            if (i === listCustomers.length - 1 ) {
+                listCustomers.pop();
+            } else {
+                listCustomers[i] = listCustomers[i+1];
+            }
+    }
+    getNameList(listCustomers);
+    alert('New list : ' + '\n' + tempVar);
+}
+

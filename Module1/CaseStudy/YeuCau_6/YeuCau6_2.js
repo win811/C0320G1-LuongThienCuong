@@ -1,14 +1,15 @@
 
-//Tạo function displayInfoCustomer
+//Tạo function displayInfoCustomer & displayTotalPayCustomer & displaySalaryEmployee
 
 let tempVar;
-function showNameListCustomers() {
+function getNameList(arrList) {
     tempVar = '';
-    for (let i = 0; i < listCustomers.length; i++) {
-        tempVar += i + '. ' + listCustomers[i].getName() + '\n';
+    for (let i = 0; i < arrList.length; i++) {
+        tempVar += i + '. ' + arrList[i].getName() + '\n';
     }
 }
-function showInfoCustomer(indexNameCustomer) {
+
+function getInfoCustomer(indexNameCustomer) {
     tempVar = '';
     for (let i = 0; i < 11; i++) {
         switch (i) {
@@ -46,11 +47,25 @@ function showInfoCustomer(indexNameCustomer) {
                 tempVar += i + '. Amount : ' + listCustomers[indexNameCustomer].getAmount() + '\n';
         }
     }
-    alert('Information of ' + listCustomers[indexNameCustomer].getName() + ' : ' + '\n' + tempVar);
 }
 
 function displayInfoCustomer() {
-    showNameListCustomers();
+    getNameList(listCustomers);
     let indexNameCustomer = parseInt(prompt('Input index (select customer you want to display)' + '\n' + tempVar));
-    showInfoCustomer(indexNameCustomer);
+    getInfoCustomer(indexNameCustomer);
+    alert('Information of ' + listCustomers[indexNameCustomer].getName() + ' : ' + '\n' + tempVar);
+}
+
+function displayTotalPayCustomer() {
+    getNameList(listCustomers);
+    let indexNameCustomer = parseInt(prompt('Input index (select customer you want to calculate total pay)' + '\n' + tempVar));
+    getInfoCustomer(indexNameCustomer);
+    alert(  'Total pay of ' + listCustomers[indexNameCustomer].getName() + ' : ' + '\n' + tempVar + '\n' +
+            '=> Total pay is : ' + listCustomers[indexNameCustomer].getTotalPay() + '$');
+}
+
+function displaySalaryEmployee() {
+    getNameList(listEmployee);
+    let indexNameEmployee = parseInt(prompt('Input index (select employee you want to calculate total salary)' + '\n' + tempVar));
+    alert('Total salary of ' + listEmployee[indexNameEmployee].getName() + ' : ' + listEmployee[indexNameEmployee].getSalary() + '$');
 }

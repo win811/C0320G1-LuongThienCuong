@@ -40,6 +40,9 @@
         #displayInfoCustomer,#displayInfoEmployee {
             background-color: purple;
         }
+        #displayTotalPayCustomer {
+            background-color: darkolivegreen;
+        }
 
         #editInfoCustomer,#salaryEmployee {
             background-color: darkblue;
@@ -94,20 +97,29 @@
             div5.innerHTML = '';
         }
         function displayCustomerMenu() {
-            let addNewCustomer = '<button class="Button" id="addNewCustomer" onclick="addNewCustomer()">Add New Customer</button><br/>';
-            let displayInfoCustomer = '<button class="Button" id="displayInfoCustomer" onclick="displayInfoCustomer()" >Display Information Customer</button><br/>';
-            let editInfoCustomer = '<button class="Button" id="editInfoCustomer" onclick="editInforCustomer()" >Edit Information Customer</button><br/>';
-            let deleteCustomer = '<button class="Button" id="deleteCustomer" >Delete Customer</button><br/>';
-            let exitCustomer = '<button class="Button" id="exitCustomer" onclick="exitCustomer()">Exit Customer</button><br/>';
-           div2.innerHTML = addNewCustomer + displayInfoCustomer + editInfoCustomer + deleteCustomer + exitCustomer;
+            let addNewCustomer = '<button class="Button" id="addNewCustomer" onclick="addNewCustomer()">' +
+                                 'Add New Customer</button><br/>';
+            let displayInfoCustomer = '<button class="Button" id="displayInfoCustomer" onclick="displayInfoCustomer()" >' +
+                                      'Display Information Customer</button><br/>';
+            let displayTotalPayCustomer = '<button class="Button" id="displayTotalPayCustomer" onclick="displayTotalPayCustomer()">' +
+                                          'Display Total Pay Of Customer</button><br/>';
+            let editInfoCustomer =  '<button class="Button" id="editInfoCustomer" onclick="editInforCustomer()" >' +
+                                    'Edit Information Customer</button><br/>';
+            let deleteCustomer = '<button class="Button" id="deleteCustomer" onclick="deleteCustomer()">' +
+                                 'Delete Customer</button><br/>';
+            let exitCustomer =  '<button class="Button" id="exitCustomer" onclick="exitCustomer()">' +
+                                'Exit Customer</button><br/>';
+           div2.innerHTML = addNewCustomer + displayInfoCustomer + displayTotalPayCustomer +
+                            editInfoCustomer + deleteCustomer + exitCustomer;
         }
         function exitCustomer() {
             div2.innerHTML = '';
         }
         function displayEmployeeMenu() {
-            let addNewEmployee = '<button class="Button" id="addNewEmployee">Add New Employee</button><br/>';
+            let addNewEmployee = '<button class="Button" id="addNewEmployee" onclick="addNewEmployee()">Add New Employee</button><br/>';
             let displayInfoEmployee = '<button class="Button" id="displayInfoEmployee">Display Info Employee</button><br/>';
-            let salaryEmployee = '<button class="Button" id="salaryEmployee">Salary Employee</button><br/>';
+            let salaryEmployee = '<button class="Button" id="salaryEmployee" onclick="displaySalaryEmployee()">' +
+                                 'Salary Of Employee</button><br/>';
             let exitEmployee = '<button class="Button" id="exitEmployee" onclick="exitEmployee()">Exit Employee</button><br/>';
             div4.innerHTML = addNewEmployee + displayInfoEmployee + salaryEmployee + exitEmployee;
         }
