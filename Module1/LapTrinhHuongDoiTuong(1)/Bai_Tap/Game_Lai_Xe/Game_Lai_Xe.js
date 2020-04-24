@@ -52,8 +52,6 @@ function Car() {
         let image = new Image();
         let xPosition = this.xPosition;
         let yPosition = this.yPosition;
-        // image.style.width = CAR_WIDTH + 'px';
-        // image.style.height = CAR_HEIGHT + 'px';
         image.src = this.image;
         image.onload = function(){
             ctx.drawImage(image, xPosition, yPosition,CAR_WIDTH,CAR_HEIGHT);
