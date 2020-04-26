@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>fappy bird</title>
+    <style>
+
+    </style>
+    <script>
+        let highscore = 0;
+        const ON_STARTING = 0;
+        const ON_PLAYING = 1;
+        const ON_OVER = 2;
+        const GAME_WIDTH = 800;
+        const GAME_HEIGHT = 500;
+        const GATE_SPACING = 270;
+        const BGR_WIDTH = GAME_WIDTH / 4;
+
+        class Bird {
+            constructor() {
+                this.x = 50;
+                this.y = GAME_HEIGHT / 2;
+                this.width = 50;
+                this.height = 50;
+                this.gravity = 0.22;
+                this.stepY = 2;
+                this.update = function () {
+                    this.y += this.stepY;
+                    if (this.y < 0) {
+                        this.y = 0;
+                        this.stepY = 0
+                    }
+                    this.stepY += this.gravity;
+                };
+                this.draw = function (context) {
+                    context.beginPath();
+                    // context.rect(this.x, this.y, this.width, this.height);
+                    if (this.stepY < 0) {
+                        context.drawImage(birdimageup, this.x - 15, this.y - 8, 70, 60);
+                    } else {
+                        context.drawImage(birdimagedown, this.x - 15, this.y - 8, 70, 60);
+                    }
+                    context.stroke();
+                };
+                this.jum = function () {
+                    this.stepY = -5
+                };
+            }
+
+        }
+
+        class Gate {
+            GATE_WIDTH = 150;
+            VECTOR_X = 2;
+
+            constructor(x) {
+                this.getscore = false;
+                this.x = x;
+                this.y1 = Math.random() * (GAME_HEIGHT - this.GATE_WIDTH);
+                this.y2 = this.GATE_WIDTH + this.y1;
+                this.width = 60;
+
+                this.update = function () {
+                    this.x -= this.VECTOR_X;
+                    if (this.x + this.width < 0) {
+                        this.y1 = Math.random() * (GAME_HEIGHT - this.GATE_WIDTH);
+                        this.y2 = this.GATE_WIDTH + this.y1;
+                        this.x += 4 * GATE_SPACING;
+                        this.getscore = false;
+                    }
+                }
+                this.draw = function (context) {
+                    context.beginPath();
+                    context.rect(this.x, 0, this.width, this.y1,);
+                    context.rect(this.x, this.y2, this.width, GAME_HEIGHT - this.y2);
+
+                    let grd = context.createLinearGradient(this.x, 0, this.x + this.width, 0);
+                    grd.addColorStop(0, "darkgreen");
+                    grd.addColorStop(0.5, "lawngreen");
+                    grd.addColorStop(1, "darkgreen");
+                    context.fillStyle = grd;
+                    // context.fillStyle = "limegreen";
+                    context.fill();
+                    context.stroke();
+                    context.beginPath();
+                    context.rect(this.x - 6, this.y1 - 35, this.width + 12, 35,);
+                    context.rect(this.x - 6, this.y2, this.width + 12, 35);
+                    context.fillStyle = grd;
+                    context.fill();
+                    context.stroke();
+                }
+                this.collisionWith = function (bird) {
+                    let gateRect1 = {
+                        left: this.x,
+                        right: this.x + this.width,
+                        top: 0,
+                        bottom: this.y1
+                    };
+                    let gateRect2 = {
+                        left: this.x,
+                        right: this.x + this.width,
+                        top: this.y2,
+                        bottom: GAME_HEIGHT
+                    };
+                    let birdRect = {
+                        left: bird.x,
+                        right: bird.x + bird.width,
+                        top: bird.y,
+                        bottom: bird.y + bird.height
+                    };
+                    return collision2Rect(gateRect1, birdRect) || collision2Rect(gateRect2, birdRect)
+                }
+            }
+
+        }
+
+        class background {
+
+            BGR_SPEED = 0.5;
+
+            constructor(x, image) {
+                this.image = image;
+                this.x = x;
+                this.y = 0;
+                this.width = BGR_WIDTH;
+                this.height = GAME_HEIGHT;
+                this.update = function () {
+                    this.x -= this.BGR_SPEED;
+                    if (this.x + this.width < 0) {
+                        this.x += 5 * BGR_WIDTH;
+                    }
+                };
+                this.draw = function (context) {
+                    context.beginPath();
+                    context.drawImage(this.image, this.x, this.y, this.width, this.height);
+                    context.stroke();
+                }
+
+            }
+
+        }
+
+        class myGame {
+            // score = 0;
+
+            constructor() {
+                this.newGame = function () {
+                    if (highscore < this.score) {
+                        highscore = this.score;
+                    }
+                    this.score = 0;
+                    this.status = ON_STARTING;
+                    this.bgr = [new background(0, bgr1),
+                        new background(BGR_WIDTH, bgr2),
+                        new background(BGR_WIDTH * 2, bgr3),
+                        new background(BGR_WIDTH * 3, bgr4),
+                        new background(BGR_WIDTH * 4, bgr5),
+                    ];
+                    this.bird = new Bird();
+                    this.gate = [
+                        new Gate(GAME_WIDTH / 2),
+                        new Gate(GAME_WIDTH / 2 + GATE_SPACING),
+                        new Gate(GAME_WIDTH / 2 + 2 * GATE_SPACING),
+                        new Gate(GAME_WIDTH / 2 + 3 * GATE_SPACING)
+                    ];
+                };
+                this.update = function () {
+                    // let game = this;
+                    if (this.status === ON_PLAYING) {
+                        this.bird.update();
+                        this.bgr.forEach(function (bgrgame) {
+                            bgrgame.update();
+                        });
+                        if (this.bird.y - this.bird.height > GAME_HEIGHT) {
+                            soundGameOver();
+                            this.status = ON_OVER;
+
+                        }
+                        this.gate.forEach(function (gateGame) {
+                            gateGame.update();
+                            if (gateGame.collisionWith(game.bird)) {
+                                soundGameOver();
+                                game.status = ON_OVER;
+                            } else if ((gateGame.getscore === false) && (gateGame.x + gateGame.width < game.bird.x)) {
+                                gateGame.getscore = true;
+                                game.score++;
+                                soundGetScore.play();
+                            }
+                        });
+                    } else if (this.status === ON_OVER) {
+                        this.bird.gravity = 0.1;
+                        this.bird.update()
+
+                        // while (this.bird.y < GAME_HEIGHT-50)
+                    }
+                };
+                this.showGame = function (context) {
+                    context.clearRect(0, 0, GAME_WIDTH, GAME_HEIGHT);
+                    this.bgr.forEach((bgrgame) => bgrgame.draw(context));
+                    this.bird.draw(context);
+
+                    this.gate.forEach((gateGame) => gateGame.draw(context));
+
+                    if (this.status === ON_STARTING) {
+                        context.font = "20px Arial";
+                        let text = "Press any key to start!";
+                        let textMetrics = context.measureText(text);
+                        context.fillStyle = "black";
+                        context.fillText(text, GAME_WIDTH / 2 - textMetrics.width / 2, GAME_HEIGHT / 4 * 3)
+                    } else if (this.status === ON_OVER) {
+                        context.font = "30px Arial";
+                        let text = "GAME OVER";
+                        context.fillStyle = "black";
+                        context.fillText(text, GAME_WIDTH / 2 - context.measureText(text).width / 2, GAME_HEIGHT / 3);
+
+                        let playAgainText = "Press any key to play again";
+                        context.font = "20px Arial";
+                        context.fillStyle = "black";
+                        context.fillText(playAgainText, GAME_WIDTH / 2 - context.measureText(playAgainText).width / 2, GAME_HEIGHT / 4 * 3);
+                        if (this.score < highscore) {
+                            context.font = "20px Arial";
+                            let yourScoreText = "Your score: " + this.score;
+                            let highScoreText = "High score: " + highscore;
+                            context.fillStyle = "black";
+                            context.fillText(yourScoreText, GAME_WIDTH / 2 - context.measureText(yourScoreText).width / 2, GAME_HEIGHT / 2);
+                            context.fillText(highScoreText, GAME_WIDTH / 2 - context.measureText(highScoreText).width / 2, GAME_HEIGHT / 2 + 60);
+                        } else {
+                            context.font = "35px Arial";
+                            let text = "New High Score: " + this.score;
+                            context.fillStyle = "black";
+                            context.fillText(text, GAME_WIDTH / 2 - context.measureText(text).width / 2, GAME_HEIGHT / 2);
+                        }
+                    } else {
+                        context.font = "30px Arial";
+                        let scoreText = this.score.toString();
+                        context.fillStyle = "black";
+                        context.fillText(scoreText, GAME_WIDTH / 2 - context.measureText(scoreText).width / 2, 50);
+                    }
+                };
+                this.onkeyEvent = function (keyCode) {
+                    if (this.status === ON_PLAYING) {
+                        this.bird.jum();
+                    } else if (this.status === ON_STARTING) {
+                        this.status = ON_PLAYING;
+                        this.bird.jum();
+                    } else {
+                        this.newGame();
+                    }
+                };
+                this.newGame();
+            }
+
+        }
+
+        function collision2Rect(rect, bird) {
+            return !(bird.right < rect.left ||
+                bird.left > rect.right ||
+                bird.top > rect.bottom ||
+                bird.bottom < rect.top)
+        }
+    </script>
+</head>
+<body onload="loadGame()" onkeydown="onkeyEvent(event)">
+</body>
+<script>
+    let canvas = document.createElement("canvas");
+    canvas.width = 800;
+    canvas.height = 500;
+    // canvas.style.background = "lightblue"
+    // canvas.style.backgroundImage = "url(\"gaixing.jpg\")";
+    // canvas.style.backgroundRepeat = "no-repeat";
+    // canvas.style.backgroundSize = "1000px 600px"
+    canvas.onmousedown = function () {
+        game.onkeyEvent();
+    };
+    document.body.appendChild(canvas);
+    let context = canvas.getContext("2d");
+
+    let birdimagedown = new Image(100, 100);
+    birdimagedown.src = "birddown.png";
+    let birdimageup = new Image(100, 100);
+    birdimageup.src = "birdup.png";
+    let bgr1 = new Image();
+    bgr1.src = "bgr_001.png";
+    let bgr2 = new Image(100, 100);
+    bgr2.src = "bgr_002.png";
+    let bgr3 = new Image(100, 100);
+    bgr3.src = "bgr_003.png";
+    let bgr4 = new Image(100, 100);
+    bgr4.src = "bgr_004.png";
+    let bgr5 = new Image(100, 100);
+    bgr5.src = "bgr_005.png";
+
+    let game = new myGame();
+
+    function loadGame() {
+        game.update();
+        game.showGame(context);
+        requestAnimationFrame(loadGame);
+        // setTimeout(loadGame, 10);
+    }
+
+    function onkeyEvent(evt) {
+        game.onkeyEvent(evt.keyCode);
+    }
+
+    // function soundGetScore() {
+    //     let sound = document.createElement("AUDIO");
+    //     sound.setAttribute("src", "ting.mp3");
+    //     sound.setAttribute("type", "audio/mp3");
+    //
+    //     sound.autoplay = true;
+    // }
+    let soundGetScore = new Audio("ting.mp3");
+    soundGetScore.volume=1;
+    function soundGameOver() {
+        let soundover = document.createElement("AUDIO");
+        soundover.setAttribute("src", "gameover.mp3");
+        soundover.setAttribute("type", "audio/mp3");
+        soundover.volume = 0.5;
+        soundover.autoplay = true;
+    }
+</script>
+</html>

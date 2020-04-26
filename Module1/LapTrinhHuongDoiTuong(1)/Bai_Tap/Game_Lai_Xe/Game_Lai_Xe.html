@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
-<body onkeydown="gameBoard.moveCar(event)">
+<body onload="window.addEventListener('keydown',moveCar)">
     <canvas id="gameCanvas" width="500px" height="500px" style="border:1px solid #d3d3d3"></canvas>
     <script src="Game_Lai_Xe.js"></script>
 </body>

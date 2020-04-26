@@ -74,7 +74,7 @@ function GameBoard() {
 
     this.moveCar = function(event){
         let orientation = 0;
-        switch (event.which){
+        switch (event.keyCode){
             case 37:
                 orientation = ORIENTATION_LEFT;
                 break;
@@ -102,3 +102,6 @@ function GameBoard() {
 
 let gameBoard = new GameBoard();
 gameBoard.start();
+function moveCar(event) {
+    gameBoard.moveCar(event);
+}

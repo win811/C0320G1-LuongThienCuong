@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chương trình quản lý sinh viên</title>
+</head>
+<body>
+
+    <script>
+        const DASH = '--------------------------------------------------';
+        let listStudent = [];
+        let tempVar = '';
+        class Student {
+            constructor(id,name,birthday,gender,className,course) {
+                this.id = id;
+                this.name = name;
+                this.birthday = birthday;
+                this.gender = gender;
+                this.className = className;
+                this.course = course;
+            }
+            getId () {
+                return this.id;
+            }
+            getName () {
+                return this.name;
+            }
+            getInfo () {
+                return  'ID : ' + this.id + '\n' +
+                        'Name : ' + this.name + '\n' +
+                        'Birthday : ' + this.birthday + '\n' +
+                        'Gender : ' + this.gender + '\n' +
+                        'Class Name : ' + this.className + '\n' +
+                        'Course : ' + this.course + '\n' +
+                        DASH
+            }
+        }
+
+        class ManagerListStudent {
+            add () {
+                let id = prompt('Input id of student');
+                let name = prompt('Input name of student');
+                let birthday = prompt('Input birthday of student');
+                let gender = prompt('Input gender of student');
+                let className = prompt('Input class name of student');
+                let course = prompt('Input course of student');
+                let student = new Student(id,name,birthday,gender,className,course);
+                listStudent.push(student);
+            }
+
+            getInfoList () {
+                let tempVar2 = '';
+                let count = 1;
+                for (let i = 0; i < listStudent.length; i ++) {
+                    tempVar2 += 'Student ' + count + ' : ' + '\n' + listStudent[i].getInfo();
+                    count++;
+                }
+                tempVar = 'Amount of student : ' + (count -1 ) + '\n' + DASH + '\n' + tempVar2;
+                return tempVar;
+            }
+
+            removeStudent (indexStudent) {
+                for (let i = indexStudent; i < listStudent.length; i++) {
+                    if (i === listStudent.length -1) {
+                        listStudent.pop();
+                    } else {
+                        listStudent[i] = listStudent[i+1];
+                    }
+                }
+            }
+
+            printList () {
+                alert(this.getInfoList());
+            }
+
+            removeById () {
+                let idRemove = prompt('* Input id of student need to be remove *' + '\n' + this.getInfoList());
+                let indexStudent = listStudent.indexOf(idRemove);
+                this.removeStudent(indexStudent);
+            }
+
+            removeByIndex () {
+                this.getInfoList();
+                let indexRemove = prompt('* Input index of student need to be remove *' + '\n' + this.getInfoList());
+                let indexStudent = indexRemove - 1;
+                this.removeStudent(indexStudent);
+            }
+
+            searchStudent () {
+                let contentSearch = prompt('* Input id or name of student need to be search *');
+                let indexStudent = listStudent.indexOf(contentSearch);
+                alert(listStudent[indexStudent].getInfo());
+            }
+
+            sortList () {
+                listStudent.sort();
+            }
+
+        }
+
+        let managerListStudent = new ManagerListStudent();
+        managerListStudent.add();
+        managerListStudent.printList();
+    </script>
+</body>
+</html>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Sự Kiện Bàn Phím</title>
 </head>
-<body onload="docReady()">
+<body onload="window.addEventListener('keydown', moveSelection)">
     <img id="nobita" src="Nobita.jpg" style="position:absolute;left:0; top:0;" height="100" width="80"/>
     <script>
         function upArrowPressed() {
@@ -39,9 +39,9 @@
                     break;
             }
         }
-        function docReady() {
-            window.addEventListener('keydown', moveSelection);
-        }
+        // function docReady() {
+        //     window.addEventListener('keydown', moveSelection);
+        // }
 
     </script>
 </body>
