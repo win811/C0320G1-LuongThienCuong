@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        // let string = prompt('Input String').trim().toLowerCase();
+        // let temp = '';
+        // for (let i = 0; i < string.length; i++) {
+        //     if (string[i] === ' ') {
+        //         if (string[i+1] !== ' ') {
+        //             temp += string[i];
+        //         }
+        //     } else {
+        //         if (i === 0|| string[i-1] === ' ') {
+        //             temp += string[i].toUpperCase();
+        //         } else {
+        //             temp += string[i];
+        //         }
+        //     }
+        // }
+        // string = temp;
+        // alert(string);
+        ////////////////////////////////
+        function fixString(string) {
+            let temp = '';
+            for (let i = 0 ; i < string.length ; i++) {
+                temp += string[i].toLowerCase();
+            }
+            temp = temp.trim();
+            let temp_2 = '';
+            for (let i = 0; i < temp.length; i++) {
+                if (temp[i] === ' ') {
+                    if (temp[i+1] !== ' ') {
+                        temp_2 += temp[i];
+                    }
+                } else {
+                    if (i === 0 || temp[i-1] === ' ') {
+                        temp_2 += temp[i].toUpperCase();
+                    } else {
+                        temp_2 += temp[i];
+                    }
+                }
+            }
+            return temp_2
+        }
+
+        let string1 = '     lưƠnG     tHiÊn   cƯờnG  ';
+        string1 = fixString(string1);
+        alert(string1);
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let a = 'abccba';
+        let b = 'rotor';
+        let c = 'abc';
+        function symmetry(string) {
+            for (let i = 0,j = string.length - i - 1; i < j;i++,j--) {
+                if (string[i] !== string[j]) {
+                    return false;
+                }
+            }
+            return true;
+        }
+        alert(symmetry(c));
+    </script>
+</body>
+</html>

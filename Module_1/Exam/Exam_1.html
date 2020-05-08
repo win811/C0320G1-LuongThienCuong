@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let array = [];
+        let result = [];
+        let sum = 0;
+        let average;
+        for (let i = 0 ; i < 10; i++) {
+            array.push(Math.floor(Math.random()*11));
+        }
+        alert(array);
+        for (let i = 0 ; i < array.length ; i++) {
+            if (array[i] % 3 === 0) {
+                result.push(array[i]);
+            }
+        }
+        alert(result);
+        for (let i = 0 ; i < result.length ; i++) {
+            sum += result[i];
+        }
+        average = sum / result.length;
+        alert(average);
+    </script>
+</body>
+</html>

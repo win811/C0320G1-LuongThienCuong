@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let regExp = /^\d{1,2}[/]\d{1,2}[/]\d{2}$/;
+    let date = prompt('Input date follow the format : "d/m/yy" or "dd/mm/yy" ');
+    while (true) {
+        if (regExp.test(date)) {
+            break;
+        } else {
+            date = prompt('Incorrect format, please follow the format : "d/m/yy" or "dd/mm/yy" ')
+        }
+    }
+    // alert(date);
+    // let tempStr = '';
+    // let result = '';
+    // for (let i = 0; date[i] !== '/'; i++) {
+    //     tempStr += date[i];
+    // }
+    // if (tempStr.length === 1) {
+    //     tempStr = '0' + tempStr;
+    // }
+    // result += tempStr + '/';
+    //
+    // tempStr = '';
+    // for (let i = date.length - 4; date[i] !== '/'; i--) {
+    //     tempStr += date[i];
+    // }
+    // if (tempStr.length === 1) {
+    //     tempStr = '0' + tempStr;
+    // }
+    // result += tempStr +'/';
+    // result += date[date.length - 2] + date[date.length - 1];
+    // date = result;
+    // alert(date);
+    ////////////////
+
+    // let name = prompt('Input name').trim().toLowerCase();
+    // alert(name);
+    //
+    // function checkNumberIsNotInString(string) {
+    //     let regExp = /[0-9]/;
+    //     return string.indexOf(regExp) === -1;
+    // }
+    //
+    // while (true) {
+    //     if (checkNumberIsNotInString(name)) {
+    //         break;
+    //     } else {
+    //         name = prompt('Incorrect format name,name does not contain number, please try again!!').trim().toLowerCase();
+    //     }
+    // }
+    //
+    // let tempName = '';
+    // for (let i = 0; i < name.length; i++) {
+    //     if (name[i] === ' ') {
+    //         if (name[i+1] !== ' ') {
+    //             tempName += name[i];
+    //         }
+    //     } else if (i === 0 || name[i-1] === ' ') {
+    //         tempName += name[i].toUpperCase();
+    //     } else {
+    //         tempName += name[i];
+    //     }
+    // }
+    // name = tempName;
+    // alert(name);
+    ///////////////////////
+    let array = '1223';
+    let b = array.match('2');
+    alert(b);
+</script>
+</body>
+</html>

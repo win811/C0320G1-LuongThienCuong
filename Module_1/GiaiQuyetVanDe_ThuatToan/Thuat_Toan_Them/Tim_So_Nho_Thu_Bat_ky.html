@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        function findXMin(array,x) {
+            if (array.length >= x) {
+                array.sort();
+                if (x !== 1) {
+                    for (let i = x-1; i < array.length; i++) {
+                        if (i === array.length -1 ) {
+                            return array[i];
+                        } else if (array[i] > array[i - 1]) {
+                            return array[i];
+                        }
+                    }
+                }
+                return array[0];
+            }
+            return 'Mảng không đủ độ dài';
+        }
+        let array1 = [5,5,4,6,8];
+        alert(findXMin(array1,3));
+    </script>
+</body>
+</html>

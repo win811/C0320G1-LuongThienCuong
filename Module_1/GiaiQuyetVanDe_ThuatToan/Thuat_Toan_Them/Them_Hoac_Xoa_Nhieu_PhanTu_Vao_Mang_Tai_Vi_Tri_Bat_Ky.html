@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let array1 = [1,4,5];
+        // function addOneValueIntoArray(array,index,value) {
+        //     for (let i = array.length; i > index - 1 ; i--) {
+        //         if ( i === index) {
+        //             array[i] = value;
+        //         } else {
+        //             array[i] = array[i-1];
+        //         }
+        //     }
+        // }
+
+        // function addManyValueIntoArray(array) {
+        //     let n = parseInt(prompt('Nhập số lượng giá gị cần thêm'));
+        //     let index ;
+        //     let value ;
+        //     for (let i = 0; i < n ; i++) {
+        //         index = parseInt(prompt('Nhập vị trí thứ '+ (i + 1) + ' cần chèn vào mảng' + '\n' + array));
+        //         // Nhập vị trí bình thường bắt đầu từ 1
+        //         value = prompt('Nhập vào giá trị của vị trí thứ ' + (i + 1));
+        //         addOneValueIntoArray(array, index - 1 , value);
+        //     }
+        //     alert(array);
+        // }
+        // addManyValueIntoArray(array1);
+        ////////////////////////////////////
+
+        // function addTwoValueIntoArray(array,index1,value1,index2,value2) {
+        //     let index = [];
+        //     let value = [];
+        //     index.push(index1,index2);
+        //     value.push(value1,value2);
+        //     for (let i = 0; i < 2; i++) {
+        //         addOneValueIntoArray(array,index[i],value[i]);
+        //     }
+        //     alert(array);
+        // }
+        // addTwoValueIntoArray(array1,1,2,2,3);
+        array1.splice(1,0,12);
+        alert(array1.join('.'));
+        alert(array1.length + '\n' + array1);
+    </script>
+</body>
+</html>

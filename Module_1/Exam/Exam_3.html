@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+
+        function input_check_return_date() {
+            let date = prompt('Input date follow the format "dd/MM/yyyy" ').trim();
+            let regExp = /^\d{2}[/]\d{2}[/]\d{4}$/;
+            while (true) {
+                if (regExp.test(date)) {
+                    break;
+                } else {
+                    date = prompt('Incorrect format, please follow the format : "dd/mm/yy" ')
+                }
+            }
+            return date;
+        }
+
+        let date = input_check_return_date();
+
+        function checkYear(year) {
+            return ((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0);
+        }
+
+        function getDateInMonth(month,year) {
+            switch (month) {
+                case 1:
+                case 3:
+                case 5:
+                case 7:
+                case 8:
+                case 10:
+                case 12:
+                    return 31;
+                case 4:
+                case 6:
+                case 9:
+                case 11:
+                    return 30;
+                case 2:
+                    if (checkYear(year))
+                        return 29;
+                    else
+                        return 28;
+                default:
+                    return -1;
+            }
+        }
+
+        let result = 0;
+        let tempMonth = date.substring(3,5);
+        for (let i = 1; i < parseInt(tempMonth); i++) {
+            result += getDateInMonth(i);
+        }
+        result += parseInt(date.substring(0,2));
+        alert('Date in this year is : '+ result);
+
+    </script>
+</body>
+</html>

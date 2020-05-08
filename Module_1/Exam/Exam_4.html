@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quản lý cán bộ</title>
+    <style>
+        #div1 {
+            width: 450px;
+            height: 340px;
+            border-radius: 5px;
+            background-color: lightgrey;
+        }
+        #div2 {
+            position: absolute;
+            border: 1px;
+            width: 1000px;
+            height: 550px;
+            top: 58px;
+            left: 550px;
+        }
+        table,tr {
+            border: solid lightsteelblue;
+        }
+        #inputName,#inputBirthday,#inputAddress,#inputSalary,#inputPosition {
+            padding-left: 10px;
+            width: 350px;
+            height: 40px;
+            margin-top:10px ;
+            margin-left: 40px;
+            border: none;
+            border-radius: 5px;
+        }
+        #addButton,#clearButton {
+            background-color: green;
+            margin-top: 20px;
+            margin-left: 120px;
+            color: aliceblue;
+            width: 100px;
+            height: 40px;
+            border-radius: 20px;
+        }
+        #displayAllOfficers {
+            background-color: darkslateblue;
+            margin-top: 20px;
+            margin-left: 75px;
+            color: aliceblue;
+            width: 300px;
+            height: 40px;
+            border-radius: 10px;
+            font-size: 18px;
+        }
+        #clearButton {
+            background-color: darkslategrey;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h3>Add New Officer</h3>
+    <div id="div1">
+        <input type="text" id="inputName" placeholder="Officer's Name "/>
+        <input type="text" id="inputBirthday" placeholder="Officer's Birthday "/>
+        <input type="text" id="inputAddress" placeholder="Officer's Address"/>
+        <input type="text" id="inputSalary" placeholder="Officer's Salary "/>
+        <input type="text" id="inputPosition" placeholder="Officer's Position"/>
+        <button id="addButton" onclick="manager_officer.add()">Add</button>
+        <button id="clearButton" onclick="manager_officer.clear()">Clear</button>
+    </div>
+    <div id="div2"></div>
+    <button id="displayAllOfficers" onclick="manager_officer.displayList()">Display All Officers</button>
+    <script src="Exam_4.js"></script>
+</body>
+</html>
