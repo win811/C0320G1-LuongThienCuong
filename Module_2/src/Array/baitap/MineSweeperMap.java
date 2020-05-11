@@ -61,6 +61,7 @@ public class MineSweeperMap {
             for (String div : row) {
                 System.out.print(div + "  ");
             }
+            System.out.println();
         }
     }
 }

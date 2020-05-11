@@ -1,5 +1,8 @@
 package Array.baitap.ArrayIndexOutOfBoundsException;
 
+
+import Array.SingleArray;
+
 import java.util.Scanner;
 
 public class GetValueViaIndex {

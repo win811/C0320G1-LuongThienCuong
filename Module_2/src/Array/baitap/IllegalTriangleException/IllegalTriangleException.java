@@ -1,10 +1,8 @@
 package Array.baitap.IllegalTriangleException;
 
-//import java.util.Scanner;
+class IllegalTriangleException extends Exception {
 
-public class IllegalTriangleException extends Exception{
-    public IllegalTriangleException ( String message) {
+    public IllegalTriangleException(String message) {
         super(message);
     }
-
 }
