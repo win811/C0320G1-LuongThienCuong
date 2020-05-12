@@ -3,49 +3,63 @@ package inheritance.thuchanh;
 public class Shape {
     private String color = "green";
     private boolean filled = true;
-    Shape () {
+    public Shape () {
     }
-    Shape (String color, boolean filled) {
+    public Shape (String color, boolean filled) {
         this.color = color;
         this.filled = filled;
     }
-    String getColor () {
+    public String getColor () {
         return this.color;
     }
-    boolean getFilled () {
+    public boolean isFilled () {
         return this.filled;
     }
-    void setColor (String color) {
+    public void setColor (String color) {
         this.color = color;
     }
-    void setFilled (boolean filled) {
+    public void setFilled (boolean filled) {
         this.filled = filled;
     }
     public String toString () {
-        if (this.filled) {
-            return "A Shape with color of " + this.color + " and filled";
+        if (isFilled()) {
+            return "A Shape with color of " + getColor() + " and filled";
         }
-        return "A Shape with color of " + this.color + " not filled";
+        return "A Shape with color of " + getColor() + " and not filled";
     }
-}
-class Rectangle extends Shape {
-    private double width = 1;
-    private double length = 1;
-    Rectangle () {
-    }
-    Rectangle (double width,double length) {
-        this.width = width;
-        this.length = length;
-    }
-    Rectangle (String color, boolean filled,double width,double length) {
-        super(color,filled);
-        this.width = width;
-        this.length = length;
-    }
-    double getArea () {
-        return this.length * this.width;
-    }
-    double getPerimeter () {
-        return 2* (this.width + this.length)
+
+    public static void main(String[] args) {
+        Shape shape = new Shape();
+        System.out.println(shape);
+
+        shape = new Shape("red", false);
+        System.out.println(shape);
+
+        Circle circle = new Circle();
+        System.out.println(circle);
+
+        circle = new Circle(3.5);
+        System.out.println(circle);
+
+        circle = new Circle(3.5,"indigo", false);
+        System.out.println(circle);
+
+        Rectangle rectangle = new Rectangle();
+        System.out.println(rectangle);
+
+        rectangle = new Rectangle(2.3, 5.8);
+        System.out.println(rectangle);
+
+        rectangle = new Rectangle("orange", true, 2.5, 3.8);
+        System.out.println(rectangle);
+
+        Square square = new Square();
+        System.out.println(square);
+
+        square = new Square(2.3);
+        System.out.println(square);
+
+        square = new Square("yellow", true,5.8);
+        System.out.println(square);
     }
 }

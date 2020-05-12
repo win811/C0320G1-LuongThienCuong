@@ -17,7 +17,7 @@ public class TryCatchTriangleException {
         int a = triangle[0];
         int b = triangle[1];
         int c= triangle[2];
-        if (a + b < c || b + c < a || a + c < b) {
+        if (a + b <= c || b + c <= a || a + c <= b) {
             throw new IllegalTriangleException();
         }
     }
@@ -34,16 +34,15 @@ public class TryCatchTriangleException {
         checkEdge(triangle);
     }
 
-    public static void main(String[] args) throws IllegalTriangleException {
+    public static void main(String[] args) {
         int[] triangle = new int[3];
         System.out.println("Input 3 edge's value : ");
         try {
             inputValue(triangle);
         } catch (Throwable e) {
-
+            System.out.println(e.getMessage());
         } finally {
             System.out.println("Líu lo");
         }
-
     }
 }
