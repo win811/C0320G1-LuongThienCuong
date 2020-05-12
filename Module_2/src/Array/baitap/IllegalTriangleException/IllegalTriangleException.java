@@ -1,8 +1,8 @@
 package Array.baitap.IllegalTriangleException;
 
-class IllegalTriangleException extends Exception {
+class IllegalTriangleException extends Throwable {
 
-    public IllegalTriangleException(String message) {
-        super(message);
+    public IllegalTriangleException() {
+        System.out.println("Bạn đã dính IllegalTriangleException");
     }
 }

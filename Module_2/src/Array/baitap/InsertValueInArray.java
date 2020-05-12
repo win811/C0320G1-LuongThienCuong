@@ -16,6 +16,7 @@ public class InsertValueInArray {
     }
 
     public static void main(String[] args) {
+
         System.out.print("Enter size of array : ");
         int[] array = SingleArray.create();
         System.out.println("Input value of array : ");

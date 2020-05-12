@@ -1,27 +1,24 @@
 package Array.baitap.IllegalTriangleException;
 
-//import Array.SingleArray;
-
 import java.util.Scanner;
 
+public class TestIllegalTriangleException2 {
+    static Scanner input = new Scanner(System.in);
 
-public class TryCatchTriangleException {
-   static Scanner input = new Scanner(System.in);
-
-    static void checkMinus (int value) throws IllegalTriangleException {
+    static void checkMinus (int value) {
         if (value < 0) {
-            throw new IllegalTriangleException();
+            TestException e = new TestException();
         }
     }
-    static void checkEdge (int[] triangle) throws IllegalTriangleException {
+    static void checkEdge (int[] triangle) {
         int a = triangle[0];
         int b = triangle[1];
         int c= triangle[2];
         if (a + b < c || b + c < a || a + c < b) {
-            throw new IllegalTriangleException();
+            TestException e = new TestException();
         }
     }
-    static void inputValue (int[] triangle ) throws IllegalTriangleException {
+    static void inputValue (int[] triangle ) {
         System.out.print("Edge 1 : ");
         triangle[0] = Integer.parseInt(input.nextLine());
         checkMinus(triangle[0]);
@@ -34,16 +31,9 @@ public class TryCatchTriangleException {
         checkEdge(triangle);
     }
 
-    public static void main(String[] args) throws IllegalTriangleException {
+    public static void main(String[] args) {
         int[] triangle = new int[3];
         System.out.println("Input 3 edge's value : ");
-        try {
-            inputValue(triangle);
-        } catch (Throwable e) {
-
-        } finally {
-            System.out.println("Líu lo");
-        }
-
+        inputValue(triangle);
     }
 }
