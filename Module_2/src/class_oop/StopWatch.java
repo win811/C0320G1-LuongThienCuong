@@ -1,8 +1,10 @@
 package class_oop;
 
 import java.util.Date;
+import java.util.Random;
 
 public class StopWatch {
+    static Random rd = new Random();
     private Date startTime;
     private Date endTime;
     StopWatch () {
@@ -18,14 +20,28 @@ public class StopWatch {
         return this.endTime.getTime() - this.startTime.getTime();
     }
 
+    static void SelectionSort (int[] arr) {
+        int n = arr.length;
+        for (int i = 0; i < n-1; i++) {
+            int min_idx = i;
+            for (int j = i+1; j < n; j++)
+                if (arr[j] < arr[min_idx])
+                    min_idx = j;
+            int temp = arr[min_idx];
+            arr[min_idx] = arr[i];
+            arr[i] = temp;
+        }
+    }
+
     public static void main(String[] args) {
-        int temp = 0;
+        int[] array = new int[100000];
         StopWatch watch = new StopWatch();
+        for (int i = 0; i<array.length;i++ ) {
+            array[i] = rd.nextInt(1000);
+        }
         watch.start();
         System.out.println(watch.startTime);
-        for (int i = 0; i<5000;i++ ) {
-            temp++;
-        }
+        SelectionSort(array);
         watch.stop();
         System.out.println(watch.endTime);
         System.out.println(watch.getElapsedTime());

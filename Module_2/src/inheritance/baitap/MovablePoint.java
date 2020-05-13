@@ -37,6 +37,16 @@ public class MovablePoint extends Point2D {
         return super.toString() + ",speed = (" + getXSpeed() + "," + getYSpeed() + ")";
     }
     public MovablePoint move() {
+        super.x += getXSpeed();
+        super.y += getYSpeed();
         return this;
+    }
+
+    public static void main(String[] args) {
+        MovablePoint point1 = new MovablePoint(2.2f,3.3f);
+        System.out.println(point1.toString());
+        point1.move();
+        System.out.println("Đã di chuyển");
+        System.out.println(point1.toString());
     }
 }
