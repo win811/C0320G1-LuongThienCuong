@@ -35,7 +35,6 @@ public class Fan {
     void setColor (String color) {
         this.color = color;
     }
-    @Override
     public String toString() {
         if (isOn()) {
             return  "-Fan " + this.id  +" is ON-" + "\nSpeed : " + this.speed + "\nColor : " + this.color + "\nRadius : " + this.radius;
@@ -44,7 +43,7 @@ public class Fan {
     }
 
     public static void main(String[] args) {
-//        final int SLOW = 1;
+        final int SLOW = 1;
         final int MEDIUM = 2;
         final int FAST = 3;
         Fan fan1 = new Fan(1);

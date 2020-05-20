@@ -1,13 +1,16 @@
 package inheritance.baitap;
 
 public class Point2D {
-    protected float x = 0.0f;
-    protected float y = 0.0f;
+    private float x = 0.0f;
+    private float y = 0.0f;
     public Point2D () {
     }
     public Point2D (float x , float y) {
         this.x = x;
         this.y = y;
+    }
+    public static void test () {
+        System.out.println("test");
     }
     public float getX () {
         return this.x;
@@ -21,14 +24,13 @@ public class Point2D {
     public void setY (float y) {
         this.y = y;
     }
+    public float[] getXY () {
+        return new float[] {getX(), getY()};
+    }
     public void setXY (float x , float y) {
         setX(x);
         setY(y);
     }
-    public float[] getXY () {
-        return new float[] {getX(), getY()};
-    }
-    @Override
     public String toString () {
         return "(" + getX() + "," + getY() + ")";
     }

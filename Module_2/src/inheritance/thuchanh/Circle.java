@@ -1,7 +1,7 @@
 package inheritance.thuchanh;
 
 public class Circle extends Shape {
-    private double radius = 1.0;
+    private double radius = 0.0;
 
     public Circle() {
     }
