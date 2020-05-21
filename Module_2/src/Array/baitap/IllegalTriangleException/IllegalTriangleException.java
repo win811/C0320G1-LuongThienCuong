@@ -1,6 +1,6 @@
 package Array.baitap.IllegalTriangleException;
 
-class IllegalTriangleException extends Throwable {
+class IllegalTriangleException extends Exception {
 
     public IllegalTriangleException() {
         System.out.println("Bạn đã dính IllegalTriangleException");

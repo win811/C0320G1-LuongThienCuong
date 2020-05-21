@@ -3,6 +3,9 @@ package models;
 public class Room extends Services {
     private String freeService;
 
+    public Room() {
+    }
+
     public Room(String freeService) {
         this.freeService = freeService;
     }
@@ -29,5 +32,15 @@ public class Room extends Services {
         System.out.println("Has Max Guest : " + super.getMaxGuest());
         System.out.println("Has Rent Type : " + super.getRentType());
         System.out.println("Has free Services : " + this.getFreeService());
+    }
+    @Override
+    public String toString() {
+        return  super.getId() + "," +
+                super.getNameService() + "," +
+                super.getAreaUse() + "," +
+                super.getRentCost() + "," +
+                super.getMaxGuest() + "," +
+                super.getRentType() + "," +
+                this.getFreeService();
     }
 }

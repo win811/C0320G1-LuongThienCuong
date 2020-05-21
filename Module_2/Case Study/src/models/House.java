@@ -5,6 +5,9 @@ public class House extends Services {
     private String convenient;
     private String floor;
 
+    public House() {
+    }
+
     public House(String roomStandard, String convenient, String floor) {
         this.roomStandard = roomStandard;
         this.convenient = convenient;
@@ -54,5 +57,17 @@ public class House extends Services {
         System.out.println("Has Room Standard : " + this.getRoomStandard());
         System.out.println("Has Convenient : " + this.getConvenient());
         System.out.println("Has floor : " + this.getFloor());
+    }
+    @Override
+    public String toString() {
+        return  super.getId() + "," +
+                super.getNameService() + "," +
+                super.getAreaUse() + "," +
+                super.getRentCost() + "," +
+                super.getMaxGuest() + "," +
+                super.getRentType() + "," +
+                this.getRoomStandard() + "," +
+                this.getConvenient() + "," +
+                this.getFloor();
     }
 }

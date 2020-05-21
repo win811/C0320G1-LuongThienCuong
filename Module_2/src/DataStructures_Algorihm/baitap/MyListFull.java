@@ -2,7 +2,7 @@ package DataStructures_Algorihm.baitap;
 
 import java.util.Arrays;
 
-public class MyListFull<T> {
+public class MyListFull<T> implements Cloneable {
     int size = 0;
     private static final int DEFAULT_CAPACITY = 10;
     private Object[] elements;
@@ -70,22 +70,24 @@ public class MyListFull<T> {
             }
         }
     }
+    @SuppressWarnings("unchecked")
     @Override
-    public MyListFull<T> clone() {
-        return this;
+    public MyListFull<T> clone() throws CloneNotSupportedException {
+        return (MyListFull<T>) super.clone();
     }
 }
 class TestMyListFull {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws CloneNotSupportedException {
         MyListFull<Integer> myListFull = new MyListFull<>();
         myListFull.add(1);
         myListFull.add(3);
         myListFull.add(4);
         myListFull.add(5);
         myListFull.add(6);
-        myListFull.print();
-        myListFull.add(2,2);
+        MyListFull<Integer> myListFull1_2 = myListFull.clone();
         myListFull.remove(2);
         myListFull.print();
+        System.out.println("--------");
+        myListFull1_2.print();
     }
 }

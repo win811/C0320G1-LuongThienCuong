@@ -21,6 +21,7 @@ public class MyList<E> {
         int newSize = elements.length * 2;
         elements = Arrays.copyOf(elements, newSize);
     }
+    @SuppressWarnings("unchecked")
     public E get(int i) {
         if (i>= size || i <0) {
             throw new IndexOutOfBoundsException("Index: " + i + ", Size " + i );

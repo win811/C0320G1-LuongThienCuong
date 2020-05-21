@@ -62,4 +62,17 @@ public class Villa extends Services {
         System.out.println("Has Area Of Pool : " + this.getAreaPool());
         System.out.println("Has floor : " + this.getFloor());
     }
+    @Override
+    public String toString() {
+        return  super.getId() + "," +
+                super.getNameService() + "," +
+                super.getAreaUse() + "," +
+                super.getRentCost() + "," +
+                super.getMaxGuest() + "," +
+                super.getRentType() + "," +
+                this.getRoomStandard() + "," +
+                this.getConvenient() + "," +
+                this.getAreaPool() + "," +
+                this.getFloor();
+    }
 }
