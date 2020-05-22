@@ -1,22 +1,24 @@
 package Service;
 
+import commons.ValidationServices;
 import models.House;
 import models.Services;
 import models.Villa;
 
 public class HouseServiceImpl implements ServiceInterface {
     @Override
-    public House add() {
+    public Services add() {
         House house = new House();
-        house.setId("1");
-        house.setNameService("house Test");
-        house.setAreaUse("100");
-        house.setRentCost("1000$");
-        house.setMaxGuest("5");
-        house.setRentType("Month");
-        house.setRoomStandard("Vip");
-        house.setConvenient("Convenient");
-        house.setFloor("5 floors");
+        house.setId(ValidationServices.inputAndCheckId("House"));
+        house.setNameService(ValidationServices.inputAndCheckNameService());
+        house.setAreaUse(ValidationServices.inputAndCheckAreaUse());
+        house.setRentCost(ValidationServices.inputAndCheckRentCost());
+        house.setMaxGuest(ValidationServices.inputAndCheckMaxGuest());
+        house.setRentType(ValidationServices.inputAndCheckRentType());
+        house.setAccompaniedService(ValidationServices.inputAndCheckAccompaniedService());
+        house.setRoomStandard(ValidationServices.inputAndCheckRoomStandard());
+        house.setConvenient(ValidationServices.inputAndCheckConvenient());
+        house.setFloor(ValidationServices.inputAndCheckFloor());
         return house;
     }
 }

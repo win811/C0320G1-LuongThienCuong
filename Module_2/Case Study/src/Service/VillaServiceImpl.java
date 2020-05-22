@@ -1,23 +1,25 @@
 package Service;
 
+import commons.ValidationServices;
 import models.Services;
 import models.Villa;
 
 public class VillaServiceImpl implements ServiceInterface {
 
     @Override
-    public Villa add() {
+    public Services add() {
         Villa villa = new Villa();
-        villa.setId("1");
-        villa.setNameService("Villa Test");
-        villa.setAreaUse("100");
-        villa.setRentCost("1000$");
-        villa.setMaxGuest("5");
-        villa.setRentType("Month");
-        villa.setRoomStandard("Vip");
-        villa.setConvenient("Convenient");
-        villa.setAreaPool("100m2");
-        villa.setFloor("5 floors");
+        villa.setId(ValidationServices.inputAndCheckId("Villa"));
+        villa.setNameService(ValidationServices.inputAndCheckNameService());
+        villa.setAreaUse(ValidationServices.inputAndCheckAreaUse());
+        villa.setRentCost(ValidationServices.inputAndCheckRentCost());
+        villa.setMaxGuest(ValidationServices.inputAndCheckMaxGuest());
+        villa.setRentType(ValidationServices.inputAndCheckRentType());
+        villa.setAccompaniedService(ValidationServices.inputAndCheckAccompaniedService());
+        villa.setRoomStandard(ValidationServices.inputAndCheckRoomStandard());
+        villa.setConvenient(ValidationServices.inputAndCheckConvenient());
+        villa.setAreaPool(ValidationServices.inputAndCheckAreaPool());
+        villa.setFloor(ValidationServices.inputAndCheckFloor());
         return villa;
     }
 }

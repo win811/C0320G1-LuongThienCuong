@@ -8,11 +8,15 @@
     <script>
         let regExp = /^[(][0-9]{2}[)]-[(][0][0-9]{9}[)]$/;
         let numPhone1 = '(84)-(0978489648)';
-        if (regExp.test(numPhone1)) {
-            alert('Correct number Phone');
-        } else {
-            alert('Incorrect number Phone');
+        if (numPhone1.match(regExp)) {
+            alert(true);
         }
+
+        // if (regExp.test(numPhone1)) {
+        //     alert('Correct number Phone');
+        // } else {
+        //     alert('Incorrect number Phone');
+        // }
     </script>
 </body>
 </html>

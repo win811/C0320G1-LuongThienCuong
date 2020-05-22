@@ -11,8 +11,8 @@ public class Room extends Services {
     }
 
     public Room(String id, String nameService, String areaUse, String rentCost, String maxGuest,
-                String rentType, String freeService) {
-        super(id, nameService, areaUse, rentCost, maxGuest, rentType);
+                String rentType,String accompaniedService, String freeService) {
+        super(id, nameService, areaUse, rentCost, maxGuest, rentType,accompaniedService);
         this.freeService = freeService;
     }
 
@@ -31,7 +31,9 @@ public class Room extends Services {
         System.out.println("Has Rent Cost : " + super.getRentCost());
         System.out.println("Has Max Guest : " + super.getMaxGuest());
         System.out.println("Has Rent Type : " + super.getRentType());
+        System.out.println("Has Accompanied Service : " + super.getAccompaniedService());
         System.out.println("Has free Services : " + this.getFreeService());
+        System.out.println("----------------------------------------------");
     }
     @Override
     public String toString() {
@@ -41,6 +43,7 @@ public class Room extends Services {
                 super.getRentCost() + "," +
                 super.getMaxGuest() + "," +
                 super.getRentType() + "," +
+                super.getAccompaniedService() + "," +
                 this.getFreeService();
     }
 }

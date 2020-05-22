@@ -14,9 +14,9 @@ public class House extends Services {
         this.floor = floor;
     }
 
-    public House(String id, String nameService, String areaUse, String rentCost, String maxGuest, String rentType,
+    public House(String id, String nameService, String areaUse, String rentCost, String maxGuest, String rentType,String accompaniedService,
                  String roomStandard, String convenient, String floor) {
-        super(id, nameService, areaUse, rentCost, maxGuest, rentType);
+        super(id, nameService, areaUse, rentCost, maxGuest, rentType,accompaniedService);
         this.roomStandard = roomStandard;
         this.convenient = convenient;
         this.floor = floor;
@@ -54,9 +54,11 @@ public class House extends Services {
         System.out.println("Has Rent Cost : " + super.getRentCost());
         System.out.println("Has Max Guest : " + super.getMaxGuest());
         System.out.println("Has Rent Type : " + super.getRentType());
+        System.out.println("Has Accompanied Service : " + super.getAccompaniedService());
         System.out.println("Has Room Standard : " + this.getRoomStandard());
         System.out.println("Has Convenient : " + this.getConvenient());
         System.out.println("Has floor : " + this.getFloor());
+        System.out.println("----------------------------------------------");
     }
     @Override
     public String toString() {
@@ -66,6 +68,7 @@ public class House extends Services {
                 super.getRentCost() + "," +
                 super.getMaxGuest() + "," +
                 super.getRentType() + "," +
+                super.getAccompaniedService() + "," +
                 this.getRoomStandard() + "," +
                 this.getConvenient() + "," +
                 this.getFloor();

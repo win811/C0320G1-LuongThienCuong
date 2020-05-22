@@ -1,7 +1,2 @@
-Id,Name Service, Area Use, Rent Cost, Max Number Of People,Type Rent,Room Standard,Convenient Description,AreaPool,Number Of Floors
-1,Villa Test,100,1000$,5,Month,Vip,Convenient,100m2,5 floors
-1,Villa Test,100,1000$,5,Month,Vip,Convenient,100m2,5 floors
-1,Villa Test,100,1000$,5,Month,Vip,Convenient,100m2,5 floors
-1,Villa Test,100,1000$,5,Month,Vip,Convenient,100m2,5 floors
-1,Villa Test,100,1000$,5,Month,Vip,Convenient,100m2,5 floors
-1,Villa Test,100,1000$,5,Month,Vip,Convenient,100m2,5 floors
+Id,Name Service, Area Use, Rent Cost, Max Number Of People,Type Rent,Accompanied Service,Room Standard,Convenient Description,AreaPool,Number Of Floors
+SVVL-0001,Villahey,40,1000,5,Month,NONE,Vip,Super Bed,100,5

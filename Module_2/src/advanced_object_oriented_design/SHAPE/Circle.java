@@ -53,5 +53,4 @@ public class Circle extends Shape implements Resizeable, Comparable<Circle> {
     public int compareTo(Circle circle) {
         return (int) (this.getRadius() - circle.getRadius());
     }
-
 }

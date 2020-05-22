@@ -17,6 +17,7 @@ import java.lang.reflect.ParameterizedType;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -30,7 +31,7 @@ public class FuncWriteAndReadFileCSV {
     private static final String PATH_FILE_ROOM = "src/data/Room.csv";
     private static final String PATH_FILE_BOOKING = "src/data/Booking.csv";
     private static final String PATH_FILE_CUSTOMER = "src/data/Customer.csv";
-    private static final String FILE_SERVICES_HEADER_DEFAULT = "Id,Name Service, Area Use, Rent Cost, Max Number Of People,Type Rent";
+    private static final String FILE_SERVICES_HEADER_DEFAULT = "Id,Name Service, Area Use, Rent Cost, Max Number Of People,Type Rent,Accompanied Service";
     private static final String FILE_HEADER_OF_VILLA = FILE_SERVICES_HEADER_DEFAULT +
             ",Room Standard,Convenient Description,AreaPool,Number Of Floors";
     private static final String FILE_HEADER_OF_HOUSE = FILE_SERVICES_HEADER_DEFAULT +
@@ -46,10 +47,10 @@ public class FuncWriteAndReadFileCSV {
     public static String readCsvFile(Object service) {
         Path path;
         String head;
-        if (service instanceof Villa) {
+        if (service.equals("Villa")) {
             path = Paths.get(PATH_FILE_VILLA);
             head = FILE_HEADER_OF_VILLA;
-        } else if (service instanceof House) {
+        } else if (service.equals("House")) {
             path = Paths.get(PATH_FILE_HOUSE);
             head = FILE_HEADER_OF_HOUSE;
         } else {
@@ -74,6 +75,7 @@ public class FuncWriteAndReadFileCSV {
                 }
             }
         }
+
         String line;
         String resultString = "";
         BufferedReader buffer = null;
@@ -94,24 +96,21 @@ public class FuncWriteAndReadFileCSV {
         }
         return resultString;
     }
+
     public static void writeCsvFile (String oldFile,Object service){
         String path;
-        String head;
         if (service instanceof Villa) {
             path = PATH_FILE_VILLA;
-            head = FILE_HEADER_OF_VILLA;
         } else if (service instanceof House) {
             path = PATH_FILE_HOUSE;
-            head = FILE_HEADER_OF_HOUSE;
+
         } else {
             path = PATH_FILE_ROOM;
-            head = FILE_HEADER_OF_ROOM;
         }
         FileWriter fileWriter = null;
         try {
             fileWriter = new FileWriter(path);
             fileWriter.append(oldFile);
-//            fileWriter.append(NEW_LINE_SEPARATOR);
             fileWriter.append(service.toString());
         } catch (IOException e) {
             e.printStackTrace();

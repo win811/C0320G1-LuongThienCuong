@@ -1,20 +1,22 @@
 package Service;
 
+import commons.ValidationServices;
 import models.Room;
 import models.Services;
 import models.Villa;
 
 public class RoomServiceImpl implements ServiceInterface {
     @Override
-    public Room add() {
+    public Services add() {
         Room room = new Room();
-        room.setId("1");
-        room.setNameService("Room Test");
-        room.setAreaUse("100");
-        room.setRentCost("1000$");
-        room.setMaxGuest("5");
-        room.setRentType("Month");
-        room.setFreeService("Massage");
+        room.setId(ValidationServices.inputAndCheckId("Room"));
+        room.setNameService(ValidationServices.inputAndCheckNameService());
+        room.setAreaUse(ValidationServices.inputAndCheckAreaUse());
+        room.setRentCost(ValidationServices.inputAndCheckRentCost());
+        room.setMaxGuest(ValidationServices.inputAndCheckMaxGuest());
+        room.setRentType(ValidationServices.inputAndCheckRentType());
+        room.setAccompaniedService(ValidationServices.inputAndCheckAccompaniedService());
+        room.setFreeService(ValidationServices.inputAndCheckFreeService());
         return room;
     }
 }
