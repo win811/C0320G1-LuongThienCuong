@@ -1,10 +1,13 @@
 package models;
 
-public abstract class Customer {
+import java.util.Date;
+
+public class Customer {
+    private String id;
     private String nameCustomer;
     private String birthdayCustomer;
     private String genderCustomer;
-    private String cmndCustomer;
+    private String idCardCustomer;
     private String phoneNumberCustomer;
     private String emailCustomer;
     private String typeCustomer;
@@ -14,18 +17,27 @@ public abstract class Customer {
     public Customer() {
     }
 
-    public Customer(String nameCustomer, String birthdayCustomer, String genderCustomer, String cmndCustomer,
+    public Customer(String id,String nameCustomer, String birthdayCustomer, String genderCustomer, String cmndCustomer,
                     String phoneNumberCustomer, String emailCustomer, String typeCustomer, String addressCustomer,
                     Services serviceCustomer) {
+        this.id = id;
         this.nameCustomer = nameCustomer;
         this.birthdayCustomer = birthdayCustomer;
         this.genderCustomer = genderCustomer;
-        this.cmndCustomer = cmndCustomer;
+        this.idCardCustomer = cmndCustomer;
         this.phoneNumberCustomer = phoneNumberCustomer;
         this.emailCustomer = emailCustomer;
         this.typeCustomer = typeCustomer;
         this.addressCustomer = addressCustomer;
         this.serviceCustomer = serviceCustomer;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getNameCustomer() {
@@ -44,6 +56,13 @@ public abstract class Customer {
         this.birthdayCustomer = birthdayCustomer;
     }
 
+    public String getAge () {
+        Date birthdayDate = new Date(this.getBirthdayCustomer());
+        Date today = new Date();
+        double age = (today.getTime() - birthdayDate.getTime())/1000/60/60/24/30/12;
+        return Double.toString(age);
+    }
+
     public String getGenderCustomer() {
         return genderCustomer;
     }
@@ -52,12 +71,12 @@ public abstract class Customer {
         this.genderCustomer = genderCustomer;
     }
 
-    public String getCmndCustomer() {
-        return cmndCustomer;
+    public String getIdCardCustomer() {
+        return idCardCustomer;
     }
 
-    public void setCmndCustomer(String cmndCustomer) {
-        this.cmndCustomer = cmndCustomer;
+    public void setIdCardCustomer(String idCardCustomer) {
+        this.idCardCustomer = idCardCustomer;
     }
 
     public String getPhoneNumberCustomer() {
@@ -100,5 +119,28 @@ public abstract class Customer {
         this.serviceCustomer = serviceCustomer;
     }
 
-    public abstract void showInfo ();
+    public void showInfo () {
+        System.out.println( "- Customer: " + this.getNameCustomer() + " With Id : " + this.getId() + " -" + "\n" +
+                            "Birthday: " + this.getBirthdayCustomer() + "\n" +
+                            "Gender: " + this.getGenderCustomer() + "\n" +
+                            "Id Card: " + this.getIdCardCustomer() + "\n" +
+                            "Phone Number: " + this.getPhoneNumberCustomer() + "\n" +
+                            "Email: " + this.getEmailCustomer() + "\n" +
+                            "Type Customer: " + this.getTypeCustomer() + "\n" +
+                            "Address: " + this.getAddressCustomer() );
+        System.out.println( "----------------------------------------------");
+    }
+
+    @Override
+    public String toString() {
+        return  this.getId() + "," +
+                this.getNameCustomer() + "," +
+                this.getBirthdayCustomer() + "," +
+                this.getGenderCustomer() + "," +
+                this.getIdCardCustomer() + "," +
+                this.getPhoneNumberCustomer() + "," +
+                this.getEmailCustomer() + "," +
+                this.getTypeCustomer() + "," +
+                this.getAddressCustomer();
+    }
 }

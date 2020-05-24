@@ -8,9 +8,7 @@ import com.opencsv.bean.CsvToBeanBuilder;
 import com.opencsv.bean.MappingStrategy;
 import com.opencsv.exceptions.CsvException;
 import jdk.internal.org.objectweb.asm.util.CheckAnnotationAdapter;
-import models.House;
-import models.Services;
-import models.Villa;
+import models.*;
 
 import java.io.*;
 import java.lang.reflect.ParameterizedType;
@@ -20,6 +18,7 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.TreeSet;
 
 public class FuncWriteAndReadFileCSV {
     private static final char COMMA_DELIMITER = ',';
@@ -37,30 +36,40 @@ public class FuncWriteAndReadFileCSV {
     private static final String FILE_HEADER_OF_HOUSE = FILE_SERVICES_HEADER_DEFAULT +
             ",Room Standard,Convenient Description,Number Of Floors";
     private static final String FILE_HEADER_OF_ROOM = FILE_SERVICES_HEADER_DEFAULT + ",Free Service";
-    private static final String FILE_HEADER_OF_CUSTOMER = "Id,Name Of Customer,Id Card,Birthday,Gender,Phone Number," +
+    private static final String FILE_HEADER_OF_CUSTOMER = "Id,Name Of Customer,Birthday,Gender,Id Card,Phone Number," +
             "Email,Type Customer,Address";
-    private static final String FILE_HEADER_OF_BOOKING = "Id,Name Of Customer,Id Card,Birthday,Gender,Phone Number," +
-            "Email,Type Customer,Address,Id Service,Name Service,Area Use," +
-            "Rent Cost,Max Number Of People,Type Rent";
+    private static final String FILE_HEADER_OF_BOOKING = FILE_HEADER_OF_CUSTOMER + "," + FILE_SERVICES_HEADER_DEFAULT;
 
     //    @SuppressWarnings("unchecked")
-    public static String readCsvFile(Object service) {
-        Path path;
+    public static String readCsvFile(String pathFile) {
+        Path pathNow;
         String head;
-        if (service.equals("Villa")) {
-            path = Paths.get(PATH_FILE_VILLA);
-            head = FILE_HEADER_OF_VILLA;
-        } else if (service.equals("House")) {
-            path = Paths.get(PATH_FILE_HOUSE);
-            head = FILE_HEADER_OF_HOUSE;
-        } else {
-            path = Paths.get(PATH_FILE_ROOM);
-            head = FILE_HEADER_OF_ROOM;
+        switch (pathFile) {
+            case PATH_FILE_VILLA:
+                pathNow = Paths.get(PATH_FILE_VILLA);
+                head = FILE_HEADER_OF_VILLA;
+                break;
+            case PATH_FILE_HOUSE:
+                pathNow = Paths.get(PATH_FILE_HOUSE);
+                head = FILE_HEADER_OF_HOUSE;
+                break;
+            case PATH_FILE_ROOM:
+                pathNow = Paths.get(PATH_FILE_ROOM);
+                head = FILE_HEADER_OF_ROOM;
+                break;
+            case PATH_FILE_CUSTOMER:
+                pathNow = Paths.get(PATH_FILE_CUSTOMER);
+                head = FILE_HEADER_OF_CUSTOMER;
+                break;
+            default:
+                pathNow = Paths.get(PATH_FILE_BOOKING);
+                head = FILE_HEADER_OF_BOOKING;
+                break;
         }
         FileWriter fileWriter = null;
-        if (!Files.exists(path)) {
+        if (!Files.exists(pathNow)) {
             try {
-                fileWriter = new FileWriter(String.valueOf(path));
+                fileWriter = new FileWriter(pathNow.toString());
                 fileWriter.append(head);
                 fileWriter.append(NEW_LINE_SEPARATOR);
             } catch (IOException e) {
@@ -80,7 +89,7 @@ public class FuncWriteAndReadFileCSV {
         String resultString = "";
         BufferedReader buffer = null;
         try {
-            FileReader reader = new FileReader(String.valueOf(path));
+            FileReader reader = new FileReader(pathNow.toString());
             buffer = new BufferedReader(reader);
             while ((line = buffer.readLine()) != null) {
                 resultString += line + "\n";
@@ -98,18 +107,21 @@ public class FuncWriteAndReadFileCSV {
     }
 
     public static void writeCsvFile (String oldFile,Object service){
-        String path;
+        String pathNow;
         if (service instanceof Villa) {
-            path = PATH_FILE_VILLA;
+            pathNow = PATH_FILE_VILLA;
         } else if (service instanceof House) {
-            path = PATH_FILE_HOUSE;
-
+            pathNow = PATH_FILE_HOUSE;
+        } else if (service instanceof Room){
+            pathNow = PATH_FILE_ROOM;
+        } else if (service instanceof Customer) {
+            pathNow = PATH_FILE_CUSTOMER;
         } else {
-            path = PATH_FILE_ROOM;
+            pathNow = PATH_FILE_BOOKING;
         }
         FileWriter fileWriter = null;
         try {
-            fileWriter = new FileWriter(path);
+            fileWriter = new FileWriter(pathNow);
             fileWriter.append(oldFile);
             fileWriter.append(service.toString());
         } catch (IOException e) {
@@ -123,6 +135,21 @@ public class FuncWriteAndReadFileCSV {
                 e.printStackTrace();
             }
         }
+    }
+
+    public static TreeSet<String> getNameServiceFromFileCSV(String pathFile) {
+        String line = "";
+        TreeSet<String> treeSetNameService = new TreeSet<>();
+        try (BufferedReader br = new BufferedReader(new FileReader(pathFile))) {
+            line = br.readLine();
+            while ((line = br.readLine()) != null) {
+                String[] arrService = line.split(",");
+                treeSetNameService.add(arrService[1]);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return treeSetNameService;
     }
 
 }

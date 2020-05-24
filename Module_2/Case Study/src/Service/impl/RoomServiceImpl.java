@@ -1,5 +1,6 @@
-package Service;
+package Service.impl;
 
+import Service.ServiceInterface;
 import commons.ValidationServices;
 import models.Room;
 import models.Services;
@@ -7,7 +8,7 @@ import models.Villa;
 
 public class RoomServiceImpl implements ServiceInterface {
     @Override
-    public Services add() {
+    public Services addNewService() {
         Room room = new Room();
         room.setId(ValidationServices.inputAndCheckId("Room"));
         room.setNameService(ValidationServices.inputAndCheckNameService());

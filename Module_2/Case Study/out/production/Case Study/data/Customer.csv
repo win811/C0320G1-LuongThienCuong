@@ -1,0 +1,5 @@
+Id,Name Of Customer,Birthday,Gender,Id Card,Phone Number,Email,Type Customer,Address
+C-0001,Luong Thien Cuong,08/11/1996,Male,123456789,0905123456,win811@gmail.com,Vip,Da Nang
+C-0002,Nguyen Hoang Duy,09/10/1996,Male,232123456,0905131313,duy@gmail.com,Normal,Sai Gon
+C-0003,Ngan,01/01/2002,Female,345678910,0905789456,ngan@gmail.com,Normal,Hoi An
+C-0004,Quan,12/12/1996,Male,123456789,0905141414,quan@gmail.com,Normal,Da Nang

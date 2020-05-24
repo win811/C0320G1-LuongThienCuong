@@ -52,17 +52,17 @@ public class Villa extends Services {
 
     @Override
     public void showInfo() {
-        System.out.println("-" + super.getNameService() + " With ID : " + super.getId() +"-");
-        System.out.println("Has Used Area : " + super.getAreaUse());
-        System.out.println("Has Rent Cost : " + super.getRentCost());
-        System.out.println("Has Max Guest : " + super.getMaxGuest());
-        System.out.println("Has Rent Type : " + super.getRentType());
-        System.out.println("Has Accompanied Service : " + super.getAccompaniedService());
-        System.out.println("Has Room Standard : " + this.getRoomStandard());
-        System.out.println("Has Convenient : " + this.getConvenient());
-        System.out.println("Has Area Of Pool : " + this.getAreaPool());
-        System.out.println("Has floor : " + this.getFloor());
-        System.out.println("----------------------------------------------");
+        System.out.println( "- " + super.getNameService() + " With ID : " + super.getId() + " -" + "\n" +
+                            "Used Area : " + super.getAreaUse() + "\n" +
+                            "Rent Cost : " + super.getRentCost() + "\n" +
+                            "Max Guest : " + super.getMaxGuest() + "\n" +
+                            "Rent Type : " + super.getRentType() + "\n" +
+                            "Accompanied Service : " + super.getAccompaniedService() + "\n" +
+                            "Room Standard : " + this.getRoomStandard() + "\n" +
+                            "Convenient : " + this.getConvenient() + "\n" +
+                            "Area Of Pool : " + this.getAreaPool() + "\n" +
+                            "floor : " + this.getFloor());
+        System.out.println( "----------------------------------------------");
     }
     @Override
     public String toString() {
