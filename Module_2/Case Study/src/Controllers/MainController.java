@@ -1,11 +1,10 @@
 package Controllers;
 
+import Service.BookingCinema4DInterface;
 import Service.CustomerInterface;
-import Service.impl.CustomerImpl;
-import Service.impl.HouseServiceImpl;
-import Service.impl.RoomServiceImpl;
+import Service.FilingCabinetsInterface;
+import Service.impl.*;
 import Service.ServiceInterface;
-import Service.impl.VillaServiceImpl;
 import commons.FuncWriteAndReadFileCSV;
 import models.*;
 import sort.NameCustomerComparator;
@@ -19,14 +18,15 @@ public class MainController {
     private static final String PATH_FILE_ROOM = "src/data/Room.csv";
     private static final String PATH_FILE_BOOKING = "src/data/Booking.csv";
     private static final String PATH_FILE_CUSTOMER = "src/data/Customer.csv";
+    private static final String PATH_FILE_EMPLOYEE = "src/data/Employee.csv";
 
     private ServiceInterface villaService = new VillaServiceImpl();
     private ServiceInterface houseService = new HouseServiceImpl();
     private ServiceInterface roomService = new RoomServiceImpl();
     private CustomerInterface customerService = new CustomerImpl();
 //    private EmployeeService employeeService = new EmployeeServiceImpl();
-//    private BookingCinema4DService bookingCinema4DService = new BookingCinema4DServiceImpl();
-//    private FilingCabinetsService filingCabinetsService = new FilingCabinetsServiceImpl();
+    private BookingCinema4DInterface bookingCinema4DService = new BookingCinema4DImpl();
+    private FilingCabinetsInterface filingCabinetsService = new FilingCabinetsImpl();
 
     Scanner input = new Scanner(System.in);
     public void displayMainMenu() {
@@ -37,9 +37,18 @@ public class MainController {
                             "\n4. Show Information of Customer" +
                             "\n5. Add New Booking" +
                             "\n6. Show Information of Employee" +
-                            "\n7. Exit");
+                            "\n7. Add booking cinema 4D" +
+                            "\n8. Show booking cinema 4D" +
+                            "\n9. Search Filing Cabinets of Employee" +
+                            "\n10. Exit");
         System.out.print("Enter number of function you want to use : ");
-        int choice = Integer.parseInt(input.nextLine());
+        int choice = -1 ;
+        try {
+            choice = Integer.parseInt(input.nextLine());
+        } catch (Exception e) {
+            System.out.println("Choice is not in the menu!!");
+        }
+
         switch (choice) {
             case 1 :
                 menuAddNewServices();
@@ -67,9 +76,31 @@ public class MainController {
                 break;
             case 6 :
                 showInfoEmployee();
+                System.out.println("Show Information Of Employee successfully ! Enter to continue");
+                input.nextLine();
+                displayMainMenu();
                 break;
             case 7 :
+                addNewBookingCinema();
+                System.out.println("Add new booking cinema successfully ! Enter to continue");
+                input.nextLine();
+                displayMainMenu();
+                break;
+            case 8 :
+                showBookingCinema();
+                System.out.println("Show Information Of Booking Cinema successfully ! Enter to continue");
+                input.nextLine();
+                displayMainMenu();
+                break;
+            case 9 :
+                searchFilingCabinetsOfEmployee();
+                System.out.println("Searching Filing Cabinet Successfully. Enter to continue");
+                input.nextLine();
+                displayMainMenu();
+                break;
+            case 10 :
                 System.exit(0);
+                break;
             default :
                 System.out.print("Wrong choice,please choose again,press Enter to continue");
                 input.nextLine();
@@ -85,7 +116,12 @@ public class MainController {
                             "\n4. Back to main menu" +
                             "\n5. Exit");
         System.out.print("Enter number of function you want to use : ");
-        int choice = Integer.parseInt(input.nextLine());
+        int choice = -1 ;
+        try {
+            choice = Integer.parseInt(input.nextLine());
+        } catch (Exception e) {
+            System.out.println("Choice is not in the menu!!");
+        }
         switch (choice) {
             case 1: {
                 addListVillaService();
@@ -171,7 +207,12 @@ public class MainController {
                             "7. Back to main menu\n" +
                             "8. Exit");
         System.out.print("Enter your choice: ");
-        int choice = Integer.parseInt(input.nextLine());
+        int choice = -1 ;
+        try {
+            choice = Integer.parseInt(input.nextLine());
+        } catch (Exception e) {
+            System.out.println("Choice is not in the menu!!");
+        }
         switch (choice) {
             case 1: {
                 showVillaService();
@@ -211,7 +252,9 @@ public class MainController {
                 break;
             }
             default: {
-                System.exit(0);
+                System.out.print("Wrong choice,please choose again,press Enter to continue");
+                input.nextLine();
+                menuShowServices();
             }
         }
     }
@@ -552,9 +595,109 @@ public class MainController {
     }
 //  ----------------------------------------------------------------------------------------
     public void showInfoEmployee () {
+        Map<String,Employee> employeeMap = new HashMap<>();
+        String dataEmployee = FuncWriteAndReadFileCSV.readCsvFile(PATH_FILE_EMPLOYEE);
+        String[] employeeArray = dataEmployee.split("\n");
+        for (int i = 0; i < employeeArray.length; i++) {
+            if (i == 0) {
+                continue;
+            }
+            String[] aEmployee = employeeArray[i].split(",");
+            Employee employee = new Employee();
+            employee.setId(aEmployee[0]);
+            employee.setNameEmployee(aEmployee[1]);
+            employee.setBirthdayEmployee(aEmployee[2]);
+            employee.setAddressEmployee(aEmployee[3]);
+            employeeMap.put(employee.getId(),employee);
+        }
+        System.out.println( "--------------------\n" +
+                            "-All Employee In Resort-" +
+                            "\n--------------------");
+        for (Map.Entry<String,Employee> entry : employeeMap.entrySet()) {
+            entry.getValue().showInfo();
+        }
+    }
+//  ----------------------------------------------------------------------------------------
+    public void addNewBookingCinema() {
+        System.out.println("Enter number of ticket : ");
+        int numberTicket = 0;
+        while (numberTicket < 1) {
+            System.out.println("Number of ticket must be higher than 0");
+            numberTicket = Integer.parseInt(input.nextLine());
+        }
 
+        List<Customer> customerList = new ArrayList<>();
+        String dataCustomer = FuncWriteAndReadFileCSV.readCsvFile(PATH_FILE_CUSTOMER);
+        String[] customerArray = dataCustomer.split("\n");
+        for (int i = 0; i < customerArray.length; i++) {
+            if (i == 0) {
+                continue;
+            }
+            String[] aCustomer = customerArray[i].split(",");
+            Customer customer = new Customer();
+            customer.setId(aCustomer[0]);
+            customer.setNameCustomer(aCustomer[1]);
+            customer.setBirthdayCustomer(aCustomer[2]);
+            customer.setGenderCustomer(aCustomer[3]);
+            customer.setIdCardCustomer(aCustomer[4]);
+            customer.setPhoneNumberCustomer(aCustomer[5]);
+            customer.setEmailCustomer(aCustomer[6]);
+            customer.setTypeCustomer(aCustomer[7]);
+            customer.setAddressCustomer(aCustomer[8]);
+            customerList.add(customer);
+        }
+
+        for (int i = 0; i < numberTicket; i++) {
+
+            Collections.sort(customerList, new NameCustomerComparator());
+            System.out.println( "---------------\n" +
+                                "-Customer List-" +
+                                "\n---------------");
+            for (int j = 0 ; j < customerList.size(); j++) {
+                System.out.println( "No." + (j + 1) );
+                customerList.get(j).showInfo();
+            }
+            // Choose Customer Booking Cinema
+            System.out.println("Enter Your Choice - Number Of Customer Want To Booking Cinema4D : ");
+            int customerChoice = Integer.parseInt(input.nextLine());
+            while (customerChoice < 1 || customerChoice > customerList.size()) {
+                System.out.println("Your Choice Is Out Of ListCustomer'size : " + customerList.size() + ". Please Try Again!" );
+                System.out.println("Enter Your Customer Choice Again : ");
+                customerChoice = Integer.parseInt(input.nextLine());
+            }
+            Customer customerBookingCinema = customerList.get(customerChoice - 1);
+            bookingCinema4DService.addBookingCinema(customerBookingCinema);
+            System.out.println("Add New Booking Cinema4D - Ticket " + (i+1) +" Successfully, Enter to continue");
+            input.nextLine();
+        }
+    }
+//  ----------------------------------------------------------------------------------------
+    private void showBookingCinema() {
+        Queue<Customer> bookingCinemaList = bookingCinema4DService.getAllBookingCinema();
+        System.out.println( "-------------------------\n" +
+                            "- All Booking Cinema 4D -" +
+                            "\n-------------------------");
+        while (true) {
+            Customer customer = bookingCinemaList.poll();
+            if (customer == null) {
+                break;
+            }
+            customer.showInfo();
+        }
+    }
+//  ----------------------------------------------------------------------------------------
+    private void searchFilingCabinetsOfEmployee() {
+        System.out.println("Enter Id Of Employee: ");
+        String idEmployee = input.nextLine();
+        Employee employee = filingCabinetsService.findEmployeeById(idEmployee);
+        if (employee == null) {
+            System.out.println("Not found Filing Cabinets!");
+        } else {
+            employee.showInfo();
+        }
     }
 
+//  ----------------------------------------------------------------------------------------
     public static void main(String[] args) {
         MainController mainController = new MainController();
         mainController.displayMainMenu();

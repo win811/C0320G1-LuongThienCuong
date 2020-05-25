@@ -1,6 +1,8 @@
 package models;
 
-import java.util.Date;
+import java.time.LocalDate;
+import java.time.Period;
+//import java.util.Date;
 
 public class Customer {
     private String id;
@@ -57,10 +59,15 @@ public class Customer {
     }
 
     public String getAge () {
-        Date birthdayDate = new Date(this.getBirthdayCustomer());
-        Date today = new Date();
-        double age = (today.getTime() - birthdayDate.getTime())/1000/60/60/24/30/12;
-        return Double.toString(age);
+        String[] birthdayArr = this.getBirthdayCustomer().split("/");
+        int year = Integer.parseInt(birthdayArr[2]);
+        int month = Integer.parseInt(birthdayArr[1]);
+        int day = Integer.parseInt(birthdayArr[0]);
+        LocalDate birthDay = LocalDate.of(year,month,day); //specify year, month, date directly
+        LocalDate now = LocalDate.now(); //gets localDate
+        Period distance = Period.between(birthDay,now); //difference between the dates is calculated
+        int age = distance.getYears();
+        return Integer.toString(age);
     }
 
     public String getGenderCustomer() {

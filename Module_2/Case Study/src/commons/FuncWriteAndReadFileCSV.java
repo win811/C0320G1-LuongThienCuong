@@ -30,6 +30,7 @@ public class FuncWriteAndReadFileCSV {
     private static final String PATH_FILE_ROOM = "src/data/Room.csv";
     private static final String PATH_FILE_BOOKING = "src/data/Booking.csv";
     private static final String PATH_FILE_CUSTOMER = "src/data/Customer.csv";
+    private static final String PATH_FILE_EMPLOYEE = "src/data/Employee.csv";
     private static final String FILE_SERVICES_HEADER_DEFAULT = "Id,Name Service, Area Use, Rent Cost, Max Number Of People,Type Rent,Accompanied Service";
     private static final String FILE_HEADER_OF_VILLA = FILE_SERVICES_HEADER_DEFAULT +
             ",Room Standard,Convenient Description,AreaPool,Number Of Floors";
@@ -39,6 +40,7 @@ public class FuncWriteAndReadFileCSV {
     private static final String FILE_HEADER_OF_CUSTOMER = "Id,Name Of Customer,Birthday,Gender,Id Card,Phone Number," +
             "Email,Type Customer,Address";
     private static final String FILE_HEADER_OF_BOOKING = FILE_HEADER_OF_CUSTOMER + "," + FILE_SERVICES_HEADER_DEFAULT;
+    private static final String FILE_HEADER_OF_EMPLOYEE = "Id,Name Of Employee,Birthday,Address";
 
     //    @SuppressWarnings("unchecked")
     public static String readCsvFile(String pathFile) {
@@ -61,10 +63,13 @@ public class FuncWriteAndReadFileCSV {
                 pathNow = Paths.get(PATH_FILE_CUSTOMER);
                 head = FILE_HEADER_OF_CUSTOMER;
                 break;
-            default:
+            case PATH_FILE_BOOKING:
                 pathNow = Paths.get(PATH_FILE_BOOKING);
                 head = FILE_HEADER_OF_BOOKING;
                 break;
+            default :
+                pathNow = Paths.get(PATH_FILE_EMPLOYEE);
+                head = FILE_HEADER_OF_EMPLOYEE;
         }
         FileWriter fileWriter = null;
         if (!Files.exists(pathNow)) {
@@ -116,8 +121,10 @@ public class FuncWriteAndReadFileCSV {
             pathNow = PATH_FILE_ROOM;
         } else if (service instanceof Customer) {
             pathNow = PATH_FILE_CUSTOMER;
-        } else {
+        } else if (service instanceof Booking){
             pathNow = PATH_FILE_BOOKING;
+        } else {
+            pathNow = PATH_FILE_EMPLOYEE;
         }
         FileWriter fileWriter = null;
         try {

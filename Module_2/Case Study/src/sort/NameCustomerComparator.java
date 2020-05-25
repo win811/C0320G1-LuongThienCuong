@@ -2,9 +2,7 @@ package sort;
 
 import models.Customer;
 
-import java.util.ArrayList;
 import java.util.Comparator;
-import java.util.List;
 
 public class NameCustomerComparator implements Comparator<Customer> {
 
@@ -29,7 +27,7 @@ public class NameCustomerComparator implements Comparator<Customer> {
         String resultNameCustomer1 = new StringBuffer(lastNameCustomer1).reverse().toString();
         String resultNameCustomer2 = new StringBuffer(lastNameCustomer2).reverse().toString();
         if( resultNameCustomer1.compareTo(resultNameCustomer2) == 0) {
-            return Integer.parseInt(o1.getAge()) - Integer.parseInt(o2.getAge());
+            return o1.getAge().compareTo(o2.getAge());
         }
         return resultNameCustomer1.compareTo(resultNameCustomer2);
     }

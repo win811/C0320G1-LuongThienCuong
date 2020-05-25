@@ -1,6 +1,8 @@
 package exception;
 
-import java.util.Date;
+import java.time.LocalDate;
+import java.time.Period;
+//import java.util.Date;
 import java.util.Scanner;
 
 public class BirthdayException extends Exception {
@@ -18,9 +20,14 @@ public class BirthdayException extends Exception {
                 System.out.println("Enter Birthday Follow The Format : dd/mm/yyyy ");
                 String birthday = input.nextLine();
                 if (birthday.matches(regex)) {
-                    Date birthdayDate = new Date(birthday);
-                    Date today = new Date();
-                    double age = (today.getTime() - birthdayDate.getTime())/1000/60/60/24/30/12;
+                    String[] birthdayArr = birthday.split("/");
+                    int year = Integer.parseInt(birthdayArr[2]);
+                    int month = Integer.parseInt(birthdayArr[1]);
+                    int day = Integer.parseInt(birthdayArr[0]);
+                    LocalDate birthDay = LocalDate.of(year,month,day); //specify year, month, date directly
+                    LocalDate now = LocalDate.now(); //gets localDate
+                    Period distance = Period.between(birthDay,now); //difference between the dates is calculated
+                    int age = distance.getYears();
                     if (age >= 18) {
                         return birthday;
                     } else {
