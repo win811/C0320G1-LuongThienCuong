@@ -5,6 +5,7 @@ import advanced_object_oriented_design.SHAPE.Square;
 
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.Date;
 
 public class TestComparator {
     public static void main(String[] args) {

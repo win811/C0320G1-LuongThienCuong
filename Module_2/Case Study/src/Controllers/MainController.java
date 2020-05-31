@@ -166,7 +166,7 @@ public class MainController {
         Villa villa;
         for (int i = 0; i < number;i++) {
             villa = (Villa) villaService.addNewService();
-            String oldFile = FuncWriteAndReadFileCSV.readCsvFile("Villa");
+            String oldFile = FuncWriteAndReadFileCSV.readCsvFile(PATH_FILE_VILLA);
             FuncWriteAndReadFileCSV.writeCsvFile(oldFile,villa);
             System.out.println("Add New Villa SuccessFully");
         }
@@ -178,7 +178,7 @@ public class MainController {
         House house;
         for (int i = 0; i < number;i++) {
             house = (House) houseService.addNewService();
-            String oldFile = FuncWriteAndReadFileCSV.readCsvFile("House");
+            String oldFile = FuncWriteAndReadFileCSV.readCsvFile(PATH_FILE_HOUSE);
             FuncWriteAndReadFileCSV.writeCsvFile(oldFile,house);
             System.out.println("Add New House SuccessFully");
         }
@@ -190,7 +190,7 @@ public class MainController {
         Room room;
         for (int i = 0; i < number;i++) {
             room = (Room) roomService.addNewService();
-            String oldFile = FuncWriteAndReadFileCSV.readCsvFile("Room");
+            String oldFile = FuncWriteAndReadFileCSV.readCsvFile(PATH_FILE_ROOM);
             FuncWriteAndReadFileCSV.writeCsvFile(oldFile,room);
             System.out.println("Add New Room SuccessFully");
         }
@@ -237,14 +237,23 @@ public class MainController {
             }
             case 4: {
                 showAllNameVillaNotDuplicate();
+                System.out.println("Show All Name Of Villa Successfully ! Enter to continue");
+                input.nextLine();
+                menuShowServices();
                 break;
             }
             case 5: {
                 showAllNameHouseNotDuplicate();
+                System.out.println("Show All Name Of House Successfully ! Enter to continue");
+                input.nextLine();
+                menuShowServices();
                 break;
             }
             case 6: {
                 showAllNameRoomNotDuplicate();
+                System.out.println("Show All Name Of Room Successfully ! Enter to continue");
+                input.nextLine();
+                menuShowServices();
                 break;
             }
             case 7: {
@@ -345,9 +354,6 @@ public class MainController {
         for (String name : treeSetNameVilla) {
             System.out.println(name);
         }
-        System.out.println("Show All Name Of Villa Successfully ! Enter to continue");
-        input.nextLine();
-        displayMainMenu();
     }
     public void showAllNameHouseNotDuplicate() {
         TreeSet<String> treeSetNameHouse = FuncWriteAndReadFileCSV.getNameServiceFromFileCSV(PATH_FILE_HOUSE);
@@ -355,9 +361,6 @@ public class MainController {
         for (String name : treeSetNameHouse) {
             System.out.println(name);
         }
-        System.out.println("Show All Name Of House Successfully ! Enter to continue");
-        input.nextLine();
-        displayMainMenu();
     }
     public void showAllNameRoomNotDuplicate() {
         TreeSet<String> treeSetNameRoom = FuncWriteAndReadFileCSV.getNameServiceFromFileCSV(PATH_FILE_ROOM);
@@ -365,9 +368,6 @@ public class MainController {
         for (String name : treeSetNameRoom) {
             System.out.println(name);
         }
-        System.out.println("Show All Name Of Room Successfully ! Enter to continue");
-        input.nextLine();
-        displayMainMenu();
     }
 //  ----------------------------------------------------------------------------------------
     public void addNewCustomer() {
@@ -613,8 +613,9 @@ public class MainController {
         System.out.println( "--------------------\n" +
                             "-All Employee In Resort-" +
                             "\n--------------------");
-        for (Map.Entry<String,Employee> entry : employeeMap.entrySet()) {
-            entry.getValue().showInfo();
+        Set<String> setKeyEmployee = employeeMap.keySet();
+        for (String keyEmployee : setKeyEmployee) {
+            employeeMap.get(keyEmployee).showInfo();
         }
     }
 //  ----------------------------------------------------------------------------------------
@@ -673,12 +674,12 @@ public class MainController {
     }
 //  ----------------------------------------------------------------------------------------
     private void showBookingCinema() {
-        Queue<Customer> bookingCinemaList = bookingCinema4DService.getAllBookingCinema();
+        Queue<Customer> bookingCinemaQueue = bookingCinema4DService.getAllBookingCinema();
         System.out.println( "-------------------------\n" +
                             "- All Booking Cinema 4D -" +
                             "\n-------------------------");
         while (true) {
-            Customer customer = bookingCinemaList.poll();
+            Customer customer = bookingCinemaQueue.poll();
             if (customer == null) {
                 break;
             }

@@ -8,7 +8,7 @@ import java.util.Stack;
 
 public class FilingCabinetsImpl implements FilingCabinetsInterface {
     private static final String PATH_FILE_EMPLOYEE = "src/data/Employee.csv";
-    private static Stack<Employee> filingCabinetsEmployee = new Stack<>();
+    private static Stack<Employee> filingCabinetsEmployeeStack = new Stack<>();
 
     static {
 
@@ -24,7 +24,7 @@ public class FilingCabinetsImpl implements FilingCabinetsInterface {
             employee.setNameEmployee(aEmployee[1]);
             employee.setBirthdayEmployee(aEmployee[2]);
             employee.setAddressEmployee(aEmployee[3]);
-            filingCabinetsEmployee.push(employee);
+            filingCabinetsEmployeeStack.push(employee);
         }
 
     }
@@ -33,7 +33,7 @@ public class FilingCabinetsImpl implements FilingCabinetsInterface {
     @Override
     public Employee findEmployeeById(String id) {
         while (true) {
-            Employee employee = filingCabinetsEmployee.pop();
+            Employee employee = filingCabinetsEmployeeStack.pop();
             if (employee == null) {
                 break;
             }

@@ -1,23 +1,12 @@
 package commons;
 
-import com.opencsv.CSVReader;
-import com.opencsv.CSVWriter;
-import com.opencsv.bean.ColumnPositionMappingStrategy;
-import com.opencsv.bean.CsvToBean;
-import com.opencsv.bean.CsvToBeanBuilder;
-import com.opencsv.bean.MappingStrategy;
-import com.opencsv.exceptions.CsvException;
-import jdk.internal.org.objectweb.asm.util.CheckAnnotationAdapter;
+
 import models.*;
 
 import java.io.*;
-import java.lang.reflect.ParameterizedType;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 import java.util.TreeSet;
 
 public class FuncWriteAndReadFileCSV {

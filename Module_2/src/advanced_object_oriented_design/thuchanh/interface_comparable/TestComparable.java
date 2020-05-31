@@ -3,10 +3,12 @@ package advanced_object_oriented_design.thuchanh.interface_comparable;
 import advanced_object_oriented_design.SHAPE.Circle;
 
 import java.util.Arrays;
+import java.util.TreeSet;
 
 public class TestComparable {
 
     public static void main(String[] args) {
+
         Circle[] arrayCircle = new Circle[3];
         arrayCircle[0] = new Circle(10.3,"red",true);
         arrayCircle[1] = new Circle(4.5,"blue",true);

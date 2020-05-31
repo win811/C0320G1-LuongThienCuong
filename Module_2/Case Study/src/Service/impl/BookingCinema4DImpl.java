@@ -8,15 +8,15 @@ import java.util.Queue;
 
 public class BookingCinema4DImpl implements BookingCinema4DInterface {
 
-    private static Queue<Customer> bookingCinemaList = new LinkedList<>();
+    private static Queue<Customer> bookingCinemaQueue = new LinkedList<>();
 
     @Override
     public void addBookingCinema(Customer customer) {
-        bookingCinemaList.add(customer);
+        bookingCinemaQueue.add(customer);
     }
 
     @Override
     public Queue<Customer> getAllBookingCinema() {
-        return bookingCinemaList;
+        return bookingCinemaQueue;
     }
 }

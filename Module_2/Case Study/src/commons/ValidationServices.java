@@ -160,7 +160,7 @@ public class ValidationServices {
     public static String inputAndCheckAccompaniedService () {
         regex = "^(massage[-]?|karaoke[-]?|food[-]?|drink[-]?|car[-]?|)+$";
         while (true) {
-            System.out.println( "Choose Accompanied Service : massage or karaoke or food or drink or car\n" +
+            System.out.println( "Choose Accompanied Service follow the format (service-service) or : massage or karaoke or food or drink or car\n" +
                                 "If you dont want any accompanied service enter 'NONE' ");
             String choice = input.nextLine();
             if (choice.equals("NONE")) {
