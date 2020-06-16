@@ -2,6 +2,7 @@ package Array.baitap.IllegalTriangleException;
 
 //import Array.SingleArray;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 
@@ -19,6 +20,7 @@ public class TryCatchTriangleException {
         int c= triangle[2];
         if (a + b <= c || b + c <= a || a + c <= b) {
             throw new IllegalTriangleException();
+
         }
     }
     static void inputValue (int[] triangle ) throws IllegalTriangleException {
@@ -39,8 +41,8 @@ public class TryCatchTriangleException {
         System.out.println("Input 3 edge's value : ");
         try {
             inputValue(triangle);
-        } catch (Throwable e) {
-            System.out.println(e.getMessage());
+        } catch (Exception e) {
+//            System.out.println(e.getMessage());
         } finally {
             System.out.println("Líu lo");
         }

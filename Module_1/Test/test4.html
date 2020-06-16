@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label>First Operand : <input type="text" name="firstOperand"/></label>
+<select name="operator" id="operator">
+    <option value="+">Addition</option>
+    <option value="-">Subtraction</option>
+    <option value="*">Multiplication</option>
+    <option value="/">Division</option>
+</select>
+<button onclick="showValue()">CLick here</button>
+    <script>
+        function showValue() {
+            alert(document.getElementById("operator").value)
+        }
+    </script>
+</body>
+</html>

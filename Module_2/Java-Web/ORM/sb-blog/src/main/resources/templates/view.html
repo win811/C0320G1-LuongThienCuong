@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:value="${blog.name}"></title>
+</head>
+<body>
+    <a th:href="@{/}" th:fragment="backToMenu">Back To The List Blog</a>
+    <h3 th:value="${blog.name}"></h3>
+    <p th:value="${blog.content}"></p>
+</body>
+</html>

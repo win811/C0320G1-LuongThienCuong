@@ -1,6 +1,8 @@
 package DataStructures_Algorihm.baitap;
 
 import java.util.Arrays;
+//import java.util.Iterator;
+import java.util.TreeSet;
 
 public class MyListFull<T> implements Cloneable {
     int size = 0;
@@ -75,6 +77,7 @@ public class MyListFull<T> implements Cloneable {
     public MyListFull<T> clone() throws CloneNotSupportedException {
         return (MyListFull<T>) super.clone();
     }
+
 }
 class TestMyListFull {
     public static void main(String[] args) throws CloneNotSupportedException {
@@ -84,10 +87,10 @@ class TestMyListFull {
         myListFull.add(4);
         myListFull.add(5);
         myListFull.add(6);
-        MyListFull<Integer> myListFull1_2 = myListFull.clone();
-        myListFull.remove(2);
-        myListFull.print();
-        System.out.println("--------");
-        myListFull1_2.print();
+//        MyListFull<Integer> myListFull1_2 = myListFull.clone();
+//        myListFull.remove(2);
+//        myListFull.print();
+//        System.out.println("--------");
+//        myListFull1_2.print();
     }
 }

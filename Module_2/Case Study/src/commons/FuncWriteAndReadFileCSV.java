@@ -10,10 +10,10 @@ import java.nio.file.Paths;
 import java.util.TreeSet;
 
 public class FuncWriteAndReadFileCSV {
-    private static final char COMMA_DELIMITER = ',';
-    private static final char DEFAULT_QUOTE = '"';
+//    private static final char COMMA_DELIMITER = ',';
+//    private static final char DEFAULT_QUOTE = '"';
     private static final String NEW_LINE_SEPARATOR = "\n";
-    private static final int NUM_OF_LINE_SKIP = 1;
+//    private static final int NUM_OF_LINE_SKIP = 1;
     private static final String PATH_FILE_VILLA = "src/data/Villa.csv";
     private static final String PATH_FILE_HOUSE = "src/data/House.csv";
     private static final String PATH_FILE_ROOM = "src/data/Room.csv";
@@ -134,9 +134,10 @@ public class FuncWriteAndReadFileCSV {
     }
 
     public static TreeSet<String> getNameServiceFromFileCSV(String pathFile) {
-        String line = "";
+        String line;
         TreeSet<String> treeSetNameService = new TreeSet<>();
-        try (BufferedReader br = new BufferedReader(new FileReader(pathFile))) {
+        try  {
+            BufferedReader br = new BufferedReader(new FileReader(pathFile));
             line = br.readLine();
             while ((line = br.readLine()) != null) {
                 String[] arrService = line.split(",");

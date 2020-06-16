@@ -136,9 +136,9 @@ public class MyLinkedListFull <T> implements Cloneable {
     @Override
     public MyLinkedListFull<T> clone() throws CloneNotSupportedException {
         MyLinkedListFull<T> cloned = (MyLinkedListFull<T>) super.clone();
-        cloned.head = head.clone();
+        cloned.head = this.head.clone();
         Node<T> pointerClone = cloned.head;
-        Node<T> pointer = head;
+        Node<T> pointer = this.head;
         while (pointer.next != null) {
             pointerClone.next = pointer.next.clone();
             pointerClone = pointerClone.next;

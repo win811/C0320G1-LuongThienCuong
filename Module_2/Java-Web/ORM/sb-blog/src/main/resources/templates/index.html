@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog Của Cường Galilei</title>
+</head>
+<body>
+    <h1>BLog Của Tôi</h1>
+    <a th:href="@{/create-form}">Create New Blog</a>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Status</th>
+            <th>Create Date</th>
+            <th>Action</th>
+        </tr>
+        <tr th:each="blog : ${listBlog}">
+            <td>
+            <a th:href="@{/view/__${blog.id}__}" th:value="${blog.name}"></a>
+            </td>
+            <td th:text="${blog.status}"></td>
+            <td th:datetime="${blog.createDate}"></td>
+            <td>
+                <a th:href="@{/edit/__${blog.id}__}">Edit | </a>
+                <a th:href="@{delete/__${blog.id}__}">Delete</a>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
