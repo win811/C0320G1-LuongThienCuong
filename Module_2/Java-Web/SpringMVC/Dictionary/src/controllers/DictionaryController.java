@@ -21,7 +21,7 @@ public class DictionaryController {
         return "index";
     }
 
-    @PostMapping("/dictionary")
+    @GetMapping("/translate")
     public String translate(@RequestParam("word") String word, Model model){
         String result = dictionaryService.findByWord(word);
         String translateResult;

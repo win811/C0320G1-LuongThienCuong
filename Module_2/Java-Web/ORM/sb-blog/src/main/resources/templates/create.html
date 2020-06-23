@@ -3,31 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <title>Create Form</title>
+<!--    <th:block th:replace="index :: linkCss"></th:block>-->
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet"/>
 </head>
 <body>
     <h2>Create A New Blog</h2>
-    <a th:replace="view :: backToMenu"></a>
-    <th:block th:if="${message}">
-        <p th:text="${message}"></p>
-    </th:block>
+    <a th:replace="view :: backToMenu" ></a>
+<!--    <th:block th:if="${message}">-->
+        <p style="color: green" th:text="${message}"></p>
+<!--    </th:block>-->
     <form th:action="@{/create}" method="post" th:object="${blog}">
-    <table>
+    <table >
         <tr>
             <td>Name :</td>
-            <td><input type="text" th:field="*{name}"></td>
+            <td><input type="text" style="width: 600px" th:field="*{name}"></td>
         </tr>
         <tr>
             <td>Content :</td>
-            <td><textarea rows="30" cols="40" th:field="*{content}"></textarea></td>
+            <td><textarea style="width: 600px;" rows="20" th:field="*{content}"></textarea></td>
         </tr>
         <tr>
             <td>Create Date :</td>
-            <td><input type="date" th:field="*{createDate}"></td>
+            <td><input type="datetime-local" th:field="*{createDate}"></td>
         </tr>
         <tr>
-            <td><input type="submit" th:value="Save"></td>
+            <td><input type="submit" th:value="Save" class="btn btn-success"></td>
         </tr>
     </table>
     </form>
+<!--    <th:block th:replace="index :: scriptCss"></th:block>-->
 </body>
 </html>

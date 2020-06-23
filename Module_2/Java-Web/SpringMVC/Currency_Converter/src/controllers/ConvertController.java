@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class ConvertController {
     @GetMapping("/currency-converter")
     public String viewConverter() {
-        return "index";
+        return "/WEB-INF/index.jsp";
     }
     @PostMapping("/currency-converter")
     public String convert(@RequestParam("rate") float rate, @RequestParam("usd") float usd ,Model model) {

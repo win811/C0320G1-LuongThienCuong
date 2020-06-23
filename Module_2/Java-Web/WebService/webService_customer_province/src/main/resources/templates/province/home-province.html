@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Province List</title>
+    <th:block th:replace="index :: linkCss"/>
+</head>
+<body>
+    <div class="container">
+    <h1>Province List</h1>
+    <a th:href="@{/}" class="btn btn-info">Home</a>
+    <a th:href="@{/provinces/create-form}" class="btn btn-success">Create New Province</a>
+    <form>
+        <input type="text" name="searchByName" placeholder="Name" th:value="${searchByName}">
+        <input type="submit" value="Search">
+    </form>
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th>Name</th>
+            <th>Status</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tr th:each="province : ${pageProvince}">
+            <td th:text="${province.name}"></td>
+            <td th:text="${province.status} == true ? 'Active' : 'Not Active' " class="text-success"></td>
+            <td>
+                <a th:href="@{/provinces/edit/__${province.id}__}">Edit | </a>
+                <a th:href="@{/provinces/delete/__${province.id}__}">Delete</a>
+            </td>
+        </tr>
+    </table>
+    <div>
+        <a th:href="@{/provinces/(page=${pageProvince.number},searchByName=${searchByName})}" th:if="${pageProvince.hasPrevious()}">Previous</a>
+        <span th:text="${pageProvince.number + 1}"></span>/<span th:text="${pageProvince.totalPages}"></span>
+        <a th:href="@{/provinces/(page=${pageProvince.number + 2},searchByName=${searchByName})}" th:if="${pageProvince.hasNext()}">Next</a>
+    </div>
+    <th:block th:replace="index :: scriptCss"/>
+    </div>
+</body>
+</html>

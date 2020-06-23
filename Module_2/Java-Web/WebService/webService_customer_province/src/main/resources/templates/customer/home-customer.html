@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer List</title>
+    <th:block th:replace="index :: linkCss"/>
+</head>
+<body>
+<div class="container">
+    <h1>Customer List</h1>
+    <a th:href="@{/}" class="btn btn-info">Home</a>
+    <a th:href="@{/customers/create-form}" class="btn btn-success">Create New Customer</a>
+    <form>
+        <input type="text" name="searchByName" placeholder="Customer's Name" th:value="${searchByName}">
+        <input type="text" name="searchByProvinceName" placeholder="Province's Name" th:value="${searchByProvinceName}">
+        <input type="submit" value="Search">
+    </form>
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Status</th>
+            <th>Province</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tr th:each="customer : ${pageCustomer}">
+            <td th:text="${customer.firstName}"></td>
+            <td th:text="${customer.lastName}"></td>
+            <td th:text="${customer.status} == true ? 'Active' : 'Not Active' " class="text-success"></td>
+            <td th:text="${customer.province.name}"></td>
+            <td>
+                <a th:href="@{/customers/edit/__${customer.id}__}">Edit | </a>
+                <a th:href="@{/customers/delete/__${customer.id}__}">Delete</a>
+            </td>
+        </tr>
+    </table>
+    <div>
+        <a th:href="@{/customers/(page=${pageCustomer.number},searchByName=${searchByName},searchByProvinceName=${searchByProvinceName})}" th:if="${pageCustomer.hasPrevious()}">Previous</a>
+        <span th:text="${pageCustomer.number + 1}"></span>/<span th:text="${pageCustomer.totalPages}"></span>
+        <a th:href="@{/customers/(page=${pageCustomer.number + 2},searchByName=${searchByName},searchByProvinceName=${searchByProvinceName})}" th:if="${pageCustomer.hasNext()}">Next</a>
+    </div>
+    <th:block th:replace="index :: scriptCss"/>
+</div>
+</body>
+</html>

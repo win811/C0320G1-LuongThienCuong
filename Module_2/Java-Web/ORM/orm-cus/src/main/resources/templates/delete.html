@@ -12,7 +12,7 @@
 </p>
 <form th:action="@{/delete-customer}" th:object="${customer}" method="post">
     <input th:type="hidden" name="id" th:field="*{id}">
-    <table>
+    <table >
         <tr>
             <td>First name:</td>
             <td th:text="${customer.firstName}"></td>
@@ -27,5 +27,6 @@
         </tr>
     </table>
 </form>
+
 </body>
 </html>

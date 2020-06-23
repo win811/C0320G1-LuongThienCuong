@@ -1,12 +1,13 @@
 package orm.sbblog.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import org.springframework.format.annotation.DateTimeFormat;
+
+import javax.persistence.*;
 import java.sql.Date;
 import java.sql.Time;
+import java.sql.Timestamp;
 import java.time.Instant;
+import java.time.LocalDateTime;
 
 @Entity
 public class Blog {
@@ -14,10 +15,13 @@ public class Blog {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private boolean status;
+    @Column(columnDefinition = "text")
     private String name;
     private String content;
-    private Date createDate;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm")
+    private LocalDateTime createDate;
+//            LocalDateTime.now();
     public Blog() {
     }
 
@@ -53,11 +57,11 @@ public class Blog {
         this.content = content;
     }
 
-    public Date getCreateDate() {
+    public LocalDateTime getCreateDate() {
         return createDate;
     }
 
-    public void setCreateDate(Date createDate) {
+    public void setCreateDate(LocalDateTime createDate) {
         this.createDate = createDate;
     }
 }

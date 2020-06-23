@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Form Province</title>
+    <th:block th:replace="index :: linkCss"/>
+</head>
+<body>
+    <h1>Create Form Province</h1>
+    <a class="btn btn-primary" th:href="@{/provinces/}">Back To The Province List</a>
+
+    <th:block th:if="${message}">
+        <p style="color: green" th:text="${message}"></p>
+    </th:block>
+
+    <form th:action="@{/provinces/create}" method="post" th:object="${province}">
+        <table >
+            <tr>
+                <td> Name :</td>
+                <td><input type="text"  th:field="*{name}"></td>
+            </tr>
+            <tr th:if="${#fields.hasErrors('name')}">
+                <td></td>
+                <td th:errors="*{name}" class="text-danger"></td>
+            </tr>
+            <tr>
+                <td><input type="submit" th:value="Save" class="btn btn-success"></td>
+            </tr>
+        </table>
+    </form>
+
+    <th:block th:replace="index :: scriptCss"/>
+
+</body>
+</html>

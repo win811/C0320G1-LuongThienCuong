@@ -1,6 +1,8 @@
 package orm.sbblog.service.Impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import orm.sbblog.model.Blog;
 import orm.sbblog.repository.BlogRepository;
@@ -15,8 +17,13 @@ public class BlogServiceImpl implements BlogService {
     BlogRepository blogRepository;
 
     @Override
-    public List<Blog> findAllBlog() {
-        return blogRepository.findAll();
+    public Page<Blog> findAllBlog(Pageable pageable) {
+        return blogRepository.findAll(pageable);
+    }
+
+    @Override
+    public Page<Blog> findAllBlogByNameContainingAndContentContaining(String name, String content, Pageable pageable) {
+        return blogRepository.findAllByNameContainingAndContentContaining(name,content,pageable);
     }
 
     @Override

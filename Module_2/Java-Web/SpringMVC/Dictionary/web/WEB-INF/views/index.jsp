@@ -12,7 +12,7 @@
   </head>
   <body>
 
-  <form method="post">
+  <form method="get" action="/translate">
   <label>Word : <input type="text" name="word"></label>
   <input type="submit" value="Search">
   </form>

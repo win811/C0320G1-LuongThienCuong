@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="96966cc2-6f1a-4a28-84d5-818398c6aea8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ORM/sb-blog/src/main/resources/templates/edit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringDataJpa/customer_province.rar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringDataJpa/customer_province/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringDataJpa/customer_province/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringDataJpa/customer_province/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringDataJpa/customer_province/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringDataJpa/customer_province/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringDataJpa/customer_province/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringDataJpa/customer_province/settings.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringDataJpa/customer_province/src/main/java/spring/data/jpa/customer_province/CustomerProvinceApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringDataJpa/customer_province/src/main/java/spring/data/jpa/customer_province/controller/CustomerController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringDataJpa/customer_province/src/main/java/spring/data/jpa/customer_province/controller/HomeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringDataJpa/customer_province/src/main/java/spring/data/jpa/customer_province/controller/ProvinceController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringDataJpa/customer_province/src/main/java/spring/data/jpa/customer_province/model/Customer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringDataJpa/customer_province/src/main/java/spring/data/jpa/customer_province/model/Province.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringDataJpa/customer_province/src/main/java/spring/data/jpa/customer_province/repository/CustomerRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringDataJpa/customer_province/src/main/java/spring/data/jpa/customer_province/repository/ProvinceRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringDataJpa/customer_province/src/main/java/spring/data/jpa/customer_province/service/customer_service/CustomerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringDataJpa/customer_province/src/main/java/spring/data/jpa/customer_province/service/customer_service/Impl/CustomerServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringDataJpa/customer_province/src/main/java/spring/data/jpa/customer_province/service/province_service/Impl/ProvinceServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringDataJpa/customer_province/src/main/java/spring/data/jpa/customer_province/service/province_service/ProvinceService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringDataJpa/customer_province/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringDataJpa/customer_province/src/main/resources/templates/customer/create.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringDataJpa/customer_province/src/main/resources/templates/customer/edit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringDataJpa/customer_province/src/main/resources/templates/customer/home-customer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringDataJpa/customer_province/src/main/resources/templates/customer/test.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringDataJpa/customer_province/src/main/resources/templates/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringDataJpa/customer_province/src/main/resources/templates/province/create.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringDataJpa/customer_province/src/main/resources/templates/province/edit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringDataJpa/customer_province/src/main/resources/templates/province/home-province.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringDataJpa/customer_province/src/test/java/spring/data/jpa/customer_province/CustomerProvinceApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ORM/orm-cus/src/main/resources/templates/delete.html" beforeDir="false" afterPath="$PROJECT_DIR$/../ORM/orm-cus/src/main/resources/templates/delete.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ORM/sb-blog/src/main/java/orm/sbblog/controller/BlogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ORM/sb-blog/src/main/java/orm/sbblog/controller/BlogController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ORM/sb-blog/src/main/java/orm/sbblog/model/Blog.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ORM/sb-blog/src/main/java/orm/sbblog/model/Blog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ORM/sb-blog/src/main/java/orm/sbblog/repository/BlogRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ORM/sb-blog/src/main/java/orm/sbblog/repository/BlogRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ORM/sb-blog/src/main/java/orm/sbblog/service/BlogService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ORM/sb-blog/src/main/java/orm/sbblog/service/BlogService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ORM/sb-blog/src/main/java/orm/sbblog/service/Impl/BlogServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ORM/sb-blog/src/main/java/orm/sbblog/service/Impl/BlogServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ORM/sb-blog/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../ORM/sb-blog/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ORM/sb-blog/src/main/resources/templates/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/../ORM/sb-blog/src/main/resources/templates/create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ORM/sb-blog/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../ORM/sb-blog/src/main/resources/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ORM/sb-blog/src/main/resources/templates/view.html" beforeDir="false" afterPath="$PROJECT_DIR$/../ORM/sb-blog/src/main/resources/templates/view.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SpringMVC/Currency_Converter/out/artifacts/Currency_Convertation_war_exploded/WEB-INF/classes/controllers/ConvertController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringMVC/Currency_Converter/out/artifacts/Currency_Convertation_war_exploded/WEB-INF/classes/controllers/ConvertController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SpringMVC/Currency_Converter/out/artifacts/Currency_Convertation_war_exploded/WEB-INF/views/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SpringMVC/Currency_Converter/out/production/Currency_Converter/controllers/ConvertController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringMVC/Currency_Converter/out/production/Currency_Converter/controllers/ConvertController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SpringMVC/Currency_Converter/src/controllers/ConvertController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringMVC/Currency_Converter/src/controllers/ConvertController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SpringMVC/Dictionary/out/artifacts/Dictionary_war_exploded/WEB-INF/classes/controllers/DictionaryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringMVC/Dictionary/out/artifacts/Dictionary_war_exploded/WEB-INF/classes/controllers/DictionaryController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SpringMVC/Dictionary/out/artifacts/Dictionary_war_exploded/WEB-INF/dispatcher-servlet.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringMVC/Dictionary/out/artifacts/Dictionary_war_exploded/WEB-INF/dispatcher-servlet.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SpringMVC/Dictionary/out/artifacts/Dictionary_war_exploded/WEB-INF/views/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringMVC/Dictionary/out/artifacts/Dictionary_war_exploded/WEB-INF/views/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SpringMVC/Dictionary/out/production/Dictionary/controllers/DictionaryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringMVC/Dictionary/out/production/Dictionary/controllers/DictionaryController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SpringMVC/Dictionary/src/controllers/DictionaryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringMVC/Dictionary/src/controllers/DictionaryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SpringMVC/Dictionary/web/WEB-INF/views/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringMVC/Dictionary/web/WEB-INF/views/index.jsp" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="D:\C0320G1_LuongThienCuong\Module_2\Java-Web\ModelMVC\.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectId" id="1dVp5m50GV7dTBlV2AIhL4efmhA" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="96966cc2-6f1a-4a28-84d5-818398c6aea8" name="Default Changelist" comment="" />
+      <created>1592519933986</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1592519933986</updated>
+      <workItem from="1592519936781" duration="22000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+</project>

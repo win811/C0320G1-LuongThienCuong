@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Form</title>
+<!--    <th:block th:replace="index :: linkCss"/>-->
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet"/>
+</head>
+<body>
+<h2>Edit Blog</h2>
+<a th:replace="view :: backToMenu" ></a>
+<th:block th:if="${message}">
+    <p style="color: green" th:text="${message}"></p>
+</th:block>
+<form th:action="@{/edit}" method="post" th:object="${blog}">
+    <input type="hidden" th:field="*{id}">
+    <input type="hidden" th:field="*{createDate}">
+    <table >
+        <tr>
+            <td>Name :</td>
+            <td><input type="text" style="width: 600px" th:field="*{name}"></td>
+        </tr>
+        <tr>
+            <td>Content :</td>
+            <td><textarea style="width: 600px;" rows="20" th:field="*{content}"></textarea></td>
+        </tr>
+<!--        <tr>-->
+<!--            <td>Create Date :</td>-->
+<!--            <td><input type="datetime-local" th:field="*{createDate}"></td>-->
+<!--        </tr>-->
+        <tr>
+            <td><input type="submit" th:value="Save" class="btn btn-success"></td>
+        </tr>
+    </table>
+</form>
+<!--<th:block th:replace="index :: scriptCss"></th:block>-->
+</body>
+</html>

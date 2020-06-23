@@ -12,6 +12,7 @@
   </head>
   <body>
   <h1>Currency Converter</h1>
+
   <form method="post" >
   <table>
     <tr>
@@ -28,5 +29,6 @@
     </tr>
   </table>
   </form>
+
   </body>
 </html>

@@ -3,10 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title th:value="${blog.name}"></title>
+<!--    <th:block th:replace="index :: linkCss"></th:block>-->
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet"/>
 </head>
 <body>
-    <a th:href="@{/}" th:fragment="backToMenu">Back To The List Blog</a>
-    <h3 th:value="${blog.name}"></h3>
-    <p th:value="${blog.content}"></p>
+    <a class="btn btn-primary" th:href="@{/}" th:fragment="backToMenu">Back To The List Blog</a>
+    <h2 th:text="${blog.name}"></h2>
+    <h4 th:text="'Create on :' + ${#temporals.format(blog.createDate,'dd/MM/yyyy HH:mm')}"></h4>
+    <p th:text="${blog.content}"></p>
+<!--    <th:block th:replace="index :: scriptCss"></th:block>-->
 </body>
 </html>

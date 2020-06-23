@@ -3,28 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <title>Blog Của Cường Galilei</title>
+<!--    <th:block th:fragment="linkCss">-->
+<!--        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"-->
+<!--              integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">-->
+<!--    </th:block>-->
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet"/>
+
 </head>
 <body>
-    <h1>BLog Của Tôi</h1>
+    <h1>BLog Của Cường Galilei</h1>
+    <h4 th:text="${'Total Views : ' + myCounter.getCount()}"></h4>
     <a th:href="@{/create-form}">Create New Blog</a>
-    <table>
+    <form>
+        <label>Search: </label>
+        <input type="text" name="searchByName" placeholder="Blog's Name" th:value="${searchByName}">
+        <input type="text" name="searchByContent" placeholder="Blog's Content" th:value="${searchByContent}">
+        <input type="submit" value="Search">
+    </form>
+    <table class="table" border="1">
+        <thead class="thead-dark">
         <tr>
             <th>Name</th>
             <th>Status</th>
             <th>Create Date</th>
             <th>Action</th>
         </tr>
+        </thead>
+        <tbody>
         <tr th:each="blog : ${listBlog}">
             <td>
-            <a th:href="@{/view/__${blog.id}__}" th:value="${blog.name}"></a>
+            <a th:href="@{/view/__${blog.id}__}" th:text="${blog.name}"></a>
             </td>
-            <td th:text="${blog.status}"></td>
-            <td th:datetime="${blog.createDate}"></td>
+            <td th:text="${blog.status == true ? 'Active' : 'Not Active'} "></td>
+            <td th:text="${#temporals.format(blog.createDate,'dd/MM/yyyy HH:mm')}"></td>
             <td>
                 <a th:href="@{/edit/__${blog.id}__}">Edit | </a>
                 <a th:href="@{delete/__${blog.id}__}">Delete</a>
             </td>
         </tr>
+        </tbody>
     </table>
+    <div>
+        <a th:href="@{/(page=${listBlog.getNumber()},searchByName=${searchByName},searchByContent=${searchByContent})}" th:if="${listBlog.hasPrevious()}"> < </a>
+        <span th:text="${listBlog.number + 1}"></span>/<span th:text="${listBlog.totalPages}"></span>
+        <a th:href="@{/(page=${listBlog.getNumber() + 2},searchByName=${searchByName},searchByContent=${searchByContent})}" th:if="${listBlog.hasNext()}"> > </a>
+    </div>
+
+<!--<th:block th:fragment="scriptCss">-->
+<!--    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"-->
+<!--            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>-->
+<!--    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"-->
+<!--            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>-->
+<!--    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"-->
+<!--            integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>-->
+<!--</th:block>-->
 </body>
 </html>

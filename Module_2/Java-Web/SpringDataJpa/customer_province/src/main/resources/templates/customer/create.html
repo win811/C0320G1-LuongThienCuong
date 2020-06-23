@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Form Customer</title>
+    <th:block th:replace="index :: linkCss"/>
+</head>
+<body>
+    <h1>Create Form Customer</h1>
+    <a class="btn btn-primary" th:href="@{/customers/}">Back To The Customer List</a>
+
+    <th:block th:if="${message}">
+        <p style="color: green" th:text="${message}"></p>
+    </th:block>
+
+    <form th:action="@{/customers/create}" method="post" th:object="${customer}">
+        <table >
+            <tr>
+                <td>First Name :</td>
+                <td><input type="text"  th:field="*{firstName}"></td>
+            </tr>
+            <tr th:if="${#fields.hasErrors('firstName')}">
+                <td></td>
+                <td th:errors="*{firstName}" class="text-danger"></td>
+            </tr>
+            <tr>
+                <td>Last Name :</td>
+                <td><input type="text" th:field="*{lastName}"></td>
+            </tr>
+            <tr th:if="${#fields.hasErrors('lastName')}">
+                <td></td>
+                <td th:errors="*{lastName}" class="text-danger"></td>
+            </tr>
+            <tr>
+                <td>Province: </td>
+                <td>
+                    <select th:field="*{province.id}">
+                        <option th:each="p :${provinces}" th:value="${p.id}" th:text="${p.name}"></option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><input type="submit" th:value="Save" class="btn btn-success"></td>
+            </tr>
+        </table>
+    </form>
+
+    <th:block th:replace="index :: scriptCss"/>
+
+</body>
+</html>
