@@ -6,8 +6,9 @@
     <th:block th:replace="index :: linkCss"/>
 </head>
 <body>
-<div class="container">
-    <h1>Customer List</h1>
+<nav th:replace="index :: navbar"></nav>
+<div class="container" style="margin-top: 35px">
+    <h1 class="text-primary">Customer List</h1>
     <a th:href="@{/}" class="btn btn-info">Home</a>
     <a th:href="@{/customers/create-form}" class="btn btn-success">Create New Customer</a>
     <form>
@@ -28,11 +29,12 @@
         <tr th:each="customer : ${pageCustomer}">
             <td th:text="${customer.firstName}"></td>
             <td th:text="${customer.lastName}"></td>
-            <td th:text="${customer.status} == true ? 'Active' : 'Not Active' " class="text-success"></td>
+            <td th:if="${customer.status == true}" th:text="Active" class="text-success"></td>
+            <td th:if="${customer.status != true}" th:text="Inactive" class="text-danger"></td>
             <td th:text="${customer.province.name}"></td>
             <td>
                 <a th:href="@{/customers/edit/__${customer.id}__}">Edit | </a>
-                <a th:href="@{/customers/delete/__${customer.id}__}">Delete</a>
+                <a th:href="@{/customers/delete/__${customer.id}__(page=${pageCustomer.number+1},searchByName=${searchByName},searchByProvinceName=${searchByProvinceName})}">Delete</a>
             </td>
         </tr>
     </table>

@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <title>Login</title>
+    <th:block th:replace="layout :: css" />
+    <style>
+        body {
+            background-image: url(https://www.vijayyadav.tk/wp-content/uploads/2020/05/background.jpg);
+            background-size: cover;
+        }
+    </style>
+</head>
+
+<header th:replace="layout :: header"></header>
+<body data-aos-easing="slide" data-aos-duration="800" data-aos-delay="0" >
+    <br><br>
+    <div class="loginbox">
+        <img src="https://www.vijayyadav.tk/wp-content/uploads/2020/05/avatar.png" class="avatar">
+        <h1>Login Here</h1>
+        <form th:action="@{/j_spring_security_check}" method='POST'>
+            <!-- /login?error=true -->
+            <div th:if="${#request.getParameter('error') == 'true'}"
+                 style="color:red;margin:10px 0;">
+                Login Failed!!!
+            </div>
+            <p>Username</p>
+            <input type="text" name= "username" placeholder="Username">
+            <p>Password</p>
+            <input type="Password" name='password' placeholder="Enter Password">
+            <br>
+            <span>Remember Me</span> <input style="width: 10px" type="checkbox" name="remember-me" >
+            <input type="submit" value="login">
+        </form>
+    </div>
+
+</body>
+
+</html>

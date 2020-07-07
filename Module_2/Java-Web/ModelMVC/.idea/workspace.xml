@@ -2,63 +2,410 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="96966cc2-6f1a-4a28-84d5-818398c6aea8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ORM/sb-blog/src/main/resources/templates/edit.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SpringDataJpa/customer_province.rar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SpringDataJpa/customer_province/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SpringDataJpa/customer_province/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SpringDataJpa/customer_province/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SpringDataJpa/customer_province/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SpringDataJpa/customer_province/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SpringDataJpa/customer_province/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SpringDataJpa/customer_province/settings.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SpringDataJpa/customer_province/src/main/java/spring/data/jpa/customer_province/CustomerProvinceApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SpringDataJpa/customer_province/src/main/java/spring/data/jpa/customer_province/controller/CustomerController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SpringDataJpa/customer_province/src/main/java/spring/data/jpa/customer_province/controller/HomeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SpringDataJpa/customer_province/src/main/java/spring/data/jpa/customer_province/controller/ProvinceController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SpringDataJpa/customer_province/src/main/java/spring/data/jpa/customer_province/model/Customer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SpringDataJpa/customer_province/src/main/java/spring/data/jpa/customer_province/model/Province.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SpringDataJpa/customer_province/src/main/java/spring/data/jpa/customer_province/repository/CustomerRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SpringDataJpa/customer_province/src/main/java/spring/data/jpa/customer_province/repository/ProvinceRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SpringDataJpa/customer_province/src/main/java/spring/data/jpa/customer_province/service/customer_service/CustomerService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SpringDataJpa/customer_province/src/main/java/spring/data/jpa/customer_province/service/customer_service/Impl/CustomerServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SpringDataJpa/customer_province/src/main/java/spring/data/jpa/customer_province/service/province_service/Impl/ProvinceServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SpringDataJpa/customer_province/src/main/java/spring/data/jpa/customer_province/service/province_service/ProvinceService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SpringDataJpa/customer_province/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SpringDataJpa/customer_province/src/main/resources/templates/customer/create.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SpringDataJpa/customer_province/src/main/resources/templates/customer/edit.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SpringDataJpa/customer_province/src/main/resources/templates/customer/home-customer.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SpringDataJpa/customer_province/src/main/resources/templates/customer/test.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SpringDataJpa/customer_province/src/main/resources/templates/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SpringDataJpa/customer_province/src/main/resources/templates/province/create.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SpringDataJpa/customer_province/src/main/resources/templates/province/edit.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SpringDataJpa/customer_province/src/main/resources/templates/province/home-province.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SpringDataJpa/customer_province/src/test/java/spring/data/jpa/customer_province/CustomerProvinceApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ORM/orm-cus/src/main/resources/templates/delete.html" beforeDir="false" afterPath="$PROJECT_DIR$/../ORM/orm-cus/src/main/resources/templates/delete.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ORM/sb-blog/src/main/java/orm/sbblog/controller/BlogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ORM/sb-blog/src/main/java/orm/sbblog/controller/BlogController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ORM/sb-blog/src/main/java/orm/sbblog/model/Blog.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ORM/sb-blog/src/main/java/orm/sbblog/model/Blog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ORM/sb-blog/src/main/java/orm/sbblog/repository/BlogRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ORM/sb-blog/src/main/java/orm/sbblog/repository/BlogRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ORM/sb-blog/src/main/java/orm/sbblog/service/BlogService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ORM/sb-blog/src/main/java/orm/sbblog/service/BlogService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ORM/sb-blog/src/main/java/orm/sbblog/service/Impl/BlogServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ORM/sb-blog/src/main/java/orm/sbblog/service/Impl/BlogServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ORM/sb-blog/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../ORM/sb-blog/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ORM/sb-blog/src/main/resources/templates/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/../ORM/sb-blog/src/main/resources/templates/create.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ORM/sb-blog/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../ORM/sb-blog/src/main/resources/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ORM/sb-blog/src/main/resources/templates/view.html" beforeDir="false" afterPath="$PROJECT_DIR$/../ORM/sb-blog/src/main/resources/templates/view.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SpringMVC/Currency_Converter/out/artifacts/Currency_Convertation_war_exploded/WEB-INF/classes/controllers/ConvertController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringMVC/Currency_Converter/out/artifacts/Currency_Convertation_war_exploded/WEB-INF/classes/controllers/ConvertController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SpringMVC/Currency_Converter/out/artifacts/Currency_Convertation_war_exploded/WEB-INF/views/index.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SpringMVC/Currency_Converter/out/production/Currency_Converter/controllers/ConvertController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringMVC/Currency_Converter/out/production/Currency_Converter/controllers/ConvertController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SpringMVC/Currency_Converter/src/controllers/ConvertController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringMVC/Currency_Converter/src/controllers/ConvertController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SpringMVC/Dictionary/out/artifacts/Dictionary_war_exploded/WEB-INF/classes/controllers/DictionaryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringMVC/Dictionary/out/artifacts/Dictionary_war_exploded/WEB-INF/classes/controllers/DictionaryController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SpringMVC/Dictionary/out/artifacts/Dictionary_war_exploded/WEB-INF/dispatcher-servlet.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringMVC/Dictionary/out/artifacts/Dictionary_war_exploded/WEB-INF/dispatcher-servlet.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SpringMVC/Dictionary/out/artifacts/Dictionary_war_exploded/WEB-INF/views/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringMVC/Dictionary/out/artifacts/Dictionary_war_exploded/WEB-INF/views/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SpringMVC/Dictionary/out/production/Dictionary/controllers/DictionaryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringMVC/Dictionary/out/production/Dictionary/controllers/DictionaryController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SpringMVC/Dictionary/src/controllers/DictionaryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringMVC/Dictionary/src/controllers/DictionaryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SpringMVC/Dictionary/web/WEB-INF/views/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringMVC/Dictionary/web/WEB-INF/views/index.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/java/furama/resort/config/AppConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/java/furama/resort/config/WebSecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/java/furama/resort/controllers/ContractController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/java/furama/resort/controllers/CustomerController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/java/furama/resort/controllers/HomeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/java/furama/resort/controllers/ServiceController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/java/furama/resort/converters/DateConverter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/java/furama/resort/models/Account.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/java/furama/resort/models/AccountRole.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/java/furama/resort/models/AttachService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/java/furama/resort/models/Contract.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/java/furama/resort/models/Customer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/java/furama/resort/models/CustomerType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/java/furama/resort/models/Role.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/java/furama/resort/models/Service.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/java/furama/resort/models/ServiceType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/java/furama/resort/models/dto/ContractDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/java/furama/resort/models/dto/SignUpDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/java/furama/resort/repositories/AccountRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/java/furama/resort/repositories/AccountRoleRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/java/furama/resort/repositories/AttachServiceRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/java/furama/resort/repositories/ContractRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/java/furama/resort/repositories/CustomerRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/java/furama/resort/repositories/CustomerTypeRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/java/furama/resort/repositories/RoleRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/java/furama/resort/repositories/ServiceRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/java/furama/resort/repositories/ServiceTypeRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/java/furama/resort/services/AccountRoleService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/java/furama/resort/services/AccountService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/java/furama/resort/services/AttachServiceService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/java/furama/resort/services/ContractService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/java/furama/resort/services/CustomerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/java/furama/resort/services/CustomerTypeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/java/furama/resort/services/RoleService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/java/furama/resort/services/ServiceService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/java/furama/resort/services/ServiceTypeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/java/furama/resort/services/SignUpDtoService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/java/furama/resort/services/impl/AccountDetailServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/java/furama/resort/services/impl/AccountRoleServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/java/furama/resort/services/impl/AccountServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/java/furama/resort/services/impl/AttachServiceServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/java/furama/resort/services/impl/ContractServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/java/furama/resort/services/impl/CustomerServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/java/furama/resort/services/impl/CustomerTypeServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/java/furama/resort/services/impl/RoleServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/java/furama/resort/services/impl/ServiceServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/java/furama/resort/services/impl/ServiceTypeServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/java/furama/resort/services/impl/SignUpDtoServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/css/adminCss.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/css/ajax-loader.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/css/animate.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/css/aos.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/css/bootstrap-datepicker.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/css/bootstrap/bootstrap-grid.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/css/bootstrap/bootstrap-reboot.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/css/css/bootstrap-reboot.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/css/css/mixins/_text-hide.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/css/flaticon.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/css/icomoon.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/css/ionicons.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/css/jquery.timepicker.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/css/login.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/css/magnific-popup.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/css/open-iconic-bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/css/owl.carousel.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/css/owl.theme.default.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/css/signup.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/fonts/flaticon/backup.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/fonts/flaticon/font/Flaticon.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/fonts/flaticon/font/Flaticon.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/fonts/flaticon/font/Flaticon.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/fonts/flaticon/font/Flaticon.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/fonts/flaticon/font/_flaticon.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/fonts/flaticon/font/flaticon.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/fonts/flaticon/font/flaticon.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/fonts/flaticon/license/license.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/fonts/icomoon/icomoon.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/fonts/icomoon/icomoon.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/fonts/icomoon/icomoon.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/fonts/icomoon/icomoon.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/fonts/ionicons/css/_ionicons.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/fonts/ionicons/css/ionicons.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/fonts/ionicons/fonts/ionicons.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/fonts/ionicons/fonts/ionicons.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/fonts/ionicons/fonts/ionicons.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/fonts/ionicons/fonts/ionicons.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/fonts/ionicons/fonts/ionicons.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/fonts/open-iconic/open-iconic.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/fonts/open-iconic/open-iconic.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/fonts/open-iconic/open-iconic.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/fonts/open-iconic/open-iconic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/fonts/open-iconic/open-iconic.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/images/about.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/images/bg_1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/images/bg_2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/images/bg_3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/images/image_1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/images/image_2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/images/image_3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/images/image_4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/images/image_5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/images/image_6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/images/insta-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/images/insta-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/images/insta-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/images/insta-4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/images/insta-5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/images/menu-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/images/menu-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/images/menu-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/images/menu-4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/images/menu-5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/images/menu-6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/images/menu-7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/images/menu-8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/images/nature_1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/images/nature_2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/images/nature_3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/images/nature_4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/images/nature_5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/images/person_1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/images/person_2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/images/person_3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/images/person_4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/images/restaurant-pattern.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/images/resto.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/images/room-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/images/room-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/images/room-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/images/room-4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/images/room-5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/images/room-6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/images/sleep.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/images/staff-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/images/staff-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/images/staff-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/images/staff-4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/images/swimming-pool.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/js/aos.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/js/bootstrap-datepicker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/js/google-map.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/js/jquery-3.2.1.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/js/jquery-migrate-3.0.1.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/js/jquery.animateNumber.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/js/jquery.easing.1.3.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/js/jquery.magnific-popup.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/js/jquery.mb.YTPlayer.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/js/jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/js/jquery.stellar.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/js/jquery.waypoints.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/js/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/js/owl.carousel.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/js/popper.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/js/range.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/js/scrollax.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/scss/bootstrap/_alert.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/scss/bootstrap/_badge.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/scss/bootstrap/_breadcrumb.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/scss/bootstrap/_button-group.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/scss/bootstrap/_buttons.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/scss/bootstrap/_card.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/scss/bootstrap/_carousel.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/scss/bootstrap/_close.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/scss/bootstrap/_code.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/scss/bootstrap/_custom-forms.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/scss/bootstrap/_dropdown.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/scss/bootstrap/_forms.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/scss/bootstrap/_functions.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/scss/bootstrap/_grid.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/scss/bootstrap/_images.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/scss/bootstrap/_input-group.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/scss/bootstrap/_jumbotron.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/scss/bootstrap/_list-group.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/scss/bootstrap/_media.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/scss/bootstrap/_mixins.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/scss/bootstrap/_modal.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/scss/bootstrap/_nav.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/scss/bootstrap/_navbar.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/scss/bootstrap/_pagination.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/scss/bootstrap/_popover.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/scss/bootstrap/_print.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/scss/bootstrap/_progress.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/scss/bootstrap/_reboot.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/scss/bootstrap/_root.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/scss/bootstrap/_spinners.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/scss/bootstrap/_tables.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/scss/bootstrap/_toasts.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/scss/bootstrap/_tooltip.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/scss/bootstrap/_transitions.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/scss/bootstrap/_type.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/scss/bootstrap/_utilities.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/scss/bootstrap/_variables.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/scss/bootstrap/bootstrap-grid.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/scss/bootstrap/bootstrap-reboot.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/scss/bootstrap/bootstrap.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/scss/bootstrap/mixins/_alert.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/scss/bootstrap/mixins/_background-variant.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/scss/bootstrap/mixins/_badge.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/scss/bootstrap/mixins/_border-radius.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/scss/bootstrap/mixins/_box-shadow.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/scss/bootstrap/mixins/_breakpoints.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/scss/bootstrap/mixins/_buttons.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/scss/bootstrap/mixins/_caret.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/scss/bootstrap/mixins/_clearfix.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/scss/bootstrap/mixins/_deprecate.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/scss/bootstrap/mixins/_float.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/scss/bootstrap/mixins/_forms.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/scss/bootstrap/mixins/_gradients.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/scss/bootstrap/mixins/_grid-framework.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/scss/bootstrap/mixins/_grid.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/scss/bootstrap/mixins/_hover.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/scss/bootstrap/mixins/_image.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/scss/bootstrap/mixins/_list-group.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/scss/bootstrap/mixins/_lists.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/scss/bootstrap/mixins/_nav-divider.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/scss/bootstrap/mixins/_pagination.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/scss/bootstrap/mixins/_reset-text.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/scss/bootstrap/mixins/_resize.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/scss/bootstrap/mixins/_screen-reader.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/scss/bootstrap/mixins/_size.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/scss/bootstrap/mixins/_table-row.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/scss/bootstrap/mixins/_text-emphasis.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/scss/bootstrap/mixins/_text-hide.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/scss/bootstrap/mixins/_text-truncate.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/scss/bootstrap/mixins/_transition.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/scss/bootstrap/mixins/_visibility.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/scss/bootstrap/utilities/_align.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/scss/bootstrap/utilities/_background.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/scss/bootstrap/utilities/_borders.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/scss/bootstrap/utilities/_clearfix.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/scss/bootstrap/utilities/_display.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/scss/bootstrap/utilities/_embed.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/scss/bootstrap/utilities/_flex.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/scss/bootstrap/utilities/_float.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/scss/bootstrap/utilities/_overflow.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/scss/bootstrap/utilities/_position.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/scss/bootstrap/utilities/_screenreaders.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/scss/bootstrap/utilities/_shadows.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/scss/bootstrap/utilities/_sizing.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/scss/bootstrap/utilities/_spacing.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/scss/bootstrap/utilities/_stretched-link.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/scss/bootstrap/utilities/_text.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/scss/bootstrap/utilities/_visibility.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/scss/bootstrap/vendor/_rfs.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/static/scss/style.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/templates/403Page.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/templates/adminPage.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/templates/contract/booking-form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/templates/contract/my-booking.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/templates/contract/page-booking.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/templates/customer/edit-form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/templates/customer/page-customer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/templates/customer/update-form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/templates/index2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/templates/layout.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/templates/layoutAdmin.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/templates/loginPage.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/templates/service/create-form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/templates/service/edit-form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/templates/service/page-service.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/templates/service/view-service.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/templates/sign_up/sign-up-form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/templates/test.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/validation/validate.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ExamMd2.rar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ExamMd2/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ExamMd2/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ExamMd2/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ExamMd2/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ExamMd2/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ExamMd2/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ExamMd2/settings.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ExamMd2/src/main/java/com/exam/md2/AppConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ExamMd2/src/main/java/com/exam/md2/Md2Application.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ExamMd2/src/main/java/com/exam/md2/controllers/CustomerController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ExamMd2/src/main/java/com/exam/md2/converters/DateConverter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ExamMd2/src/main/java/com/exam/md2/models/Customer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ExamMd2/src/main/java/com/exam/md2/repositories/CustomerRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ExamMd2/src/main/java/com/exam/md2/services/CustomerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ExamMd2/src/main/java/com/exam/md2/services/CustomerServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ExamMd2/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ExamMd2/src/main/resources/static/css/bootstrap-grid.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ExamMd2/src/main/resources/static/css/bootstrap-grid.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ExamMd2/src/main/resources/static/css/bootstrap-grid.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ExamMd2/src/main/resources/static/css/bootstrap-grid.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ExamMd2/src/main/resources/static/css/bootstrap-reboot.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ExamMd2/src/main/resources/static/css/bootstrap-reboot.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ExamMd2/src/main/resources/static/css/bootstrap-reboot.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ExamMd2/src/main/resources/static/css/bootstrap-reboot.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ExamMd2/src/main/resources/static/css/bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ExamMd2/src/main/resources/static/css/bootstrap.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ExamMd2/src/main/resources/static/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ExamMd2/src/main/resources/static/css/bootstrap.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ExamMd2/src/main/resources/static/images/nature_1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ExamMd2/src/main/resources/static/images/nature_2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ExamMd2/src/main/resources/static/images/nature_3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ExamMd2/src/main/resources/static/images/nature_4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ExamMd2/src/main/resources/static/images/nature_5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ExamMd2/src/main/resources/static/js/bootstrap.bundle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ExamMd2/src/main/resources/static/js/bootstrap.bundle.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ExamMd2/src/main/resources/static/js/bootstrap.bundle.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ExamMd2/src/main/resources/static/js/bootstrap.bundle.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ExamMd2/src/main/resources/static/js/bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ExamMd2/src/main/resources/static/js/bootstrap.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ExamMd2/src/main/resources/static/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ExamMd2/src/main/resources/static/js/bootstrap.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ExamMd2/src/main/resources/templates/create.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ExamMd2/src/main/resources/templates/edit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ExamMd2/src/main/resources/templates/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ExamMd2/src/main/resources/templates/page.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ExamMd2/src/main/resources/validation/validate.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ExamMd2/src/test/java/com/exam/md2/Md2ApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Quân_SpringSecurity.rar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SessionCookie.rar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SessionCookie/Hùng-cart/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SessionCookie/Hùng-cart/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SessionCookie/Hùng-cart/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SessionCookie/Hùng-cart/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SessionCookie/Hùng-cart/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SessionCookie/Hùng-cart/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SessionCookie/Hùng-cart/settings.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SessionCookie/Hùng-cart/src/main/java/com/example/cart/CartApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SessionCookie/Hùng-cart/src/main/java/com/example/cart/controllers/ProductController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SessionCookie/Hùng-cart/src/main/java/com/example/cart/models/Cart.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SessionCookie/Hùng-cart/src/main/java/com/example/cart/models/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SessionCookie/Hùng-cart/src/main/java/com/example/cart/repositories/CartRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SessionCookie/Hùng-cart/src/main/java/com/example/cart/repositories/Impl/CartRepositoryImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SessionCookie/Hùng-cart/src/main/java/com/example/cart/repositories/Impl/ProductRepositoryImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SessionCookie/Hùng-cart/src/main/java/com/example/cart/repositories/ProductRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SessionCookie/Hùng-cart/src/main/java/com/example/cart/services/Impl/ProductServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SessionCookie/Hùng-cart/src/main/java/com/example/cart/services/ProductService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SessionCookie/Hùng-cart/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SessionCookie/Hùng-cart/src/main/resources/static/css/bootstrap-grid.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SessionCookie/Hùng-cart/src/main/resources/static/css/bootstrap-grid.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SessionCookie/Hùng-cart/src/main/resources/static/css/bootstrap-grid.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SessionCookie/Hùng-cart/src/main/resources/static/css/bootstrap-grid.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SessionCookie/Hùng-cart/src/main/resources/static/css/bootstrap-reboot.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SessionCookie/Hùng-cart/src/main/resources/static/css/bootstrap-reboot.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SessionCookie/Hùng-cart/src/main/resources/static/css/bootstrap-reboot.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SessionCookie/Hùng-cart/src/main/resources/static/css/bootstrap-reboot.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SessionCookie/Hùng-cart/src/main/resources/static/css/bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SessionCookie/Hùng-cart/src/main/resources/static/css/bootstrap.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SessionCookie/Hùng-cart/src/main/resources/static/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SessionCookie/Hùng-cart/src/main/resources/static/css/bootstrap.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SessionCookie/Hùng-cart/src/main/resources/templates/cart.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SessionCookie/Hùng-cart/src/main/resources/templates/list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SessionCookie/Hùng-cart/src/main/resources/templates/view.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SessionCookie/Hùng-cart/src/test/java/com/example/cart/CartApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Validation.rar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../WebService.rar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo_i18N.rar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CaseStudy/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../CaseStudy/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CaseStudy/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../CaseStudy/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CaseStudy/src/main/java/furama/resort/ResortApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CaseStudy/src/main/java/furama/resort/ResortApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CaseStudy/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/ModelMVC.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ModelMVC.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SessionCookie/product_cart/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SessionCookie/product_cart/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SessionCookie/product_cart/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SessionCookie/product_cart/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SessionCookie/product_cart/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SessionCookie/product_cart/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SessionCookie/product_cart/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SessionCookie/product_cart/src/main/java/shop/product/ProductApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SessionCookie/product_cart/src/main/java/shop/product/model/Product.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SessionCookie/product_cart/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SessionCookie/product_cart/src/test/java/shop/product/ProductApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SpringDataJpa/customer_province/src/main/java/spring/data/jpa/customer_province/controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringDataJpa/customer_province/src/main/java/spring/data/jpa/customer_province/controller/CustomerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SpringDataJpa/customer_province/src/main/resources/templates/customer/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringDataJpa/customer_province/src/main/resources/templates/customer/create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SpringDataJpa/customer_province/src/main/resources/templates/customer/home-customer.html" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringDataJpa/customer_province/src/main/resources/templates/customer/home-customer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SpringDataJpa/customer_province/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringDataJpa/customer_province/src/main/resources/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SpringDataJpa/customer_province/src/main/resources/templates/province/home-province.html" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringDataJpa/customer_province/src/main/resources/templates/province/home-province.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Validation/src/main/java/validation/all/AllApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Validation/src/main/java/validation/all/AllApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Validation/src/main/java/validation/all/controller/PhoneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Validation/src/main/java/validation/all/controller/PhoneController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Validation/src/main/java/validation/all/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Validation/src/main/java/validation/all/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_web.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../case_study_web.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/Module_2/TEST/A.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../out/production/Module_2/TEST/A.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/Module_2/TEST/B.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../out/production/Module_2/TEST/B.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/Module_2/TEST/TestDate.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../out/production/Module_2/TEST/TestDate.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/TEST/TestDate.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/TEST/TestDate.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
@@ -82,7 +429,10 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="D:/apache-tomcat-9.0.35/apache-tomcat-9.0.35/webapps/examples/WEB-INF/lib/taglibs-standard-spec-1.2.5.jar!/" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -95,10 +445,25 @@
       <option name="presentableId" value="Default" />
       <updated>1592519933986</updated>
       <workItem from="1592519936781" duration="22000" />
+      <workItem from="1593854927006" duration="585000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="531" y="253" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1593854954514">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="531" y="253" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1366.728@0.0.1366.728" timestamp="1593854954514" />
+    <state x="389" y="106" key="FileChooserDialogImpl" timestamp="1593855385666">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="389" y="106" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1593855385666" />
+    <state x="163" y="0" key="SettingsEditor" timestamp="1593855386516">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="163" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1593855386516" />
   </component>
 </project>

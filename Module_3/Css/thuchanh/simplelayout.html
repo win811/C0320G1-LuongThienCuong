@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .container{
+            display: grid;
+            grid-template-columns: repeat(12, minmax(100px,1fr));
+            grid-template-rows: repeat(12,100px) ;
+        }
+        /*.head {*/
+        /*        grid-column: 1/-1;*/
+        /*        grid-row: span 3;*/
+        /*        background: aquamarine;*/
+        /*}*/
+        .logo {
+            grid-column: span 2;
+            grid-row: 3 / span 3;
+
+        }
+
+        .banner {
+            grid-column: auto;
+            grid-row: span 2;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <div class="logo">Logo
+    <!--    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/1200px-Instagram_logo_2016.svg.png">-->
+        </div>
+        <div class="banner">
+           Welcome Home
+        </div>
+
+    </div>
+</body>
+</html>

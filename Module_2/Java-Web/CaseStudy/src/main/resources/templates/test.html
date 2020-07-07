@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <style>
+        body {
+            background-image: url(/images/nature_1.jpg);
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" th:fragment="navbar">
+    <a class="navbar-brand" href="#">Home</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto" >
+            <li class="nav-item active" >
+                <a class="nav-link" href="#">Customer List <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link " href="#">Province List</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Dropdown
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="container d-flex justify-content-center" style="margin-top: 35px;background-color: white;width: 550px;border-radius: 10px">
+    <div>
+        <h1 class="text-primary">Customer Information</h1>
+        <h4 th:text="${message}" class="text-success"></h4>
+        <form th:action="@{/customer/update/}" method="post" th:object="${customer}">
+            <input type="hidden" th:field="*{id}">
+            <input type="hidden" th:field="*{customerType.id}">
+            <input type="hidden" th:field="*{customerType.name}">
+            <input type="hidden" th:field="*{code}">
+            <div class="form-group">
+                <label><b>Customer Code</b></label>
+                <p style="background-color: lightgrey" class="form-control" th:text="${customer.code}"></p>
+                <span th:errors="*{code}" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label ><b>Customer Name</b> </label>
+                <input style="background-color: lightgrey" type="text" class="form-control" th:field="*{name}">
+                <span th:errors="*{name}" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label><b>Id Card</b></label>
+                <input style="background-color: lightgrey" type="text" class="form-control" th:field="*{idCard}">
+                <span th:errors="*{idCard}" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label><b>Phone Number</b></label>
+                <input style="background-color: lightgrey" type="text" class="form-control" th:field="*{phoneNumber}">
+                <span th:errors="*{phoneNumber}" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label><b>Email</b></label>
+                <input style="background-color: lightgrey" type="text" class="form-control" th:field="*{email}" >
+                <span th:errors="*{email}" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label><b>Birthday</b></label>
+                <input style="background-color: lightgrey" type="date" class="form-control" th:field="*{birthday}">
+                <span th:errors="*{birthday}" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label ><b>Address</b></label>
+                <input style="background-color: lightgrey" type="text" class="form-control" th:field="*{address}" >
+                <span th:errors="*{address}" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label><b>Customer Type</b></label>
+                <p style="background-color: lightgrey" class="form-control" th:text="${customer.customerType.name}"></p>
+            </div>
+
+            <div class="d-flex justify-content-center" >
+                <input class="btn btn-success " type="submit" value="Update">
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>

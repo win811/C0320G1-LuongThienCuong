@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <th:block th:replace="index :: head"/>
+    <style>
+        body {
+            background-image: url(/images/nature_2.jpg);
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+<nav th:replace="index :: navbar"></nav>
+
+<div class="container d-flex justify-content-center" style="margin-top: 35px;background-color: white;width: 550px;border-radius: 10px">
+    <div>
+        <h1 class="text-primary">Edit Customer</h1>
+        <h4 th:text="${message}" class="text-success"></h4>
+        <form th:action="@{/customers/edit}" method="post" th:object="${customer}">
+
+            <input type="hidden" th:field="*{id}">
+            <div class="form-group">
+                <label ><b>Code</b> </label>
+                <input style="background-color: lightgrey" type="text" class="form-control"
+                       placeholder="KH-XXXX" th:field="*{code}">
+                <span th:errors="*{code}" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label ><b>Name</b> </label>
+                <input style="background-color: lightgrey" type="text" class="form-control"
+                       placeholder="Name" th:field="*{name}">
+                <span th:errors="*{name}" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label><b>Birthday</b></label>
+                <input style="background-color: lightgrey" type="date" class="form-control" th:field="*{birthday}">
+                <span th:errors="*{birthday}" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label ><b>Gender</b> </label>
+                <input style="background-color: lightgrey" type="text" class="form-control"
+                       placeholder="Gender" th:field="*{gender}">
+                <span th:errors="*{gender}" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label><b>Phone Number</b></label>
+                <input style="background-color: lightgrey" type="text" class="form-control"
+                       placeholder="XXXX.XXX.XXX" th:field="*{phoneNumber}">
+                <span th:errors="*{phoneNumber}" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label><b>Id Card</b></label>
+                <input style="background-color: lightgrey" type="text" class="form-control"
+                       placeholder="XXXXXXXXX" th:field="*{idCard}">
+                <span th:errors="*{idCard}" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label><b>Email</b></label>
+                <input style="background-color: lightgrey" type="text" class="form-control"
+                       placeholder="abc@abc.abc" th:field="*{email}" >
+                <span th:errors="*{email}" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label ><b>Address</b></label>
+                <input style="background-color: lightgrey" type="text" class="form-control"
+                       placeholder="Address" th:field="*{address}" >
+                <span th:errors="*{address}" class="text-danger"></span>
+            </div>
+
+            <div class="d-flex justify-content-center" >
+                <input class="btn btn-success " type="submit" value="Update">
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>

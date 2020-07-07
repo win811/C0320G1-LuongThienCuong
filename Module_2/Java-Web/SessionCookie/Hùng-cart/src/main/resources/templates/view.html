@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet"/>
+    <title>Product detail</title>
+</head>
+<body>
+<p>
+    <a class="btn btn-primary" th:href="@{/products}">Back to product list</a>
+</p>
+
+<form th:object="${product}" th:method="post" th:action="@{/products/buy}">
+    <input type="hidden" th:field="*{id}">
+    <fieldset>
+        <legend>Product Information</legend>
+        <table class="table table-bordered">
+            <tr>
+                <td>Name:</td>
+                <td th:text="${product.name}"></td>
+            </tr>
+            <tr>
+                <td>Description:</td>
+                <td th:text="${product.description}"></td>
+            </tr>
+            <tr>
+                <td>Price:</td>
+                <td th:text="${product.price}"></td>
+            </tr>
+            <tr>
+                <td>Quantity: </td>
+                <td><input type="number" name="quantity" min="1" max="20"></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="submit" value="Add"></td>
+            </tr>
+        </table>
+    </fieldset>
+</form>
+</body>
+</html>

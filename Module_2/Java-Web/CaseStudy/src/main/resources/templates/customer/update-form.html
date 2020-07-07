@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Customer</title>
+    <th:block th:replace="layout :: css" />
+    <style th:inline="text">
+        body {
+            /*background-image: url(https://images.wallpapersden.com/image/download/fox-forest-minimalism_57571_1440x900.jpg);*/
+            background-image: url(/images/nature_5.jpg) ;
+            background-size: cover;
+        }
+
+    </style>
+</head>
+
+<body>
+<header th:replace="layout :: header"></header>
+<div class="container d-flex justify-content-center" style="margin-top: 100px;background-color: white;width: 550px;border-radius: 10px">
+    <div>
+        <h1 class="text-primary">Customer Information</h1>
+        <span th:text="${message}" class="text-success"></span>
+        <form th:action="@{/customer/update/}" method="post" th:object="${customer}">
+            <input type="hidden" th:field="*{id}">
+            <input type="hidden" th:field="*{customerType.id}">
+            <input type="hidden" th:field="*{customerType.name}">
+            <input type="hidden" th:field="*{code}">
+            <div class="form-group">
+                <label><b>Customer Code</b></label>
+                <p style="background-color: lightgrey" class="form-control" th:text="${customer.code}"></p>
+                <span th:errors="*{code}" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label ><b>Customer Name</b> </label>
+                <input style="background-color: lightgrey" type="text" class="form-control" th:field="*{name}">
+                <span th:errors="*{name}" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label><b>Id Card</b></label>
+                <input style="background-color: lightgrey" type="text" class="form-control" th:field="*{idCard}">
+                <span th:errors="*{idCard}" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label><b>Phone Number</b></label>
+                <input style="background-color: lightgrey" type="text" class="form-control" th:field="*{phoneNumber}">
+                <span th:errors="*{phoneNumber}" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label><b>Email</b></label>
+                <input style="background-color: lightgrey" type="text" class="form-control" th:field="*{email}" >
+                <span th:errors="*{email}" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label><b>Birthday</b></label>
+                <input style="background-color: lightgrey" type="date" class="form-control" th:field="*{birthday}">
+                <span th:errors="*{birthday}" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label ><b>Address</b></label>
+                <input style="background-color: lightgrey" type="text" class="form-control" th:field="*{address}" >
+                <span th:errors="*{address}" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label><b>Customer Type</b></label>
+                <p style="background-color: lightgrey" class="form-control" th:text="${customer.customerType.name}"></p>
+            </div>
+
+            <div class="d-flex justify-content-center" >
+                <input class="btn btn-success " type="submit" value="Update">
+            </div>
+        </form>
+    </div>
+</div>
+////
+</body>
+</html>

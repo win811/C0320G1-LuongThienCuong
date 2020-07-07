@@ -18,6 +18,8 @@ public class AllApplication {
         messageSource.setDefaultEncoding("UTF-8");
         return messageSource;
     }
+
+
     @Bean
     public LocalValidatorFactoryBean getValidator() {
         LocalValidatorFactoryBean bean = new LocalValidatorFactoryBean();

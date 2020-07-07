@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>My Booking</title>
+    <th:block th:replace="layout :: css" />
+    <style>
+        body {
+            background-image: url(https://img.thuthuatphanmem.vn/uploads/2018/09/27/wallpaper-4k_105912678.jpg);
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+<header th:replace="layout :: header"></header>
+<div class="container" style="margin-top: 100px;background-color: white;border-radius: 10px">
+    <h1 class="text-warning">My Booking List</h1>
+    <br>
+    <table class="table table-sm text-center" boder="1">
+        <thead class="thead-dark">
+        <tr>
+            <th>Index</th>
+            <th>Code</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Deposit</th>
+            <th>Total Pay</th>
+            <th>Status</th>
+            <th>Service</th>
+            <th>Customer</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+
+        <tr th:each="contract,stat : ${pageMyContract}" class="text-center">
+            <td th:text="${stat.count}"></td>
+            <td th:text="${contract.code}"></td>
+            <td th:text="${contract.startDate}"></td>
+            <td th:text="${contract.endDate}"></td>
+            <td th:text="${contract.deposit}"></td>
+            <td th:text="${contract.totalPay}"></td>
+            <td th:if="${contract.status}" th:text="Active" class="text-success"></td>
+            <td th:if="${!contract.status}" th:text="Inactive" class="text-danger"></td>
+            <td th:text="${contract.service.name}"></td>
+            <td th:text="${contract.customer.name}"></td>
+            <td>
+                <a th:href="@{on/__${contract.id}__}" class="text-success">ON | </a>
+                <a th:href="@{off/__${contract.id}__}" class="text-danger" onclick="return confirm('Are you sure?')">OFF</a>
+            </td>
+        </tr>
+    </table>
+    <div>
+        <a th:if="${pageMyContract.hasPrevious()}" th:href="@{/contract/my-booking/(page=${pageMyContract.number})}">Previous</a>
+
+        <span th:text="${pageMyContract.number + 1}"></span>/<span th:text="${pageMyContract.getTotalPages()}"></span>
+
+        <a th:if="${pageMyContract.hasNext()}" th:href="@{/contract/my-booking/(page=${pageMyContract.number + 2})}">Next</a>
+    </div>
+
+</div>
+</body>
+</html>

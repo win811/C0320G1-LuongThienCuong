@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>All Serivce</title>
+    <th:block th:replace="layout :: css" />
+</head>
+<body>
+<header th:replace="layout :: header"></header>
+<div class="container-fluid">
+    <div class="row">
+        <nav th:replace="layoutAdmin :: admin-nav-left"></nav>
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+            <div class="container" style="margin-top: 100px">
+                <h1 class="text-primary">Service List</h1>
+                <a th:href="@{create-form}" class="btn btn-info">Create New Service</a>
+                <form>
+                    <input class="rounded" type="text" name="searchByName" th:value="${searchByName}" placeholder="Name Service">
+                    <select class="rounded" name="searchByType">
+                        <option th:value="''" th:text="All" th:selected="${searchByType == ''}"></option>
+                        <option th:each="type : ${listServiceType}" th:value="${type.name}" th:text="${type.name}"
+                                th:selected="${searchByType == type.name}"></option>
+                    </select>
+                    <input type="submit" value="Search" class="btn btn-success">
+                </form>
+                <br>
+                <table class="table text-center" border="1">
+                    <thead class="thead-dark">
+                    <tr>
+                        <th>Index</th>
+                        <th>Code</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Area</th>
+                        <th>Floor</th>
+                        <th>Max Person</th>
+                        <th>Status</th>
+                        <th>Description</th>
+                        <th>Service Type</th>
+                        <th>Action</th>
+                    </tr>
+                    </thead>
+                    <tr th:each="service,stat : ${pageService}" >
+                        <td th:text="${stat.count}"></td>
+                        <td th:text="${service.code}"></td>
+                        <td th:text="${service.name}"></td>
+                        <td th:text="${service.price}"></td>
+                        <td th:text="${service.area}"></td>
+                        <td th:text="${service.floor}"></td>
+                        <td th:text="${service.maxPerson}"></td>
+                        <td th:if="${service.status}" th:text="Active" class="text-success"></td>
+                        <td th:if="${!service.status}" th:text="Inactive" class="text-danger"></td>
+                        <td th:text="${service.description}"></td>
+                        <td th:text="${service.serviceType.name}"></td>
+                        <td>
+                            <a th:href="@{edit/__${service.id}__}">EDIT | </a>
+                            <a th:href="@{on/__${service.id}__}" class="text-success">ON | </a>
+                            <a th:href="@{off/__${service.id}__}" class="text-danger">OFF</a>
+                        </td>
+                    </tr>
+                </table>
+                <div>
+                    <a th:if="${pageService.hasPrevious()}" th:href="@{/admin/service/(page=${pageService.number},
+                     searchByName = ${searchByName},searchByType = ${searchByType})}">Previous
+                    </a>
+
+                    <span th:text="${pageService.number + 1}"></span>/<span th:text="${pageService.getTotalPages()}"></span>
+
+                    <a th:if="${pageService.hasNext()}" th:href="@{/admin/service/(page=${pageService.number + 2},
+                    searchByName = ${searchByName},searchByType = ${searchByType})}">Next
+                    </a>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+</body>
+</html>

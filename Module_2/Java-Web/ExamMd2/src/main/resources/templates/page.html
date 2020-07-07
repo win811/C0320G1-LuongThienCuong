@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Page</title>
+    <th:block th:replace="index :: head"/>
+    <style>
+        body {
+            background-image: url(/images/nature_5.jpg);
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+
+    <nav th:replace="index :: navbar"></nav>
+    
+    <div class="container" style="margin-top: 35px; background-color: white;border-radius: 10px">
+        <h1 class="text-primary">Customer List</h1>
+        <a th:href="@{create-form}" class="btn btn-info">Create New Customer</a>
+        <form>
+            <input class="rounded" type="text" name="searchByName" th:value="${searchByName}" placeholder="Customer's Name">
+            <input class="rounded" type="text" name="searchByCode" th:value="${searchByCode}" placeholder="Customer's Code">
+            <input type="submit" value="Search" class="btn btn-success">
+        </form>
+        <br>
+        <table class="table text-center table-sm" border="1">
+            <thead class="thead-dark">
+            <tr>
+                <th>Index</th>
+                <th>Code</th>
+                <th>Name</th>
+                <th>Birthday</th>
+                <th>Gender</th>
+                <th>Phone Number</th>
+                <th>Id Card</th>
+                <th>Email</th>
+                <th>Address</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+            <tr th:each="customer,stat : ${pageCustomer}" >
+                <td th:text="${stat.count}"></td>
+                <td th:text="${customer.code}"></td>
+                <td th:text="${customer.name}"></td>
+                <td th:text="${customer.birthday}"></td>
+                <td th:text="${customer.gender}"></td>
+                <td th:text="${customer.phoneNumber}"></td>
+                <td th:text="${customer.idCard}"></td>
+                <td th:text="${customer.email}"></td>
+                <td th:text="${customer.address}"></td>
+                <td th:if="${customer.status}" th:text="Active" class="text-success"></td>
+                <td th:if="${!customer.status}" th:text="Inactive" class="text-danger"></td>
+                <td>
+                    <a th:href="@{edit/__${customer.id}__}">EDIT | </a>
+                    <a th:href="@{on/__${customer.id}__(page=${pageCustomer.number+1},searchByName=${searchByName},searchByCode=${searchByCode})}" class="text-success">ON | </a>
+                    <a th:href="@{off/__${customer.id}__(page=${pageCustomer.number+1},searchByName=${searchByName},searchByCode=${searchByCode})}" onclick="return confirm('Are you sure?')" class="text-danger">OFF</a>
+                </td>
+            </tr>
+        </table>
+        <div>
+            <a th:if="${pageCustomer.hasPrevious()}" th:href="@{/customers/(page = ${pageCustomer.number},
+             searchByName = ${searchByName},searchByCode = ${searchByCode})}">Previous
+            </a>
+
+            <span th:text="${pageCustomer.number + 1}"></span>/<span th:text="${pageCustomer.getTotalPages()}"></span>
+
+            <a th:if="${pageCustomer.hasNext()}" th:href="@{/customers/(page = ${pageCustomer.number + 2},
+            searchByName = ${searchByName},searchByCode = ${searchByCode})}">Next
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>

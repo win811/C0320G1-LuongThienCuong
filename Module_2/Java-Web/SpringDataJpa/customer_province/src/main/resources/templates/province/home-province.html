@@ -5,8 +5,10 @@
     <title>Province List</title>
     <th:block th:replace="index :: linkCss"/>
 </head>
+
 <body>
-    <div class="container">
+<nav th:replace="index :: navbar"></nav>
+<div class="container" style="margin-top: 35px">
     <h1>Province List</h1>
     <a th:href="@{/}" class="btn btn-info">Home</a>
     <a th:href="@{/provinces/create-form}" class="btn btn-success">Create New Province</a>
@@ -24,10 +26,11 @@
         </thead>
         <tr th:each="province : ${pageProvince}">
             <td th:text="${province.name}"></td>
-            <td th:text="${province.status} == true ? 'Active' : 'Not Active' " class="text-success"></td>
+            <td th:if="${province.status == true}" th:text="Active" class="text-success"></td>
+            <td th:if="${province.status != true}" th:text="Inactive" class="text-danger"></td>
             <td>
-                <a th:href="@{/provinces/edit/__${province.id}__}">Edit | </a>
-                <a th:href="@{/provinces/delete/__${province.id}__}">Delete</a>
+                <a th:href="@{edit/__${province.id}__}">Edit | </a>
+                <a th:href="@{delete/__${province.id}__}">Delete</a>
             </td>
         </tr>
     </table>

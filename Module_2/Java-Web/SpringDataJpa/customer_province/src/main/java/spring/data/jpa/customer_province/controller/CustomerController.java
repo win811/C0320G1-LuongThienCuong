@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import spring.data.jpa.customer_province.model.Customer;
 import spring.data.jpa.customer_province.model.Province;
 import spring.data.jpa.customer_province.service.customer_service.CustomerService;
@@ -30,8 +31,8 @@ public class CustomerController {
     }
 
     @GetMapping("/")
-    public ModelAndView getCustomerHome(@RequestParam(name = "searchByProvinceName",required = false, defaultValue = "") String searchByProvinceName,
-                                        @RequestParam(name = "searchByName",required = false,defaultValue = "") String searchByName,
+    public ModelAndView getCustomerHome(@RequestParam(name = "searchByProvinceName",defaultValue = "") String searchByProvinceName,
+                                        @RequestParam(name = "searchByName",defaultValue = "") String searchByName,
                                         @PageableDefault(value = 5) Pageable pageable) {
 
         searchByName = searchByName.trim();
@@ -78,10 +79,14 @@ public class CustomerController {
     }
 
     @GetMapping("delete/{id}")
-    public String delete(@PathVariable Long id) {
+    public String delete(@PathVariable Long id,
+                         @RequestParam(name = "searchByProvinceName", defaultValue = "") String searchByProvinceName,
+                         @RequestParam(name = "searchByName",defaultValue = "") String searchByName,
+                         @RequestParam(name = "page",defaultValue = "1") int page) {
         Customer customer = customerService.findCustomerById(id);
         customer.setStatus(false);
         customerService.saveCustomer(customer);
-        return "redirect:/customers/";
+        String urlExtend = "?page=" + page + "&searchByName=" + searchByName + "&searchByProvinceName=" + searchByProvinceName;
+        return "redirect:/customers/" + urlExtend;
     }
 }

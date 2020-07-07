@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>Booking</title>
+    <th:block th:replace="layout :: css" />
+<style>
+    body {
+        background-image: url(https://i.pinimg.com/564x/53/aa/24/53aa24b2682c7ae185ca68bb58549387.jpg);
+        background-size: cover;
+    }
+</style>
+</head>
+<header th:replace="layout :: header"></header>
+<body>
+
+<div class="container d-flex justify-content-center" style="margin-top: 100px">
+    <div>
+        <h1 class="d-flex justify-content-center text-warning">Booking</h1>
+        <h4 class="d-flex justify-content-center text-info" th:text="'Service : ' +${service.name}"></h4>
+        <span th:text="${message}" class="text-success"></span>
+        <form method="post" th:object="${contractDto}">
+
+            <div >
+                <table class="table">
+
+                    <tr>
+                        <td><b>Start Date :</b></td>
+                        <td><input type="date" th:field="*{startDate}"></td>
+                        <td th:errors="*{startDate}" class="text-danger"></td>
+                    </tr>
+
+                    <tr>
+                        <td><b>End Date :</b></td>
+                        <td><input type="date" th:field="*{endDate}"></td>
+                        <td th:errors="*{endDate}" class="text-danger"></td>
+                    </tr>
+
+                    <tr>
+                        <td><b>Deposit :</b></td>
+                        <td><input type="text" th:field="*{deposit}"></td>
+                    </tr>
+                    <tr>
+                        <td><b>Attach Service :</b></td>
+                        <td>
+                            <div th:each="attachService : ${listAttachService}">
+                                <input type="checkbox" name="idAttachServiceArr" th:value="${attachService.id}">
+                                <span th:text="${attachService.name} + ' - '"></span>
+                                <span th:text="${attachService.price}"></span>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
+
+            <div class="d-flex justify-content-center" >
+                <input class="btn btn-success " type="submit" value="Booking">
+            </div>
+
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

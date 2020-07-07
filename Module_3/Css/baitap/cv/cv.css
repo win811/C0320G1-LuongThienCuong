@@ -1,0 +1,74 @@
+.cv {
+    /* border: 1px solid black; */
+    width: 700px;
+    height: 900px;
+}
+.info {
+    width: 40%;
+    height: 100%;
+    float: left;
+    background-color: midnightblue;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.detail {
+    width: 58%;
+    height: 100%;
+    float: left;
+    background-color:lightsteelblue;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.detailgroup {
+    border: 1px solid darkblue;
+    width: 90%;
+    height: 97%;
+    margin: auto;
+    margin-top: 10px;
+}
+.detail1 {
+    width: 90%;
+    height: 30%;
+    margin: auto;
+    margin-top: 10px;
+}
+.mydetail1 {
+    display: inline-block;
+}
+.spec1 {
+    display: inline-block;
+    margin-left: 10px;
+}
+.info1 {
+    width: 80%;
+    height: 30%;
+    margin: auto;
+    margin-top: 10px;
+    /* display: block; */
+}
+.info1 img {
+    width: 100%;
+    height: 100%;
+}
+.info2 {
+    margin: auto;
+    width: 80%;
+    height: 30%;
+    /* display: block; */
+}
+.myinfo {
+    display: inline-block;
+}
+.doc {
+    margin-left: 10px;
+    display: inline-block;
+}
+.info3 {
+    margin: auto;
+    width: 80%;
+    height: 30%;
+}
+.info3 p {
+    line-height: 30px;
+}
+

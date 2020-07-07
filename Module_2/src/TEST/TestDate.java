@@ -1,6 +1,7 @@
 package TEST;
 
 import java.io.Serializable;
+import java.rmi.server.UID;
 import java.sql.Timestamp;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -24,16 +25,23 @@ public class TestDate implements Serializable {
 //            System.out.println("Customer mus be older than 18.");
 //        }
         ///////////////////////////////
-        String a = new String("a");
-        String b = new String("a");
-        String c = "    ";
-        String d = "";
-        System.out.println(d.equals(""));
-//        System.out.println(a.equals(b));
-//        if (a.equals(null) == false) {
-//            System.out.println("Khác");
-//        }
-        System.out.println(c.trim());
+
+        String a = UUID.randomUUID().toString().replaceAll("[^0-9]", "");
+        String b = UUID.randomUUID().toString().replaceAll("[^0-9]", "");
+        String c = UUID.randomUUID().toString().replaceAll("[^0-9]", "");
+        String d = UUID.randomUUID().toString().replaceAll("[^0-9]", "");
+        String e = UUID.randomUUID().toString().replaceAll("[^0-9]", "");
+        System.out.println(a);
+        System.out.println(b);
+        System.out.println(c);
+        System.out.println(d);
+        System.out.println(e);
+        UUID z = UUID.randomUUID();
+        System.out.println(Math.abs(z.getMostSignificantBits())/1000000000);
+        long id = Math.abs(UUID.randomUUID().getMostSignificantBits())/1000000000;
+        System.out.println(id);
+
+        String pass = "123";
 
     }
 }

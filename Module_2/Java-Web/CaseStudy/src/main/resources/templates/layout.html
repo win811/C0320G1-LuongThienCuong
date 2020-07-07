@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <title>Title</title>
+    <th:block th:fragment="css">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+              integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+                integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+                integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+                integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script><link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+<!--        CSS Thêm-->
+        <link rel="stylesheet" href="css/login.css">
+        <link rel="stylesheet" href="css/signup.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+              integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+        <link href="/css/adminCss.css" rel="stylesheet"/>
+    </th:block>
+</head>
+<body data-aos-easing="slide" data-aos-duration="800" data-aos-delay="0" class="">
+    <header th:fragment="header">
+    <nav th:fragment="navbar" class="navbar navbar-expand-lg navbar-dark ftco_navbar
+                    bg-dark ftco-navbar-light sleep fixed-top" id="ftco-navbar">
+        <div class="container">
+            <a class="navbar-brand" href="/">Furama Resort</a>
+            <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="oi oi-menu"></span> Menu
+            </button>
+
+            <div class="navbar-collapse collapse" id="ftco-nav" style="">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active"><a href="/" class="nav-link"><b>Home</b></a></li>
+                    <li class="nav-item"><a href="/service" class="nav-link"><b>Services</b></a></li>
+                    <li class="nav-item"><a href="/about.html" class="nav-link"><b>About</b></a></li>
+                    <li class="nav-item"><a href="blog.html" class="nav-link"><b>Review</b></a></li>
+                </ul>
+            </div>
+
+            <div sec:authorize="!isAuthenticated()">
+                <a class=" btn btn-info" style="border-radius: 10px"
+                   th:href="@{/sign-up}">Register</a>&nbsp;&nbsp;
+            </div >
+            <div sec:authorize="!isAuthenticated()">
+                <a class=" btn btn-success" style="border-radius: 10px"
+                   th:href="@{/login}">Login</a>
+            </div>
+            <div sec:authorize="isAuthenticated()" class="nav-item dropdown">
+                    <a sec:authentication="principal.username" style="border-radius: 10px"
+                       class="nav-link dropdown-toggle btn btn-warning" href="#" id="navbarDropdownMenuLink"
+                       role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="/customer/update/">My Information</a>
+                        <a class="dropdown-item" href="/contract/my-booking/">My Booking</a>
+                        <a class="dropdown-item" href="/logout">Logout</a>
+                    </div>
+            </div>
+
+        </div>
+    </nav>
+    </header>
+
+    <footer th:fragment="footer" class="ftco-footer ftco-bg-dark ftco-section">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-md">
+                    <div class="ftco-footer-widget mb-4">
+                        <h2 class="ftco-heading-2">Furama</h2>
+                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                        <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
+                            <li class="ftco-animate fadeInUp ftco-animated"><a href="#"><span class="icon-twitter"></span></a></li>
+                            <li class="ftco-animate fadeInUp ftco-animated"><a href="#"><span class="icon-facebook"></span></a></li>
+                            <li class="ftco-animate fadeInUp ftco-animated"><a href="#"><span class="icon-instagram"></span></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="ftco-footer-widget mb-4 ml-md-5">
+                        <h2 class="ftco-heading-2">Useful Links</h2>
+                        <ul class="list-unstyled">
+                            <li><a href="#" class="py-2 d-block">Blog</a></li>
+                            <li><a href="#" class="py-2 d-block">Rooms</a></li>
+                            <li><a href="#" class="py-2 d-block">Amenities</a></li>
+                            <li><a href="#" class="py-2 d-block">Gift Card</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="ftco-footer-widget mb-4">
+                        <h2 class="ftco-heading-2">Privacy</h2>
+                        <ul class="list-unstyled">
+                            <li><a href="#" class="py-2 d-block">Career</a></li>
+                            <li><a href="#" class="py-2 d-block">About Us</a></li>
+                            <li><a href="#" class="py-2 d-block">Contact Us</a></li>
+                            <li><a href="#" class="py-2 d-block">Services</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="ftco-footer-widget mb-4">
+                        <h2 class="ftco-heading-2">Have a Questions?</h2>
+                        <div class="block-23 mb-3">
+                            <ul>
+                                <li><span class="icon icon-map-marker"></span>
+                                <span class="text">
+                                103 - 105 Vo Nguyen Giap Street, Khue My Ward, Ngu Hanh Son District, Danang City, Vietnam
+                                </span>
+                                </li>
+                                <li><a href="#"><span class="icon icon-phone"></span><span class="text">84-236-3847 333/888</span></a></li>
+                                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">reservation@furamavietnam.com</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

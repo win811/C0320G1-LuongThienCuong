@@ -1,6 +1,7 @@
 package validation.all.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -20,9 +21,9 @@ public class UserController {
     }
 
     @PostMapping("/")
-    public ModelAndView validate(@Valid @ModelAttribute User user, Errors errors) {
+    public ModelAndView validate(@Valid @ModelAttribute User user, BindingResult bindingResult) {
         ModelAndView modelAndView = new ModelAndView("/user/index");
-        if (errors.hasFieldErrors()) {
+        if (bindingResult.hasFieldErrors()) {
             return modelAndView;
         }
         modelAndView.addObject("message","Successfully");
