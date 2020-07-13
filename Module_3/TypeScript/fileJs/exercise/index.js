@@ -29,7 +29,7 @@ function main() {
         // step 4: call hàm container.appendChild(item mà hàm createItem trả về)
         res.forEach((item) => {
             const li = createItem(item.name);
-            container.appendChild(li);
+            container.append(li);
         });
     });
 }
