@@ -1,0 +1,221 @@
+{
+  "facilityList": [
+    {
+      "id": 1,
+      "code": "DV-0001",
+      "name": "Pool Villas",
+      "areaUse": 320,
+      "rentCost": 1000,
+      "maxGuest": 10,
+      "roomStandard": "VIP",
+      "convenient": "Automatic Light",
+      "areaPool": 100,
+      "floor": 3,
+      "freeService": "Free-wifi,Towel"
+    },
+    {
+      "id": 2,
+      "code": "DV-0002",
+      "name": "Ocean House",
+      "areaUse": 150,
+      "rentCost": 500,
+      "maxGuest": 5,
+      "roomStandard": "VIP",
+      "convenient": "Massage Chair",
+      "areaPool": 0,
+      "floor": 3,
+      "freeService": "Free-wifi,Towel"
+    },
+    {
+      "id": 3,
+      "code": "DV-0003",
+      "name": "Garden Room",
+      "areaUse": 70,
+      "rentCost": 250,
+      "maxGuest": 2,
+      "roomStandard": "VIP",
+      "convenient": "69 Bed",
+      "areaPool": 0,
+      "floor": 0,
+      "freeService": "Free-wifi,Towel"
+    }
+  ],
+  "employeeList": [
+    {
+      "id": 1,
+      "code": "NV-0001",
+      "name": "Lương Thiên Cường",
+      "birthday": "1996-11-08",
+      "gender": "Nam",
+      "idCard": "123123123",
+      "numberPhone": "0123123123",
+      "email": "cuong@gmail.com",
+      "level": "After College",
+      "position": "Director",
+      "salary": 5000,
+      "department": "Management"
+    },
+    {
+      "id": 2,
+      "code": "NV-0002",
+      "name": "Nguyễn Xuân Hùng",
+      "birthday": "1994-11-08",
+      "gender": "Nam",
+      "idCard": "321321321",
+      "numberPhone": "0321321321",
+      "email": "hung@gmail.com",
+      "level": "After College",
+      "position": "Director",
+      "salary": 5000,
+      "department": "Management"
+    },
+    {
+      "id": 3,
+      "code": "NV-0003",
+      "name": "Nguyễn Hoàng Duy",
+      "birthday": "1996-11-08",
+      "gender": "Nam",
+      "idCard": "234234234",
+      "numberPhone": "0234234234",
+      "email": "duy@gmail.com",
+      "level": "After College",
+      "position": "Director",
+      "salary": 5000,
+      "department": "Management"
+    }
+  ],
+  "customerList": [
+    {
+      "id": 3,
+      "code": "KH-0003",
+      "name": "Chế Công Bách",
+      "birthday": "1997-11-08",
+      "gender": "Nam",
+      "idCard": "666555444",
+      "numberPhone": "0666555444",
+      "email": "bach@gmail.com",
+      "customerType": "Diamond",
+      "address": "Đà Nẵng"
+    },
+    {
+      "code": "KH-0011",
+      "name": "Trương Khánh Mậu",
+      "birthday": "1998-07-15",
+      "gender": "Nam",
+      "idCard": "123111222",
+      "numberPhone": "0901222333",
+      "email": "mau@gmail.com",
+      "customerType": "Diamond",
+      "address": "Hà Tĩnh",
+      "id": 4
+    },
+    {
+      "code": "KH-0013",
+      "name": "Nguyễn Văn A",
+      "birthday": "1996-07-15",
+      "gender": "Nam",
+      "idCard": "131313131",
+      "numberPhone": "0901123123",
+      "email": "a@gmail.com",
+      "customerType": "Diamond",
+      "address": "Đà Nẵng",
+      "id": 6
+    },
+    {
+      "code": "KH-0016",
+      "name": "Nguyễn Văn B",
+      "birthday": "1996-08-15",
+      "gender": "Nam",
+      "idCard": "123123123",
+      "numberPhone": "0901111111",
+      "email": "b@gmail.com",
+      "customerType": "Diamond",
+      "address": "Đà Nẵng",
+      "id": 7
+    },
+    {
+      "code": "KH-0022",
+      "name": "Nguyễn Văn C",
+      "birthday": "1996-08-18",
+      "gender": "Nam",
+      "idCard": "123123123",
+      "numberPhone": "0901123123",
+      "email": "c@gmail.com",
+      "customerType": "Diamond",
+      "address": "Đà Nẵng",
+      "id": 8
+    },
+    {
+      "code": "KH-0112",
+      "name": "Nguyễn Văn D",
+      "birthday": "1995-01-15",
+      "gender": "Nam",
+      "idCard": "123123123",
+      "numberPhone": "0901123123",
+      "email": "d@gmail.com",
+      "customerType": "Diamond",
+      "address": "Hội An",
+      "id": 9
+    },
+    {
+      "code": "KH-0011",
+      "name": "Nguyễn Văn F",
+      "birthday": "1998-07-07",
+      "gender": "Nam",
+      "idCard": "123123123",
+      "numberPhone": "0901123123",
+      "email": "f@gmail.com",
+      "customerType": "Diamond",
+      "address": "Quảng Trị",
+      "id": 10
+    },
+    {
+      "code": "KH-1111",
+      "name": "Nguyễn Văn Q",
+      "birthday": "1998-11-11",
+      "gender": "Nữ",
+      "idCard": "123123123",
+      "numberPhone": "0901123123",
+      "email": "q@gmail.com",
+      "customerType": "Diamond",
+      "address": "Quảng Bình",
+      "id": 11
+    },
+    {
+      "code": "KH-0223",
+      "name": "Nguyễn Xuân Tùng",
+      "birthday": "1998-01-14",
+      "gender": "Nam",
+      "idCard": "123321123",
+      "numberPhone": "0901333222",
+      "email": "tung@gmail.com",
+      "customerType": "Diamond",
+      "address": "Đà Nẵng",
+      "id": 12
+    },
+    {
+      "code": "KH-0101",
+      "name": "Nguyễn Văn Toàn",
+      "birthday": "1992-01-18",
+      "gender": "Nam",
+      "idCard": "123123123",
+      "numberPhone": "0901111233",
+      "email": "toan@gmail.com",
+      "customerType": "Diamond",
+      "address": "Huế",
+      "id": 13
+    },
+    {
+      "code": "KH-0333",
+      "name": "Nguyễn Hữu Hậu",
+      "birthday": "1985-01-18",
+      "gender": "Nam",
+      "idCard": "123123321",
+      "numberPhone": "0901111232",
+      "email": "hau@gmail.com",
+      "customerType": "Diamond",
+      "address": "Đà Nẵng",
+      "id": 14
+    }
+  ]
+}

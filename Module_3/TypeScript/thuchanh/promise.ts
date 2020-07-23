@@ -29,7 +29,7 @@ const wait5Secs = new Promise((resolve, reject) => {
     function(value) {
       console.log('Contents: ' + value);
     },
-    function(reason) {
+    function(reason: any) {
       console.error('Something went wrong', reason);
     }
   );
@@ -50,8 +50,8 @@ const wait5Secs = new Promise((resolve, reject) => {
   
   // promise chỉ resolve hoặc reject duy nhất 1 lần
   const promise = new Promise((resolve, reject) => {
-    resolve('done');
-    reject(new Error('…')); // ignored
+    reject(new Error('…'));
+    resolve('done'); // ignored
     setTimeout(() => resolve('…')); // ignored
   });
   

@@ -1,0 +1,126 @@
+<div class="col-md-6 offset-3 ">
+    <div class="d-flex justify-content-center ">
+        <h2 class="text-success">EDIT FACILITY FORM</h2>
+    </div>
+    <div class="mt-3 ">
+        <form [formGroup]="createForm" (ngSubmit)="onSubmit()">
+
+            <div class="input-group mb-2 mr-sm-2 ">
+                <div class="input-group-prepend" >
+                  <div class="input-group-text " >Code</div>
+                </div>
+                <input type="text" class="form-control" formControlName="code" placeholder="DV-XXXX">
+            </div>
+            <div class="alert alert-danger" role="alert" 
+            *ngIf="createForm.get('code').invalid && createForm.get('code').touched">
+                Invalid Code!
+            </div>
+            <!-- -------------------------------------- -->
+            <div class="input-group mb-2 mr-sm-2 ">
+                <div class="input-group-prepend ">
+                  <div class="input-group-text ">Name</div>
+                </div>
+                <input type="text" class="form-control" formControlName="name" placeholder="Name">
+            </div>
+            <div class="alert alert-danger" role="alert" 
+            *ngIf="createForm.get('name').invalid && createForm.get('name').touched">
+                Invalid Name!
+            </div>
+            <!-- -------------------------------------- -->
+            <div class="input-group mb-2 mr-sm-2">
+                <div class="input-group-prepend">
+                  <div class="input-group-text ">Area Use</div>
+                </div>
+                <input type="number" class="form-control" formControlName="areaUse" placeholder="Min : 30">
+            </div>
+            <div class="alert alert-danger" role="alert" 
+            *ngIf="createForm.get('areaUse').invalid && createForm.get('areaUse').touched">
+                Invalid Area Use!
+            </div>
+            <!-- -------------------------------------- -->
+            <div class="input-group mb-2 mr-sm-2">
+                <div class="input-group-prepend">
+                  <div class="input-group-text ">Rent Cost</div>
+                </div>
+                <input type="number" class="form-control" formControlName="rentCost" placeholder="Example : 1000">
+            </div>
+            <div class="alert alert-danger" role="alert" 
+            *ngIf="createForm.get('rentCost').invalid && createForm.get('rentCost').touched">
+                Invalid Rent Cost!
+            </div>
+            <!-- -------------------------------------- -->
+            <div class="input-group mb-2 mr-sm-2">
+                <div class="input-group-prepend">
+                  <div class="input-group-text ">Max Guest</div>
+                </div>
+                <input type="number" class="form-control" formControlName="maxGuest" placeholder="Example : 1">
+            </div>
+            <div class="alert alert-danger" role="alert" 
+            *ngIf="createForm.get('maxGuest').invalid && createForm.get('maxGuest').touched">
+                Invalid Max Guest!
+            </div>
+            <!-- -------------------------------------- -->
+            <div class="input-group mb-2 mr-sm-2">
+                <div class="input-group-prepend">
+                  <div class="input-group-text ">Room Standard</div>
+                </div>
+                <input type="text" class="form-control" formControlName="roomStandard" placeholder="Example : VIP">
+            </div>
+            <div class="alert alert-danger" role="alert" 
+            *ngIf="createForm.get('roomStandard').invalid && createForm.get('roomStandard').touched">
+                Invalid Room Standard!
+            </div>
+            <!-- -------------------------------------- -->
+            <div class="input-group mb-2 mr-sm-2">
+                <div class="input-group-prepend">
+                  <div class="input-group-text ">Convenient</div>
+                </div>
+                <input type="text" class="form-control" formControlName="convenient" placeholder="Example : 69 bed">
+            </div>
+            <div class="alert alert-danger" role="alert" 
+            *ngIf="createForm.get('convenient').invalid && createForm.get('convenient').touched">
+                Invalid Convenient!
+            </div>
+            <!-- -------------------------------------- -->
+            <div class="input-group mb-2 mr-sm-2">
+                <div class="input-group-prepend">
+                  <div class="input-group-text ">Area Pool</div>
+                </div>
+                <input type="number" class="form-control" formControlName="areaPool" placeholder="Example : 50">
+            </div>
+            <div class="alert alert-danger" role="alert" 
+            *ngIf="createForm.get('areaPool').invalid && createForm.get('areaPool').touched">
+                Invalid Area Pool!
+            </div>
+            <!-- -------------------------------------- -->
+            <div class="input-group mb-2 mr-sm-2">
+                <div class="input-group-prepend">
+                  <div class="input-group-text ">Floor</div>
+                </div>
+                <input type="number" class="form-control" formControlName="floor" placeholder="Example : 3">
+            </div>
+            <div class="alert alert-danger" role="alert" 
+            *ngIf="createForm.get('floor').invalid && createForm.get('floor').touched">
+                Invalid Floor!
+            </div>
+            <!-- -------------------------------------- -->
+            <div class="input-group mb-2 mr-sm-2">
+                <div class="input-group-prepend">
+                  <div class="input-group-text ">Free Service</div>
+                </div>
+                <input type="text" class="form-control" formControlName="freeService" placeholder="Example : Free-Wifi, Towel">
+            </div>
+            <div class="alert alert-danger" role="alert" 
+            *ngIf="createForm.get('freeService').invalid && createForm.get('freeService').touched">
+                Invalid Free Service!
+            </div>
+            <!-- -------------------------------------- -->
+
+
+            <div class="d-flex justify-content-center mt-4">
+            <button type="submit" class="btn btn-primary" [disabled]="createForm.invalid">Update</button>
+            </div>
+        </form>
+    </div>
+    
+</div>

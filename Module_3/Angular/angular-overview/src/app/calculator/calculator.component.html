@@ -16,6 +16,7 @@
     <input type="number" class="form-input"
     [value]="secondNumber"
     (change)="secondNumberChange($event.target.value)">
+    <span>{{secondNumber}}</span>
 </div>
 <div>
     <button class="form-input" (click)="calculate()">

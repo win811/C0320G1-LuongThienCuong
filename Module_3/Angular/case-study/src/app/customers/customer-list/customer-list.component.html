@@ -1,0 +1,91 @@
+<div class="row justify-content-between align-items-center">
+    <h1 class="text-primary">Customer List</h1>
+    <div class="d-flex">
+        <input class="form-control mr-3" type="text" style="width: 400px;" 
+        placeholder="Search By Name" [(ngModel)]="term" >
+        <button class="btn btn-outline-success" style="height: 40px;"><i class="fas fa-search"></i></button>
+    </div>
+</div>
+<br>
+<!-- Create  -->
+<a class="btn btn-success text-white" data-toggle="modal" data-target="#myModalCreate" ><i class="fas fa-plus-circle"></i> Customer</a>
+
+<div class="modal fade" id="myModalCreate">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+        <div class="modal-content ">
+            <div class="modal-header">
+                <!-- <h2 class="modal-title"><u>Create Employee</u></h2> -->
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+              
+            <div class="modal-body">
+                <app-customer-create (doCreate)="ngOnInit()"></app-customer-create>
+            </div>
+
+            <div class="modal-footer">
+            </div>    
+        </div>
+    </div>
+</div>
+<br><br>
+
+<div class="row">
+<table class="table table-sm table-striped text-center">
+    <thead class="thead-dark">
+        <tr>
+            <th>Code</th>
+            <th>Name</th>
+            <th>Birthday</th>
+            <th>Gender</th>
+            <th>Id Card</th>
+            <th>Number Phone</th>
+            <th>Email</th>
+            <th>Customer Type</th>
+            <th>Address</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let customer of customerList |filter:term | paginate: { itemsPerPage: 4, currentPage: p }">
+            <td>{{customer.code}}</td>
+            <td>{{customer.name}}</td>
+            <td>{{customer.birthday | date : 'dd-MM-yyyy'}}</td>
+            <td>{{customer.gender}}</td>
+            <td>{{customer.idCard}}</td>
+            <td>{{customer.numberPhone}}</td>
+            <td>{{customer.email}}</td>
+            <td>{{customer.customerType}}</td>
+            <td>{{customer.address}}</td>
+            <td>
+                <a class="btn btn-warning" (click)="showEditForm(customer.id)"><i class="fas fa-edit"></i></a> &nbsp;&nbsp;
+                <a class="btn btn-danger" data-toggle="modal" [attr.data-target]="'#myModal'+ customer.id"><i class="fas fa-trash-alt"></i></a>
+            </td>
+            <div class="modal" [id]="'myModal' +customer.id">
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content">
+                  
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                      <h2 class="modal-title text-danger"><u>Delete Customer</u></h2>
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                      <h2>Do you really want to delete <span class="text-danger">{{customer.name}}</span> ?</h2>
+                    </div>
+                    
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-success" data-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal" (click)="deleteCustomer(customer.id)">Delete</button>
+                    </div>
+                    
+                  </div>
+                </div>
+            </div>
+        </tr>
+    </tbody>
+</table>
+<pagination-controls (pageChange)="p = $event" (pageBoundsCorrection)="p = $event"></pagination-controls>
+</div>

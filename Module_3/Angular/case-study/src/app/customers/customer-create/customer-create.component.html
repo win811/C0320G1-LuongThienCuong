@@ -1,0 +1,118 @@
+<div class="col-md-10 offset-1 ">
+    <div class="d-flex justify-content-center ">
+        <h2 class="text-success">CREATE CUSTOMER FORM</h2>
+    </div>
+    <div class="mt-3 ">
+        <form [formGroup]="createForm" (ngSubmit)="onSubmit()">
+
+            <div class="input-group mb-2 mr-sm-2 ">
+                <div class="input-group-prepend ">
+                  <div class="input-group-text">Code</div>
+                </div>
+                <input type="text" class="form-control" formControlName="code" placeholder="KH-XXXX">
+            </div>
+            <div class="alert alert-danger" role="alert" 
+            *ngIf="createForm.get('code').invalid && createForm.get('code').touched">
+                Invalid Code!
+            </div>
+            <!-- -------------------------------------- -->
+            <div class="input-group mb-2 mr-sm-2 ">
+                <div class="input-group-prepend ">
+                  <div class="input-group-text">Name</div>
+                </div>
+                <input type="text" class="form-control" formControlName="name" placeholder="Name">
+            </div>
+            <div class="alert alert-danger" role="alert" 
+            *ngIf="createForm.get('name').invalid && createForm.get('name').touched">
+                Invalid Name!
+            </div>
+            <!-- -------------------------------------- -->
+            <div class="input-group mb-2 mr-sm-2">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">Birthday</div>
+                </div>
+                <input type="date" class="form-control" formControlName="birthday" placeholder="Choose a Date">
+            </div>
+            <div class="alert alert-danger" role="alert" 
+            *ngIf="createForm.get('birthday').hasError('required') && createForm.get('birthday').touched">
+                Invalid Birthday!
+            </div>
+            <div class="alert alert-danger" role="alert" 
+            *ngIf="createForm.get('birthday').hasError('invalidDate') && createForm.get('birthday').touched">
+                Birthday Can Not Be Text!
+            </div>
+            <!-- -------------------------------------- -->
+            <div class="input-group mb-2 mr-sm-2">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">Gender</div>
+                </div>
+                <input type="text" class="form-control" formControlName="gender" placeholder="Gender">
+            </div>
+            <div class="alert alert-danger" role="alert" 
+            *ngIf="createForm.get('gender').invalid && createForm.get('gender').touched">
+                Invalid Gender!
+            </div>
+            <!-- -------------------------------------- -->
+            <div class="input-group mb-2 mr-sm-2">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">Id Card</div>
+                </div>
+                <input type="text" class="form-control" formControlName="idCard" placeholder="XXXXXXXXX">
+            </div>
+            <div class="alert alert-danger" role="alert" 
+            *ngIf="createForm.get('idCard').invalid && createForm.get('idCard').touched">
+                Invalid Id Card!
+            </div>
+            <!-- -------------------------------------- -->
+            <div class="input-group mb-2 mr-sm-2">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">Number Phone</div>
+                </div>
+                <input type="text" class="form-control" formControlName="numberPhone" placeholder="090xxxxxxx | 091xxxxxxx | (84)+90xxxxxxx | (84)+91xxxxxxx">
+            </div>
+            <div class="alert alert-danger" role="alert" 
+            *ngIf="createForm.get('numberPhone').invalid && createForm.get('numberPhone').touched">
+                Invalid Number Phone!
+            </div>
+            <!-- -------------------------------------- -->
+            <div class="input-group mb-2 mr-sm-2">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">Email</div>
+                </div>
+                <input type="email" class="form-control" formControlName="email" placeholder="abc@abc.abc">
+            </div>
+            <div class="alert alert-danger" role="alert" 
+            *ngIf="createForm.get('email').invalid && createForm.get('email').touched">
+                Invalid Email!
+            </div>
+            <!-- -------------------------------------- -->
+            <div class="input-group mb-2 mr-sm-2">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">Customer Type</div>
+                </div>
+                <input type="text" class="form-control" formControlName="customerType" placeholder="Diamond | Platinum | Gold | Silver | Member">
+            </div>
+            <div class="alert alert-danger" role="alert" 
+            *ngIf="createForm.get('customerType').invalid && createForm.get('customerType').touched">
+                Invalid Customer Type!
+            </div>
+            <!-- -------------------------------------- -->
+            <div class="input-group mb-2 mr-sm-2">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">Address</div>
+                </div>
+                <input type="text" class="form-control" formControlName="address" placeholder="Address">
+            </div>
+            <div class="alert alert-danger" role="alert" 
+            *ngIf="createForm.get('address').invalid && createForm.get('address').touched">
+                Invalid Address!
+            </div>
+            <!-- -------------------------------------- -->
+            <div class="d-flex justify-content-center mt-4">
+            <button type="submit" class="btn btn-primary" [disabled]="createForm.invalid" 
+            data-dismiss="modal" (click)="onSubmit()">Create</button>
+            </div>
+        </form>
+    </div>
+    
+</div>

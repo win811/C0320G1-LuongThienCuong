@@ -175,3 +175,11 @@ function square(num: number): number {
   const rect = new Rect(5, 5, 10, 20);
   console.log(rect.toString());
   console.log(rect.area());
+  //---------------
+  const promise2 = new Promise((resolve, reject) => {
+    resolve('done');
+    reject(new Error('…'));// ignored
+    setTimeout(() => resolve('…')); // ignored
+  });
+  
+  promise2.then(data => console.log(data)).catch(err => console.log(err));

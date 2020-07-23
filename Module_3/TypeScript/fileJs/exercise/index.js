@@ -10,6 +10,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 function fetchRepo() {
     return __awaiter(this, void 0, void 0, function* () {
         let res = yield fetch('https://api.github.com/search/repositories?q=angular');
+        // console.log(res);
         res = (yield res.json());
         return res.items;
     });
@@ -19,17 +20,19 @@ function createItem(text) {
     item.textContent = text;
     return item;
 }
-const container = document.querySelector('.app .list');
+let container = document.querySelector("#list");
 function main() {
     return __awaiter(this, void 0, void 0, function* () {
+        console.log(container);
         // step 1: fetch repo
         const res = yield fetchRepo();
+        console.log(res[0].name);
         // step 2: lặp qua mảng các item trả về
         // step 3: call hàm createItem sau đó truyền vào name của từng item ở mỗi vòng lặp
         // step 4: call hàm container.appendChild(item mà hàm createItem trả về)
         res.forEach((item) => {
             const li = createItem(item.name);
-            container.append(li);
+            container.appendChild(li);
         });
     });
 }

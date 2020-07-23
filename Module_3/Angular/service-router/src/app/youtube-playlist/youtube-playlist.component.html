@@ -1,0 +1,10 @@
+<h2>Youtube playlist</h2>
+<div class="d-flex justify-content-center">
+<ul class="text-left">
+    <li *ngFor="let item of youtubeService.playlist">
+        <a routerLink="/youtube/{{item.id}}">{{item.song}}</a>
+    </li>
+</ul>
+</div>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,28 @@
+<h2 class="text-center">Login</h2>
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="col-md-6 offset-md-3">
+    <div class="row">
+        <label class="col">
+            Email
+            <input type="email" class="form-control" formControlName="email">
+        </label>
+    </div>
+    <div class="alert alert-danger" *ngIf="loginForm.get('email').invalid && loginForm.get('email').touched">
+        InValid Email
+    </div>
+    <div class="row">
+        <label class="col">
+            Password
+            <input type="password" class="form-control" formControlName="password">
+        </label>
+    </div>
+    <div class="alert alert-danger" *ngIf="loginForm.get('password').invalid && loginForm.get('password').touched">
+        Invalid Password
+    </div>
+    <div>
+        <input type="submit" class="btn btn-info" value="Submit">
+        <button type="button" class="btn btn-success">Test</button>
+    </div>
+</form>
+<pre>
+    {{ loginForm.value | json}}
+</pre>

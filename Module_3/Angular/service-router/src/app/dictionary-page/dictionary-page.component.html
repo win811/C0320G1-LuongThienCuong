@@ -1,0 +1,9 @@
+<h2>Dictionary Page</h2>
+<div class="d-flex justify-content-center">
+<ul class="text-left">
+    <li *ngFor="let word of listWord">
+        <a [routerLink]="['/dictionary', word.key]" >{{ word.key }}</a>
+    </li>
+</ul>
+</div>
+<router-outlet></router-outlet>

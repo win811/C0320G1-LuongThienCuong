@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-overview';
+  test = 0;
+  onRateChange(number) {
+    this.test += number;
+  }
 }

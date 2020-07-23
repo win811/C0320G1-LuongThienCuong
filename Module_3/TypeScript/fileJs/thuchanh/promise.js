@@ -55,8 +55,8 @@ httpGet('https://api.github.com/search/repositories?q=angular')
 });
 // promise chỉ resolve hoặc reject duy nhất 1 lần
 const promise = new Promise((resolve, reject) => {
-    resolve('done');
-    reject(new Error('…')); // ignored
+    reject(new Error('…'));
+    resolve('done'); // ignored
     setTimeout(() => resolve('…')); // ignored
 });
 promise.then(data => console.log(data));
